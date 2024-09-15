@@ -11,7 +11,7 @@ app.set('layout', './layouts/layout')
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-  res.send('Hello, World!');
+  res.render('home');
 });
 
 app.listen(port, () => {
