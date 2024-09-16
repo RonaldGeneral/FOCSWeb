@@ -7,6 +7,12 @@ const db = require('./db');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static(__dirname + '/public'));
+
+app.use(expressLayouts)
+app.set('layout', './layouts/layout')
+app.set('view engine', 'ejs')
+
 
 // Test the database connection when your app starts
 db.testConnection()
@@ -19,7 +25,7 @@ db.testConnection()
     process.exit(1);
   });
 
-// Example usage in an Express route
+
  app.get('/programme', async (req, res) => {
   try {
     const programme = await db.getAllRecords('programme'); 
@@ -37,11 +43,6 @@ app.post('/check-requirements', (req, res) => {
   res.render('available_prog', { data: subjectGradeData });
 });
 
-app.use(express.static(__dirname + '/public'));
-
-app.use(expressLayouts)
-app.set('layout', './layouts/layout')
-app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
   res.render('home');
