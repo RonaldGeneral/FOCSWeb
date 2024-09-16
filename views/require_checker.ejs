@@ -2146,241 +2146,28 @@ function loadHighQualification(qualification) {
              <h5><u>Postgraduate Certification</u></h5> 
              <div></div>
              <div class="form-group">
-                <label class="col-sm-2 control-label no-padding-right" for="fothqua">Qualification/Programme Obtained From</label>
-                <div class="col-sm-3">
-                   <select name="fothqua" class="form-control" id="fothqua"  onChange="check_ExTARC(this.value)">
-                    <option value=""></option>
-                     <option value="Y" >TARC/TAR UC</option>
-                      <option value="N" >Other Institution of Higher Learning</option>
-                    </select>
+                <label class="col-sm-2 control-label no-padding-right" for="fothqua">Have a computing/mathematics bachelor</label>
+                <div class="col-sm-3 d-flex align-items-center pt-2">
+                   <input type="checkbox" name="fothqua" id="fothqua" />
                 </div>
-                 <!--<div class="col-sm-12" id="otherQualfDiv"></div> -->
-   			 </div>
-                
-         <!--**********************************EXTARCIAN*****************************************-->                        
-          <div id="divExTarcian"  style="display:none;" >
-             <div class="form-group">
-                <label class="col-sm-2 control-label no-padding-right" for="fexstatus">Student Status</label>
-                <div class="col-sm-2">
-                    <select class="form-control" name="fexstatus" id="fexstatus" >
-                        <option value="" selected></option>
-                        <option value="G" >Graduate/Waiting for final semester result</option>
-                        <option value="E" >Existing</option>
-                        <option value="W" >Withdraw</option>
-                    </select>
-                </div> 
              </div>
              
              <div class="form-group">
-                <label class="col-sm-2 control-label no-padding-right" for="fexprogram">Programme</label>
-                <div class="col-sm-6">
-                    <input type="text" name="fexprogram" id="fexprogram" maxlength="100" class="form-control" value="">
-                </div> 
-             </div>
-             
-             
-             <div id="divOthQuabutton" >
-                <div class="col-sm-12">
-                  <button class="btn btn-sm btn-primary" name="faddfile" type="button" onclick="loadOTHQualification('2');$('#AddOnOTHQDiv').toggle( flip++ % 2 === 0 );" >
-                        <i class="fa fa-plus " ></i> Add Qualification/Programme
-                    </button>
-                </div> 
-            </div><br><br>
-        
-          </div> 
-        <!--**********************************EXTARCIAN ENDs*****************************************-->    
-                  
-       <!--**********************************OTHER INSTITUTE*****************************************-->              
-          <div id="divOtherInstitute"  style="display:none;" >
-             <div class="form-group">
-                <label class="col-sm-2 control-label no-padding-right" for="finscat">Institution & Campus</label>
-                <div class="col-sm-2">
-                    <select class="form-control" name="finscat" id="finscat" onChange="getBranch('')">
-                       <option value="" selected>Select Type</option>
-					   
-                       	   <option value="M1" >MALAYSIA COMMUNITY COLLEGE</option>
-                        
-                       	   <option value="M5" >MALAYSIA KOLEJ VOKASIONAL</option>
-                        
-                       	   <option value="M2" >MALAYSIA MATRICULATION</option>
-                        
-                       	   <option value="M3" >MALAYSIA POLYTECHNIC</option>
-                        
-                       	   <option value="M7" >MALAYSIA PRIVATE COLLEGE/INSTITUTION</option>
-                        
-                       	   <option value="M9" >MALAYSIA PRIVATE UNIVERSITY</option>
-                        
-                       	   <option value="M8" >MALAYSIA PRIVATE UNIVERSITY COLLEGE</option>
-                        
-                       	   <option value="M4" >MALAYSIA PUBLIC UNIVERSITY/INSTITUTE</option>
-                        
-                       	   <option value="M6" >MALAYSIA QUALIFICATIONS AGENCY</option>
-                        
-                       	   <option value="OI" >OVERSEA INSTITUTION</option>
-                                                   
-                    </select>
-               </div> 
-              
-                 <div class="col-sm-2">
-                    <select class="form-control" name="finsbranch" id="finsbranch"  onChange="getInstitute('')">
-                        <option value=""></option>
-                    </select>
-                </div> 
-            
-                <div class="col-sm-4">
-                    <select class="form-control" name="finstitute" id="finstitute" onChange="check_OtherInstitute(this.value)">
-                        <option value=""></option>
-                    </select>
-                </div> 
-                
-                <div class="col-sm-2" id="divOthInstitue"  >
-                    <input type="text" name="fothinstitute" id="fothinstitute" maxlength="50" class="form-control" value="" placeholder="If Others, please specify">
-                </div> 
-            </div>
-         
-             <div class="form-group" >
-                <label class="col-sm-2 control-label no-padding-right" for="fqlevel">Name of Award/Programme</label>
-                <div class="col-sm-2">
-                    <select class="form-control" name="fqlevel" id="fqlevel">
-                    <option selected value="">Level</option>
-                      <option value="DG" >Bachelor Degree</option>
-                      <option value="DI" >Diploma</option>
-                      <option value="CR" >Certificate</option>
-                      <option value="FD" >Foundation</option>
-                      <option value="MT" >Matriculation</option>
-                      <option value="OTH" >Others</option>
-                </select>
-                </div> 
-                
-                <div class="col-sm-4">
-                    <input type="text" name="faward" id="faward" maxlength="100" class="form-control" placeholder="Name of Award/Programme" value="">
-                </div> 
-             </div>
-             
-             <div class="form-group" >
-                <label class="col-sm-2 control-label no-padding-right" for="fawardcomplete">Programme Completed</label>
+                <label class="col-sm-2 control-label no-padding-right" for="fworkexp">Year of work experience in related field</label>
                 <div class="col-sm-1">
-                    <select class="form-control" name="fawardcomplete" id="fawardcomplete" onChange="showNoteComplete(this.value)">
-                    <option selected value="">&nbsp;</option>
-                      <option value="Y" >Yes</option>
-                      <option value="N" >No</option>
-                </select>
-                </div> 
+                   <input type="number" name="fworkexp" id="fworkexp" class="form-control" min="0"/>
+                </div>
              </div>
-             
-            
-            <div id="divAwdComplete"  style="display:none;" >
-             
-                <div class="form-group">
-                    
-                    <label class="col-sm-2 control-label no-padding-right" for="fawardmonth">Month & Year of Award</label>
-                    <div class="col-sm-2">
-                        <select class="form-control" name="fawardmonth" id="fawardmonth">
-                         <option value ="" selected></option>
-                          <option value="01" >January</option>
-                          <option value="02" >February</option>
-                          <option value="03" >March</option>
-                          <option value="04" >April</option>
-                          <option value="05" >May</option>
-                          <option value="06" >June</option>
-                          <option value="07" >July</option>
-                          <option value="08" >August</option>
-                          <option value="09" >September</option>
-                          <option value="10" >October</option>
-                          <option value="11" >November</option>
-                          <option value="12" >December</option>
-                    </select>
-                    </div> 
-                   
-                    <div class="col-sm-2">
-                        <select class="form-control" name="fawardyear" id="fawardyear">
-                         <option value ="" selected></option>
-                         
-                          
-                            <option value="2024" >2024 </option>
-                          
-                          
-                            <option value="2023" >2023 </option>
-                          
-                          
-                            <option value="2022" >2022 </option>
-                          
-                          
-                            <option value="2021" >2021 </option>
-                          
-                          
-                            <option value="2020" >2020 </option>
-                          
-                          
-                            <option value="2019" >2019 </option>
-                          
-                          
-                            <option value="2018" >2018 </option>
-                          
-                          
-                            <option value="2017" >2017 </option>
-                          
-                          
-                            <option value="2016" >2016 </option>
-                          
-                          
-                            <option value="2015" >2015 </option>
-                          
-                    </select>
-                    </div> 
-              </div>
-              
-              
-                <div class="form-group">
-                    <label class="col-sm-2 control-label no-padding-right" for="fcredit">Total Credits</label>
-                    <div class="col-sm-1">
-                        <input type="text" name="fcredit" id="fcredit" maxlength="3" class="form-control" value="">
-                    </div> 
-                 </div>
-                 
-                 
-                <div class="form-group">
-                    <label class="col-sm-2 control-label no-padding-right" for="fcgpa">CGPA/Average Grade</label>
-                    <div class="col-sm-1">
-                        <input type="text" name="fcgpa" id="fcgpa" maxlength="6" class="form-control" value="">
-                    </div> 
-                 </div>
-             
-         </div>
-         
-         
-         
-          <div class="form-group">
-          	<div class="col-sm-12">
-                <label>If you have taken and pass Bahasa Kebangsaan A (BKA), please indicate:</label>
-            </div>    
-                 <label class="col-sm-2 control-label no-padding-right" for="fbka">BKA Code & Title</label>
-                <div class="col-sm-3">
-                	<input type="text" name="fbka" id="fbka" maxlength="35" class="form-control" value="">
-                </div> 
-                <label class="col-sm-1 control-label no-padding-right" for="fbkacredit">Credit: </label>
-               <div class="col-sm-1">
-                    <input type="text" name="fbkacredit" id="fbkacredit" maxlength="1" class="form-control" value="" onKeyPress="return checkDecimal(event)">
-                </div>  
-                 <label class="col-sm-2 control-label no-padding-right" for="fbkagrade">Grade Obtained: </label>
-               <div class="col-sm-1">
-                    <input type="text" name="fbkagrade" id="fbkagrade" maxlength="10" class="form-control" value="">
-                </div>   
-         </div>
-         
-         
-          <div id="divOthQuabutton" >
-            <div class="col-sm-12">
-              <button class="btn btn-sm btn-primary" name="faddfile" type="button" onclick="loadOTHQualification('2');$('#AddOnOTHQDiv').toggle( flip++ % 2 === 0 );" >
-                    <i class="fa fa-plus " ></i> Add Qualification/Programme
-                </button>
-            </div> 
-        </div><br><br>      
-          
-       </div>
+
+             <div class="form-group">
+                <label class="col-sm-2 control-label no-padding-right" for="fcgpa">Latest CGPA</label>
+                <div class="col-sm-1">
+                   <input type="number" name="fcgpa" id="fcgpa" class="form-control" step="0.01" min="0" max="4"/>
+                </div>
+             </div>
   	<!--**************************************OTHER INSTITUTE ENDS**********************************************-->	
-    
-     <div class="col-sm-12" id="AddOnOTHQDiv" ></div> 
+    <!-- 
+     <div class="col-sm-12" id="AddOnOTHQDiv" ></div>  -->
      
      
      
