@@ -2011,7 +2011,49 @@ function loadHighQualification(qualification) {
 
   highqualDiv.appendChild(addButton);
 }
-	
+
+function collectAndSubmitData(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  // Collect SPM/O Level data
+  const lowQualData = collectSubjectGradeData('fsubject', 'fgrade');
+
+  // Collect STPM/A Level/UEC data
+  const highQualData = collectSubjectGradeData('fhighsubject', 'fhighgrade');
+
+  // Combine all data
+  const allData = {
+    lowQual: lowQualData,
+    highQual: highQualData,
+    
+    qualification: document.getElementById('fqua').value,
+    highQualification: document.getElementById('fquahigh').value,
+    englishQualification: document.getElementById('fenglishQua').value,
+  };
+
+  // Store data in hidden field
+  document.getElementById('subjectGradeData').value = JSON.stringify(allData);
+
+  // Submit the form
+  document.form1.submit();
+}
+
+function collectSubjectGradeData(subjectName, gradeName) {
+  const data = [];
+  const subjects = document.getElementsByName(subjectName);
+  const grades = document.getElementsByName(gradeName);
+
+  for (let i = 0; i < subjects.length; i++) {
+    if (subjects[i].value && grades[i].value) {
+      data.push({
+        subject: subjects[i].value,
+        grade: grades[i].value
+      });
+    }
+  }
+
+  return data;
+}
 	
 	</script>
 
@@ -2078,7 +2120,7 @@ function loadHighQualification(qualification) {
                     
 				 <script>loadLowQualification('');</script><script>loadSPMQualification('M');</script><script>loadHighQualification('');</script> 
                         
-                     <form name="form1" class="form-horizontal" role="form" method="post" action="" onSubmit="return Validation('')">
+                     <form name="form1" class="form-horizontal" role="form" method="post" action="/check-requirements" onSubmit="return Validation('');return collectAndSubmitData(event)">
                      
          
            <h4>ACADEMIC QUALIFICATION</h4> 
@@ -2087,7 +2129,7 @@ function loadHighQualification(qualification) {
              <div class="form-group">
                 <label class="col-sm-1 control-label no-padding-right" for="fqua">Qualification</label>
                 <div class="col-sm-2">
-                   <select name="fqua" class="form-control" id="fqua" onChange="loadLowQualification(this.value);chkSPM(this.value);loadSPMYear(this.value);loadResultType(this.value,'202501','','D');check_SPMQuaButton(this.value)">
+                   <select name="fqua" class="form-control" id="fqua" onChange="loadLowQualification(this.value);chkSPM(this.value);loadSPMYear(this.value);">
                     <option value="">None</option>
                      <option value="M" >SPM</option>
                       <option value="O" >O Level</option>
@@ -2095,12 +2137,12 @@ function loadHighQualification(qualification) {
                 </div>
                 
               
-                <div id="DIVresultYear" style="display:none">
+                <!-- <div id="DIVresultYear" style="display:none">
                     <label class="col-sm-1 control-label " for="fquayear">Year</label> 
                      <div class="col-sm-1">
                         <input type="text" name="fquayear" id="fquayear" class="form-control" maxlength="4" onKeyPress="return checkDecimal(event)"  value="" />
                     </div> 
-                </div>    
+                </div>  -->   
                 
                 
                 <!-- <div id="resultTypeDIV"></div> 
@@ -2135,8 +2177,6 @@ function loadHighQualification(qualification) {
                 	<input type="text" name="foquahigh" id="foquahigh" class="form-control" maxlength="10"  value="" disabled/>
                   </div>  -->
                 
-               
-                 
                 
                  <div class="col-sm-10" id="highqualDiv"></div> 
             </div>
@@ -2146,21 +2186,21 @@ function loadHighQualification(qualification) {
              <h5><u>Postgraduate Certification</u></h5> 
              <div></div>
              <div class="form-group">
-                <label class="col-sm-2 control-label no-padding-right" for="fothqua">Have a computing/mathematics bachelor</label>
+                <label class="col-sm-3 control-label no-padding-right" for="fothqua">Have a computing/mathematics bachelor</label>
                 <div class="col-sm-3 d-flex align-items-center pt-2">
                    <input type="checkbox" name="fothqua" id="fothqua" />
                 </div>
              </div>
              
              <div class="form-group">
-                <label class="col-sm-2 control-label no-padding-right" for="fworkexp">Year of work experience in related field</label>
+                <label class="col-sm-3 control-label no-padding-right" for="fworkexp">Year of work experience in related field</label>
                 <div class="col-sm-1">
                    <input type="number" name="fworkexp" id="fworkexp" class="form-control" min="0"/>
                 </div>
              </div>
 
              <div class="form-group">
-                <label class="col-sm-2 control-label no-padding-right" for="fcgpa">Latest CGPA</label>
+                <label class="col-sm-3 control-label no-padding-right" for="fcgpa">Latest CGPA</label>
                 <div class="col-sm-1">
                    <input type="number" name="fcgpa" id="fcgpa" class="form-control" step="0.01" min="0" max="4"/>
                 </div>
@@ -2279,6 +2319,7 @@ function loadHighQualification(qualification) {
                     </button>-->
                     </div>
                 </div> 
+                <input type="hidden" name="subjectGradeData" id="subjectGradeData">
                  </form>
                      <BR><BR><BR>
                    

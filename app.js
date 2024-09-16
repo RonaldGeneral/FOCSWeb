@@ -4,6 +4,9 @@ const expressLayouts = require('express-ejs-layouts')
 const app = express()
 const port = 3000
 const db = require('./db');
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // Test the database connection when your app starts
 db.testConnection()
@@ -24,6 +27,14 @@ db.testConnection()
   } catch (error) {
     res.status(500).json({ error: 'An error occurred while fetching programme' });
   }
+});
+
+app.post('/check-requirements', (req, res) => {
+  const formData = req.body;
+  const subjectGradeData = JSON.parse(formData.subjectGradeData);
+
+  // Process the data and send a response
+  res.render('available_prog', { data: subjectGradeData });
 });
 
 app.use(express.static(__dirname + '/public'));
