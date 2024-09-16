@@ -33,7 +33,15 @@ app.set('layout', './layouts/layout')
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
+  res.render('home');
+});
+
+app.get('/req', (req, res) => {
   res.render('require_checker');
+});
+
+app.get('/course', (req, res) => {
+  res.render('course');
 });
 
 function startServer() {
