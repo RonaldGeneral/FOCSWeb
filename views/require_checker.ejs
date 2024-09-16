@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="https://web.tarc.edu.my/portal/assets/css/font-awesome.css" />
 
 		<!-- page specific plugin styles -->
+		<link rel="stylesheet" href="https://web.tarc.edu.my/portal/assets/css/datepicker.css" />
 
 		<!-- text fonts -->
 		<link rel="stylesheet" href="https://web.tarc.edu.my/portal/assets/css/ace-fonts.css" />
@@ -40,6 +41,20 @@
 		<script src="https://web.tarc.edu.my/portal/assets/js/html5shiv.js"></script>
 		<script src="https://web.tarc.edu.my/portal/assets/js/respond.js"></script>
 		<![endif]-->
+
+		<style>
+            body{
+                display: flex;
+                flex-direction: column;
+                display: grid;
+            }
+            .QZ3zWd{
+                min-height:2400px;
+                max-height:10000px;
+                display: flex;
+                flex-direction: column;
+            }
+		</style>
 	</head>
 
 	<body class="no-skin">
@@ -67,16 +82,6 @@
                 padding-top: 50px;
             }
         </style>
-        <script>
-            window.addEventListener('scroll', function() {
-                var navbar = document.querySelector('.navbar');
-                if (window.scrollY > 0) {
-                    navbar.style.backgroundColor = 'orange';
-                } else {
-                    navbar.style.backgroundColor = 'orange';
-                }
-            });
-        </script>
 	
 <script>
 	function openChildWindow(myurl) {
@@ -102,6 +107,24 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script language="javascript">
 	
+    function adjustFooterPosition() {
+    var footer = document.querySelector('.footer');
+    var mainContent = document.querySelector('.main-content');
+    var windowHeight = window.innerHeight;
+    var contentHeight = mainContent.offsetHeight;
+    var footerHeight = footer.offsetHeight;
+
+    if (contentHeight + footerHeight < windowHeight) {
+        footer.style.position = 'fixed';
+        footer.style.bottom = '0';
+    } else {
+        footer.style.position = 'relative';
+    }
+}
+
+window.addEventListener('load', adjustFooterPosition);
+window.addEventListener('resize', adjustFooterPosition);
+
 	 function Validation(resulttypeQua){
 		var alphanumeric_pattern=/^[a-zA-Z0-9 ]+$/;
 		document.form1.fsubmit.disabled=true;
@@ -1740,6 +1763,254 @@
 	  $('#divQ1Add').toggle( flip++ % 2 === 0 );
 	});
 	
+    function loadResultType(qualification, intakeCode, resultType, programLevel) {
+  // This function would typically make an AJAX call to fetch result types
+  // For this example, we'll just populate a select element with dummy data
+  const resultTypeSelect = document.createElement('select');
+  resultTypeSelect.name = 'fresulttype';
+  resultTypeSelect.id = 'fresulttype';
+  resultTypeSelect.className = 'form-control';
+
+  const options = [
+    { value: '', text: 'Select Result Type' },
+    { value: 'A', text: 'Actual Result' },
+    { value: 'F', text: 'Forecast Result' },
+    { value: 'T', text: 'Trial Result' }
+  ];
+
+  options.forEach(option => {
+    const optionElement = document.createElement('option');
+    optionElement.value = option.value;
+    optionElement.textContent = option.text;
+    resultTypeSelect.appendChild(optionElement);
+  });
+
+  const resultTypeDIV = document.getElementById('resultTypeDIV');
+  resultTypeDIV.innerHTML = '';
+  resultTypeDIV.appendChild(resultTypeSelect);
+}
+
+  // Start of Selection
+function loadLowQualification(qualification) {
+  const subjectsM = [
+    'Bahasa Melayu', 'Bahase Ingerris', 'Pendidikan Moral', 'Pendidikan Islam', 'Sejarah',
+    'Mathematics', 'Additional Mathematics', 'Physics', 'Chemistry', 
+    'Biology', 'Science', 'Additional Science', 'Prinsip Perakaunan', 'Ekonomi', 'Perniagaan', 'Geografi', 'Sains Komputer',
+    'Pendidikan Seni Visual', 'Bahasa Tamil', 'English for Science and Technology', 'Bahasa Cina', 'Kesusasteraan Tamil', 'Sains Rumah Tangga',
+    'Pertanian', 'Reka Cipta'
+  ];
+
+  const subjectsO = [
+    'English Language', 'History', 'Geography', 'Mathematics-Additional', 'Mathematics (with Coursework)',
+    'Statistics', 'Physics', 'Chemistry', 'Biology', 'Science-Combined', 'Physical Education',
+    'Accounting', 'Economics', 'Business Studies', 'Commerse', 'Enterprise', 'Arts', 'Computer Science', 'Agriculture',
+    'Food and Nutrition', 'Drama', 'Music', 'Malay-Foreign Language', 'Chinese', 'Tamil'
+  ];
+
+  const gradesM = ['A+', 'A', 'A-', 'B+', 'B', 'C+', 'C', 'D', 'E', 'G'];
+  const gradesO = ['A*', 'A', 'B', 'C', 'D', 'E', 'U'];
+  const lowqualDiv = document.getElementById('lowqualDiv');
+  lowqualDiv.innerHTML = '';
+
+  if (!qualification) {
+    return;
+  }
+
+  const rowSubject = document.createElement('label');
+  rowSubject.className = 'col-sm-6 control-label text-right';
+  rowSubject.style.fontWeight = 'bold';
+  rowSubject.textContent = 'Subject';
+  const rowGrade = document.createElement('label');
+  rowGrade.className = 'col-sm-6 control-label text-right';
+  rowGrade.style.fontWeight = 'bold';
+  rowGrade.textContent = 'Grade';
+  lowqualDiv.appendChild(rowSubject);
+  lowqualDiv.appendChild(rowGrade);
+
+  const createSubjectGradeRow = (subjects, grades) => {
+    const rowDiv = document.createElement('div');
+    rowDiv.className = 'form-group';
+
+    const subjectSelect = document.createElement('select');
+    subjectSelect.name = 'fsubject';
+    subjectSelect.className = 'form-control col-sm-5';
+
+    const defaultSubjectOption = document.createElement('option');
+    defaultSubjectOption.value = '';
+    defaultSubjectOption.textContent = 'Select Subject';
+    subjectSelect.appendChild(defaultSubjectOption);
+
+    subjects.forEach(subject => {
+      const option = document.createElement('option');
+      option.value = subject;
+      option.textContent = subject;
+      subjectSelect.appendChild(option);
+    });
+
+    const gradeSelect = document.createElement('select');
+    gradeSelect.name = 'fgrade';
+    gradeSelect.className = 'form-control col-sm-5';
+
+    const defaultGradeOption = document.createElement('option');
+    defaultGradeOption.value = '';
+    defaultGradeOption.textContent = 'Select Grade';
+    gradeSelect.appendChild(defaultGradeOption);
+
+    grades.forEach(grade => {
+      const option = document.createElement('option');
+      option.value = grade;
+      option.textContent = grade;
+      gradeSelect.appendChild(option);
+    });
+
+    const subjectColDiv = document.createElement('div');
+    subjectColDiv.className = 'col-sm-6';
+    subjectColDiv.appendChild(subjectSelect);
+
+    const gradeColDiv = document.createElement('div');
+    gradeColDiv.className = 'col-sm-6';
+    gradeColDiv.appendChild(gradeSelect);
+
+    rowDiv.appendChild(subjectColDiv);
+    rowDiv.appendChild(gradeColDiv);
+
+    return rowDiv;
+  };
+
+  const subjects = qualification === 'M' ? subjectsM : subjectsO;
+  const grades = qualification === 'M' ? gradesM : gradesO;
+  lowqualDiv.appendChild(createSubjectGradeRow(subjects, grades));
+
+  const addButton = document.createElement('button');
+  addButton.textContent = 'Add Subject';
+  addButton.className = 'btn btn-sm btn-primary';
+  addButton.onclick = function(event) {
+    event.preventDefault();
+    lowqualDiv.insertBefore(createSubjectGradeRow(subjects), addButton);
+    adjustFooterPosition();
+  };
+
+  lowqualDiv.appendChild(addButton);
+}
+
+function loadSPMQualification(qualification) {
+  loadLowQualification(qualification);
+}
+
+function loadHighQualification(qualification) {
+
+  const subjectsST = [
+    'Pengajian Am', 'Mathematics (M)', 'Mathematics (T)', 'Further Mathematics', 'Physics',
+    'Chemistry', 'Biology', 'Perakaunan', 'Ekonomi', 'Pengajian Perniagaan', 'Sejarah', 
+    'Geografi', 'Information and Communications Technology (ICT)', 'Seni Visual', 'Sains Sukan',
+    'Bahasa Melayu', 'Kesusasteraan Melayu Komunikatif', 'Literature in English', 'Bahasa Cina',
+    'Bahasa Tamil', 'Syariah', 'Usuluddin', 'Bahasa Arab'
+  ];
+
+  const subjectsAL = [
+    'English - Language', 'English - Literature', 'History', 'Geography', 'Mathematics', 
+    'Pure Mathematics', 'Mathematics - Further', 'Physics', 'Chemistry', 'Biology', 
+    'Accounting', 'Economics', 'Business Studies/ Business', 'Law', 'Computing',
+    'Applied Information and Communication Technology', 'Computer Science', 'Food Studies',
+    'Art and Design', 'Design and Technology', 'Design and Textiles', 'Media Studies', 
+    'Music', 'Psychology', 'Sociology', 'Travel and Tourism', 'Global Perspectives and Research',
+    'Chinese', 'Islamic Studies'
+  ];
+
+  const subjectsUE = [
+    'Chinese Language', 'Malay Language', 'English Language', 'Mathematics', 'Advanced Mathematics',
+    'History', 'Geography', 'Biology',
+    'Chemistry', 'Physics', 'Business Studies', 'Accounting', 
+    'Economics', 'Computing and Information Technology', 'Art', 
+    'Basic Circuit Theory', 'Principle Electronic', 'Digital Logic'
+  ];
+
+  const gradesST = ['A', 'A-', 'B+', 'B','B-', 'C+', 'C','C-','D+', 'D', 'F', 'X'];
+  const gradesAL = ['A*', 'A', 'B', 'C', 'D', 'E', 'O', 'U', 'X'];
+  const gradesUE = ['A1', 'A2', 'B3', 'B4','B5', 'B6', 'C7','C8','F9','X'];
+
+  const highqualDiv = document.getElementById('highqualDiv');
+  highqualDiv.innerHTML = '';
+
+  if (!qualification) {
+    return;
+  }
+  const rowSubject = document.createElement('label');
+  rowSubject.className = 'col-sm-6 control-label text-right';
+  rowSubject.style.fontWeight = 'bold';
+  rowSubject.textContent = 'Subject';
+  const rowGrade = document.createElement('label');
+  rowGrade.className = 'col-sm-6 control-label text-right';
+  rowGrade.style.fontWeight = 'bold';
+  rowGrade.textContent = 'Grade';
+  highqualDiv.appendChild(rowSubject);
+  highqualDiv.appendChild(rowGrade);
+
+  const createSubjectGradeRow = (subjects, grades) => {
+    const rowDiv = document.createElement('div');
+    rowDiv.className = 'form-group';
+
+    const subjectSelect = document.createElement('select');
+    subjectSelect.name = 'fhighsubject';
+    subjectSelect.className = 'form-control col-sm-5';
+
+    const defaultSubjectOption = document.createElement('option');
+    defaultSubjectOption.value = '';
+    defaultSubjectOption.textContent = 'Select Subject';
+    subjectSelect.appendChild(defaultSubjectOption);
+
+    subjects.forEach(subject => {
+      const option = document.createElement('option');
+      option.value = subject;
+      option.textContent = subject;
+      subjectSelect.appendChild(option);
+    });
+
+    const gradeSelect = document.createElement('select');
+    gradeSelect.name = 'fhighgrade';
+    gradeSelect.className = 'form-control col-sm-5';
+
+    const defaultGradeOption = document.createElement('option');
+    defaultGradeOption.value = '';
+    defaultGradeOption.textContent = 'Select Grade';
+    gradeSelect.appendChild(defaultGradeOption);
+
+    grades.forEach(grade => {
+      const option = document.createElement('option');
+      option.value = grade;
+      option.textContent = grade;
+      gradeSelect.appendChild(option);
+    });
+
+    const subjectColDiv = document.createElement('div');
+    subjectColDiv.className = 'col-sm-6';
+    subjectColDiv.appendChild(subjectSelect);
+
+    const gradeColDiv = document.createElement('div');
+    gradeColDiv.className = 'col-sm-6';
+    gradeColDiv.appendChild(gradeSelect);
+
+    rowDiv.appendChild(subjectColDiv);
+    rowDiv.appendChild(gradeColDiv);
+
+    return rowDiv;
+  };
+
+  const subjects = qualification === 'ST' ? subjectsST : qualification === 'AL' ? subjectsAL : subjectsUE;
+  const grades = qualification === 'ST' ? gradesST : qualification === 'AL' ? gradesAL : gradesUE;
+  highqualDiv.appendChild(createSubjectGradeRow(subjects, grades));
+
+  const addButton = document.createElement('button');
+  addButton.textContent = 'Add Subject';
+  addButton.className = 'btn btn-sm btn-primary';
+  addButton.onclick = function(event) {
+    event.preventDefault();
+    highqualDiv.insertBefore(createSubjectGradeRow(subjects, grades), addButton);
+    adjustFooterPosition();
+  };
+
+  highqualDiv.appendChild(addButton);
+}
 	
 	
 	</script>
@@ -1799,30 +2070,27 @@
                     <!-- PAGE CONTENT BEGINS -->
                     
              <div class="tabbable">
-                <h2>Qualification</h2>
+                <h1>Minimum Requirement Checker</h1>
                 
                 
                 <div class="tab-content">
                     <div id="Qualification" class="tab-pane fade in active ">
                     
-				 <script>loadResultType('','202501','','D');</script><script>loadLowQualification('');</script><script>loadSPMQualification('M');</script><script>loadHighQualification('');</script><script>new jsInsBranch('','finsbranch','')</script><script>new jsInsBranch('','finsbranch2','')</script><script>new jsInsBranch('','finsbranch3','')</script><script>new jsInsBranch('','fmccbranch1','')</script><script>new jsInsBranch('','fmccbranch2','')</script><script>new jsInsBranch('','fmccbranch3','')</script><script>new jsInsBranch('','fmccbranch4','')</script><script>new jsInsBranch('','fmccbranch5','')</script><script>new jsInsBranch('','fmccbranch6','')</script> 
+				 <script>loadLowQualification('');</script><script>loadSPMQualification('M');</script><script>loadHighQualification('');</script> 
                         
-                     <form name="form1" class="form-horizontal" role="form" method="post" action="qualification-pro.jsp" onSubmit="return Validation('')">
+                     <form name="form1" class="form-horizontal" role="form" method="post" action="" onSubmit="return Validation('')">
                      
          
            <h4>ACADEMIC QUALIFICATION</h4> 
          
-            <h5><u>SPM/O LEVEL/EQUIVALENT:</u></h5> 
-            <div><p>Ex-TARCians and applicants from other institution of higher learning with SPM/O Level/equivalent results are also required to complete this section.</p>  
-            </div>
+            <h5><u>SPM/O LEVEL :</u></h5> 
              <div class="form-group">
                 <label class="col-sm-1 control-label no-padding-right" for="fqua">Qualification</label>
                 <div class="col-sm-2">
                    <select name="fqua" class="form-control" id="fqua" onChange="loadLowQualification(this.value);chkSPM(this.value);loadSPMYear(this.value);loadResultType(this.value,'202501','','D');check_SPMQuaButton(this.value)">
-                    <option value=""></option>
+                    <option value="">None</option>
                      <option value="M" >SPM</option>
-                      <option value="O" >IGCSE/GCSE/O Level</option>
-                      <option value="L" >Others</option>
+                      <option value="O" >O Level</option>
                     </select>
                 </div>
                 
@@ -1835,49 +2103,37 @@
                 </div>    
                 
                 
-                <div id="resultTypeDIV"></div> 
+                <!-- <div id="resultTypeDIV"></div> 
                 
                 
                  <label class="col-sm-2 control-label no-padding-right" for="foqua">If others, please specify</label>
                   <div class="col-sm-2">
                 	<input type="text" name="foqua" id="foqua" class="form-control" maxlength="60"  value="" disabled/>
-                </div> 
+                </div>  -->
                
                 <div class="col-sm-10" id="lowqualDiv"></div> 
                 
-                <!-- 
-               <div id="divSPMbutton" style="display:none">
-                   <br><br>
-                    <div class="col-sm-12">
-                      <button class="btn btn-sm btn-primary" name="faddfile" type="button" onclick="loadSPMQualification('M');$('#AddOnSPMDiv').toggle( flip++ % 2 === 0 );" >
-                            <i class="fa fa-plus " ></i> Add SPM Year & Result
-                        </button>&nbsp;<span class="small red"> *Only for students who have also sat for SPM in a different year</span>
-                    </div> 
-                </div> -->
-                <!-- 
-                 <div class="col-sm-10" id="AddOnSPMDiv" style="display:none"></div>  -->
                  
             </div>
           
           
            <br>
-            <h5><u>STPM/A LEVEL/ UEC/EQUIVALENT  (IF APPLICABLE):</u></h5> 
-            <div><p>Applicants with UEC and SPM are also to complete the above SPM section.</p></div>
+            <h5><u>STPM/A LEVEL/ UEC :</u></h5> 
+            <!-- <div><p>Applicants with UEC and SPM are also to complete the above SPM section.</p></div> -->
              <div class="form-group">
                 <label class="col-sm-1 control-label no-padding-right" for="fquahigh">Qualification</label>
                 <div class="col-sm-2">
                    <select name="fquahigh" class="form-control" id="fquahigh" onChange="loadHighQualification(this.value);chkSTPM(this.value)">
-                    <option value=""></option>
+                    <option value="">None</option>
                      <option value="ST" >STPM</option>
                       <option value="AL" >A Level</option>
                       <option value="UE" >UEC</option>
-                       <option value="LL" >Others</option>
                     </select> 
                 </div>
-                 <label class="col-sm-2 control-label no-padding-right" for="foquahigh">If others, please specify</label>
+                 <!-- <label class="col-sm-2 control-label no-padding-right" for="foquahigh">If others, please specify</label>
                   <div class="col-sm-2">
                 	<input type="text" name="foquahigh" id="foquahigh" class="form-control" maxlength="10"  value="" disabled/>
-                </div> 
+                  </div>  -->
                 
                
                  
@@ -1887,7 +2143,7 @@
           
           
            <br>
-             <h5><u>OTHER QUALIFICATION OBTAINED/PROGRAMME STUDIED (IF APPLICABLE):</u> (eg. Foundation, Certificate, Diploma, Bachelor Degree, etc.)</h5> 
+             <h5><u>Postgraduate Certification</u></h5> 
              <div></div>
              <div class="form-group">
                 <label class="col-sm-2 control-label no-padding-right" for="fothqua">Qualification/Programme Obtained From</label>
@@ -2129,77 +2385,9 @@
      
      
       <br>
-    <!-- <h5><u>MICRO-CREDENTIAL COURSE (IF APPLICABLE)</u></h5>
-   
-   	<div class="form-group" >
-        <label class="col-sm-2 control-label no-padding-right" for="fmccourse1">Name of Course</label>
-        <div class="col-sm-4">
-            <input type="text" name="fmccourse1" class="form-control" maxlength="50" value="" placeholder="Micro Award in Principles of Journalism" />
-        </div> 
-     </div>
-   
-    
-    <div class="form-group">
-        <label class="col-sm-2 control-label no-padding-right" for="finscat1">Name of Awarding Institution</label>
-        <div class="col-sm-2">
-            <select class="form-control" name="fmccat1" id="fmccat1" onChange="getBranchMCC('')">
-               <option value="" selected>Select Type</option>
-               
-				   <option value="M1" >MALAYSIA COMMUNITY COLLEGE</option>
-               
-				   <option value="M5" >MALAYSIA KOLEJ VOKASIONAL</option>
-               
-				   <option value="M2" >MALAYSIA MATRICULATION</option>
-               
-				   <option value="M3" >MALAYSIA POLYTECHNIC</option>
-               
-				   <option value="M7" >MALAYSIA PRIVATE COLLEGE/INSTITUTION</option>
-               
-				   <option value="M9" >MALAYSIA PRIVATE UNIVERSITY</option>
-               
-				   <option value="M8" >MALAYSIA PRIVATE UNIVERSITY COLLEGE</option>
-               
-				   <option value="M4" >MALAYSIA PUBLIC UNIVERSITY/INSTITUTE</option>
-               
-				   <option value="M6" >MALAYSIA QUALIFICATIONS AGENCY</option>
-               
-				   <option value="OI" >OVERSEA INSTITUTION</option>
-                   
-            </select>
-       </div> 
-      
-         <div class="col-sm-2">
-            <select class="form-control" name="fmccbranch1" id="fmccbranch1"  onChange="getInstituteMCC('')">
-                <option value=""></option>
-            </select>
-        </div> 
-    
-        <div class="col-sm-4">
-            <select class="form-control" name="fmccinstitute1" id="fmccinstitute1" onChange="check_OtherInstituteMCC(this.value)">
-                <option value=""></option>
-            </select>
-        </div> 
-        
-        <div class="col-sm-2" id="divOthMCCInstitue" style="display:none;" >
-            <input type="text" name="fothmccinst1" id="fothmccinst1" maxlength="50" class="form-control" value="" placeholder="If Others, please specify">
-        </div> 
-    </div>
-    
-    <div id="divOthMCCbutton" >
-        <div class="col-sm-12">
-          <button class="btn btn-sm btn-primary" name="faddcourse" type="button" onclick="loadAddMCC('2');$('#AddOnMCCDiv').toggle( flip++ % 2 === 0 );" >
-                <i class="fa fa-plus " ></i> Add Course
-            </button>
-        </div> 
-    </div><br><br>     
-        
-    <div class="col-sm-12" id="AddOnMCCDiv" ></div> 
-  -->
-  
-  
   
    <br>
-    <h5><u>ENGLISH LANGUAGE PROFICIENCY (IF APPLICABLE)</u></h5>
+    <h5><u>ENGLISH LANGUAGE PROFICIENCY</u></h5>
       <div class="form-group">
          <div class="col-sm-3">
            <select name="fenglishQua" class="form-control" id="fenglishQua" onChange="check_EnglishQua(this.value)" >
@@ -2219,7 +2407,6 @@
                    <select name="fmuetband" class="form-control" id="fmuetband">
                       <option value="" selected></option>
                       <option value="5+" >5+</option>
-                      <option value="6.0" >6.0</option>
                       <option value="5.0" >5.0</option>
                       <option value="4.5" >4.5</option>
                       <option value="4.0" >4.0</option>
@@ -2291,11 +2478,9 @@
    
                          
  </div>
-                  
-                     
                   <br>
                   <div class="col-sm-8">
-                    <label class="col-sm-2 control-label no-padding-right">&nbsp;</label>
+                    <!-- <label class="col-sm-2 control-label no-padding-right">&nbsp;</label> -->
                     <div class="col-sm-6">
                         <input type="hidden" name="fact" value="UpdateQualification" />
                         <button class="btn btn-sm btn-info" name="fsubmit" type="submit">
@@ -2313,119 +2498,16 @@
                     
                    </div><!-- Close <div id="Qualification" class="tab-pane fade in active"> -->
                    
-                
-                
-                 <div id="Document" class="tab-pane fade  ">
-                 
-                 
-                    <div class="form-group">
-                        <label class="col-sm-10"  >
-                            <span align="right"><strong><u>Information on the Documents to be uploaded:</u></strong></span>
-                        </label>
-                        
-                       
-           		   </div> 
-                   
-                     <div class="form-group">
-                     	   
-                        <label class="col-sm-12">
-                          <ol>
-                          	 
-                           		 <li><p>Documents to be uploaded must be scanned/snapped from the original and in colour.</p></li>
-							 
-                           		 <li><p>Documents must be scanned/snapped at the original size and are clear. Avoid flash light or glare.</p></li>
-							 
-                           		 <li><p>If your image/document files take up more than one page, you are to save it as ONE file before uploading.</p></li>
-							 
-                           		 <li><p>Submission of incomplete/unclear documents will delay in the processing of your application.</p></li>
-							 
-                          </ol>
-                        </label>
-                        
-                        
-                         <div class="form-group">
-                        <label class="col-sm-12"  >
-                            <span class="small red">Please note that maximum for each attached file size is 10MB.<BR>
-                            The only accepted formats are pdf, png, jpg, gif or bmp.<BR />
-                            </span>
-                             <span class="small">* Compulsory file to upload<BR><BR />
-                            </span>
-                        </label>
-                         
-               			</div>  
-                    </div>
-                 
-                 
-                 
-
-                  
-             
-           
-           
-			
-          
-          
-          
-          
-           
-          
-           
-         
-         
-         
-         
-           
-           
-         <!---------------------------START QUALIFICATION OBTAINED/PROGRAMME STUDIED 1 DOCUMENT---------------------------------->
-           
-         <!-----------------------END QUALIFICATION OBTAINED/PROGRAMME STUDIED 1------------------------------------->
-         
-         
-         
-          <!---------------------------START QUALIFICATION OBTAINED/PROGRAMME STUDIED 2 DOCUMENT---------------------------------->
-           
-         <!-----------------------END QUALIFICATION OBTAINED/PROGRAMME STUDIED 2------------------------------------->
-         
-         
-         
-           <!---------------------------START QUALIFICATION OBTAINED/PROGRAMME STUDIED 3 DOCUMENT---------------------------------->
-           
-         <!-----------------------END QUALIFICATION OBTAINED/PROGRAMME STUDIED 3------------------------------------->
-          
-          
-          
-        
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-           
-          
-          
-           
-           
-            
-           
-                     
-           
             <br>
               <div class="col-sm-10">
-              <div class="col-sm-1">&nbsp;</div>
+              <!-- <div class="col-sm-1">&nbsp;</div>
                 <div class="col-sm-9">
                      <button class="btn btn-sm btn-info" name="fnext" type="button" onclick="window.location.href='declaration.jsp'" >
                         <i class="ace-icon fa fa-floppy-o bigger-110"></i>
                         Save &amp; Next
                     </button>
                 </div>
-            </div>      
+                </div>  -->     
            
                     <BR><BR><BR> 
                  </div>
@@ -2452,34 +2534,9 @@
 
 	
 
-			<div id="notPrint" class="footer">
-				<div class="footer-inner">
-					<!-- #section:basics/footer -->
-					
-					
-					
-					<div class="footer-content">
-						<span class="blue small"><a href="http://www.tarc.edu.my/disclaimer.htm" target="_blank">DISCLAIMER</a> | <a href="http://www.tarc.edu.my/privacy.htm" target="_blank">PRIVACY POLICY</a> | COPYRIGHT &copy; 2024 </span>
-						<span class="blue small bolder">TAR UMT. ALL RIGHTS RESERVED</span>
-
-						&nbsp; &nbsp;
-						<span class="action-buttons">
-							<a href="https://twitter.com/tarctechnology" target="_tab">
-								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
-							</a>
-
-							<a href="https://www.facebook.com/tunkuabdulrahmanuniversitycollege" target="_tab">
-								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
-							</a>
-
-							<a href="http://www.linkedin.com/edu/school?id=21094&trk=edu-cp-title" target="_tab">
-								<i class="ace-icon fa fa-linkedin-square bigger-150"></i>
-							</a>
-						</span>
-					</div>
-
+			
 					<!-- /section:basics/footer -->
-				</div>
+				
 			</div>
 			
 			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
