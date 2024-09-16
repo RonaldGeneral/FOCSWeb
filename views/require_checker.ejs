@@ -1,0 +1,2685 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>TAR UMT - Online Application for Admission</title>
+		<link rel="shortcut icon" href="https://web.tarc.edu.my/portal/images/tarIco.ico"/>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="https://web.tarc.edu.my/portal/assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="https://web.tarc.edu.my/portal/assets/css/font-awesome.css" />
+
+		<!-- page specific plugin styles -->
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="https://web.tarc.edu.my/portal/assets/css/ace-fonts.css" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="https://web.tarc.edu.my/portal/assets/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="https://web.tarc.edu.my/portal/assets/css/ace-part2.css" class="ace-main-stylesheet" />
+		<![endif]-->
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="https://web.tarc.edu.my/portal/assets/css/ace-ie.css" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+
+		<!-- ace settings handler -->
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace-extra.js"></script>
+
+		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+		<!--[if lte IE 8]>
+		<script src="https://web.tarc.edu.my/portal/assets/js/html5shiv.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/respond.js"></script>
+		<![endif]-->
+	</head>
+
+	<body class="no-skin">
+		<!-- #section:basics/navbar.layout -->
+		<div id="navbar" class="navbar navbar-default ace-save-state" style="background:#9a0000;">
+			<div class="navbar-container ace-save-state" id="navbar-container">
+				<!-- #section:basics/sidebar.mobile.toggle -->
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+					<span class="sr-only">Toggle sidebar</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>
+
+				<!-- /section:basics/sidebar.mobile.toggle -->
+				<div class="navbar-header pull-left">
+					<!-- #section:basics/navbar.layout.brand -->
+					<a href="http://www.tarc.edu.my" class="navbar-brand" target="_blank">
+						<small>
+							<img src="https://web.tarc.edu.my/portal/images/tarumt-logo2.png" width="70px" />
+ 							<span class="hidden-480">Online Application for Admission (Pre-University and Undergraduate Programmes)</span>
+						</small>
+					</a>
+
+					<!-- /section:basics/navbar.layout.brand -->
+
+					<!-- #section:basics/navbar.toggle -->
+
+					<!-- /section:basics/navbar.toggle -->
+				</div>
+
+				<!-- #section:basics/navbar.dropdown -->
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+ 
+						<!-- #section:basics/navbar.user_menu -->
+						<li class="red">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<i class="fa fa-user bigger-180"></i>&nbsp;&nbsp;
+								<span class="user-info">
+									<small>Welcome,</small>
+									LIM TIEN AU
+								</span>
+
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            	<li>
+									<a target="_blank" href="https://www.tarc.edu.my/account/changepassword.jsp?femail=jingru4@gmail.com">
+										<i class="ace-icon fa fa-key"></i>
+										Change Password
+									</a>
+								</li>
+  								<li>
+									<a href="https://web.tarc.edu.my/portal/admintake/logout.jsp">
+										<i class="ace-icon fa fa-power-off"></i>
+										Logout
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<!-- /section:basics/navbar.user_menu -->
+					</ul>
+				</div>
+
+				<!-- /section:basics/navbar.dropdown -->
+			</div><!-- /.navbar-container -->
+		</div>
+
+		<!-- /section:basics/navbar.layout -->
+		<div class="main-container ace-save-state" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.loadState('main-container')}catch(e){}
+			</script>
+	
+<script>
+	function openChildWindow(myurl) {
+		var win = window.open(myurl,'E-Invoice Profile', '_blank','width=800');
+
+		var win_timer = setInterval(function() {   
+		  if(win.closed) {
+			  window.location.reload();
+			  clearInterval(win_timer);
+		  } 
+		  }, 100); 
+	}
+</script>
+
+
+
+
+<!-- #section:basics/sidebar -->
+<div id="sidebar" class="sidebar responsive ace-save-state">
+    <script type="text/javascript">
+        try{ace.settings.loadState('sidebar')}catch(e){}
+    </script>
+
+
+
+    <ul class="nav nav-list">
+    	<li class="">
+            <a href="https://web.tarc.edu.my/portal/admintake/user/setNav.jsp">
+                <i class="menu-icon fa fa-home"></i>
+                 <span class="menu-text">
+                    Home 
+               </span>
+            </a>
+
+            <b class="arrow"></b></li>
+    
+     
+    
+		<li class="">
+			<a href="#" onClick="openChildWindow('https://web.tarc.edu.my/portal//einv_profile/pointer.jsp?reqParam=4utvSjDIrXojJwPwJkz6EZOaEiXUBIkyP7H1GoXh%2FAH3W%2BFVN9cDlv7IpPrCvwI0KRaKd8aTVNYKR9Yl%2B6bYKS%2BRxwaDtkDbKw8rOONaxbK6pjCjaqGWWxnRCnPOU5U76uuPlm6bc1yGQhf1Otd3MUSL1dnwRGwZ4uMuRHDd0RUkS2V0%2FbGzSXR5Cy8pyDyyE6dPmkbhUACvTVoctQe1kzp2c1sPVKmQd2Njjk6YjNQ%3D')">
+				 <i class="menu-icon fa fa-hand-o-right blue"></i>
+				 <span class="menu-text blue ">
+				  Billing / E-Invoice <i class="fa fa-exclamation-triangle red"></i>
+				 </span>
+			</a>
+		</li>
+        
+      
+        
+     
+        
+   
+    </ul><!-- /.nav-list -->
+    
+    <br>
+    <div class="small blue">&nbsp;<strong><i class="menu-icon fa fa-info-circle"></i> Need assistance?</strong><table><tr><td>&nbsp;</td><td><p>You may contact us at +603-41450123 ext. 3420/3267/3547 from 8.30am to 5.30pm, Mondays - Fridays (excluding public holidays).</p></td></tr></table></div>
+
+    <!-- #section:basics/sidebar.layout.minimize -->
+    <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+        <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+  </div>
+
+    <!-- /section:basics/sidebar.layout.minimize -->
+</div>
+
+<!-- /section:basics/sidebar -->
+
+
+
+
+
+
+<div class="main-content">
+    <div class="main-content-inner">
+
+	<script language="javascript" src="divs.js"></script>
+	<script type ="text/javascript" src="https://web.tarc.edu.my/portal/js/publicAjax.js"></script>
+    <script type ="text/javascript" src = "ajax/ajax.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script language="javascript">
+	
+	 function Validation(resulttypeQua){
+		var alphanumeric_pattern=/^[a-zA-Z0-9 ]+$/;
+		document.form1.fsubmit.disabled=true;
+		
+		if(document.form1.fqua.value.replace(/\s+/g, '')=="" && document.form1.fquahigh.value.replace(/\s+/g, '')=="" && document.form1.fothqua.value.replace(/\s+/g, '')==""){
+			document.form1.fsubmit.disabled=false;
+			alert("Please fill in at least ONE Academic Qualification");
+			return false;
+		}
+		
+		if(document.form1.fqua.value.replace(/\s+/g, '')!=""){//SPM
+			 
+			if(document.form1.fqua.value.replace(/\s+/g, '')=="M" && document.form1.fquayear.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fquayear.focus();
+				return false;	
+			} 
+			
+			if(document.form1.fqua.value.replace(/\s+/g, '')=="M" && document.form1.fquayear.value.length != 4){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fquayear.focus();
+				return false;	
+			} 
+			 
+			
+			 
+			 
+			 
+			  if(document.form1.fqua.value.replace(/\s+/g, '')=="L" && document.form1.foqua.value.replace(/\s+/g, '')==""){	
+				document.form1.fsubmit.disabled=false;
+				document.form1.foqua.focus();
+				return false;
+			 }
+			 
+			 if(document.form1.fsub1.value.replace(/\s+/g, '')=="" || document.form1.fgsub1.value.replace(/\s+/g, '')==""){	
+				document.form1.fsubmit.disabled=false;
+				alert("Please complete your SPM / O Level result / Equivalent");
+				document.form1.fsub1.focus();
+				return false;
+			 }
+			 
+				if((document.form1.fsub2.value  != "")&&(document.form1.fgsub2.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fgsub2.focus();
+					 return false;
+				} 
+				if((document.form1.fsub2.value  == "")&&(document.form1.fgsub2.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fsub2.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsub3.value  != "")&&(document.form1.fgsub3.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fgsub3.focus();
+					 return false;
+				} 
+				if((document.form1.fsub3.value  == "")&&(document.form1.fgsub3.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fsub3.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsub4.value  != "")&&(document.form1.fgsub4.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fgsub4.focus();
+					 return false;
+				} 
+				if((document.form1.fsub4.value  == "")&&(document.form1.fgsub4.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fsub4.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsub5.value  != "")&&(document.form1.fgsub5.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fgsub5.focus();
+					 return false;
+				} 
+				if((document.form1.fsub5.value  == "")&&(document.form1.fgsub5.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fsub5.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsub6.value  != "")&&(document.form1.fgsub6.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fgsub6.focus();
+					 return false;
+				} 
+				if((document.form1.fsub6.value  == "")&&(document.form1.fgsub6.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fsub6.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsub7.value  != "")&&(document.form1.fgsub7.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fgsub7.focus();
+					 return false;
+				} 
+				if((document.form1.fsub7.value  == "")&&(document.form1.fgsub7.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fsub7.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsub8.value  != "")&&(document.form1.fgsub8.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fgsub8.focus();
+					 return false;
+				} 
+				if((document.form1.fsub8.value  == "")&&(document.form1.fgsub8.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fsub8.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsub9.value  != "")&&(document.form1.fgsub9.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fgsub9.focus();
+					 return false;
+				} 
+				if((document.form1.fsub9.value  == "")&&(document.form1.fgsub9.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fsub9.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsub10.value  != "")&&(document.form1.fgsub10.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fgsub10.focus();
+					 return false;
+				} 
+				if((document.form1.fsub10.value  == "")&&(document.form1.fgsub10.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fsub10.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsub11.value  != "")&&(document.form1.fgsub11.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fgsub11.focus();
+					 return false;
+				} 
+				if((document.form1.fsub11.value  == "")&&(document.form1.fgsub11.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fsub11.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsub12.value  != "")&&(document.form1.fgsub12.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fgsub12.focus();
+					 return false;
+				} 
+				if((document.form1.fsub12.value  == "")&&(document.form1.fgsub12.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your SPM / O Level result / Equivalent");
+					 document.form1.fsub12.focus();
+					 return false;
+				} 
+			
+		}
+		
+		if(document.form1.fquaSPMyear.value.replace(/\s+/g, '')!=""){//SPM second record
+		
+			if( document.form1.fqua.value.replace(/\s+/g, '')=="M" && ( document.form1.fquaSPMyear.value.replace(/\s+/g, '') == document.form1.fquayear.value.replace(/\s+/g, '') ) ){
+				document.form1.fsubmit.disabled=false;
+				alert("The additional SPM result year must not be the same as the first SPM result year");
+				document.form1.fquaSPMyear.focus();
+				return false;
+			}
+			
+			if( document.form1.fqua.value.replace(/\s+/g, '')=="M" &&  document.form1.fquaSPMyear.value.length != 4  ){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fquaSPMyear.focus();
+				return false;
+			}
+		
+			if(document.form1.fsubj1.value.replace(/\s+/g, '')=="" || document.form1.fgsubj1.value.replace(/\s+/g, '')==""){	
+				document.form1.fsubmit.disabled=false;
+				alert("Please complete your Additional SPM result");
+				document.form1.fsubj1.focus();
+				return false;
+			 }
+			 
+			 
+				if((document.form1.fsubj2.value  != "")&&(document.form1.fgsubj2.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fgsubj2.focus();
+					 return false;
+				} 
+				if((document.form1.fsubj2.value  == "")&&(document.form1.fgsubj2.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fsubj2.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsubj3.value  != "")&&(document.form1.fgsubj3.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fgsubj3.focus();
+					 return false;
+				} 
+				if((document.form1.fsubj3.value  == "")&&(document.form1.fgsubj3.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fsubj3.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsubj4.value  != "")&&(document.form1.fgsubj4.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fgsubj4.focus();
+					 return false;
+				} 
+				if((document.form1.fsubj4.value  == "")&&(document.form1.fgsubj4.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fsubj4.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsubj5.value  != "")&&(document.form1.fgsubj5.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fgsubj5.focus();
+					 return false;
+				} 
+				if((document.form1.fsubj5.value  == "")&&(document.form1.fgsubj5.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fsubj5.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsubj6.value  != "")&&(document.form1.fgsubj6.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fgsubj6.focus();
+					 return false;
+				} 
+				if((document.form1.fsubj6.value  == "")&&(document.form1.fgsubj6.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fsubj6.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsubj7.value  != "")&&(document.form1.fgsubj7.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fgsubj7.focus();
+					 return false;
+				} 
+				if((document.form1.fsubj7.value  == "")&&(document.form1.fgsubj7.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fsubj7.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsubj8.value  != "")&&(document.form1.fgsubj8.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fgsubj8.focus();
+					 return false;
+				} 
+				if((document.form1.fsubj8.value  == "")&&(document.form1.fgsubj8.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fsubj8.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsubj9.value  != "")&&(document.form1.fgsubj9.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fgsubj9.focus();
+					 return false;
+				} 
+				if((document.form1.fsubj9.value  == "")&&(document.form1.fgsubj9.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fsubj9.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsubj10.value  != "")&&(document.form1.fgsubj10.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fgsubj10.focus();
+					 return false;
+				} 
+				if((document.form1.fsubj10.value  == "")&&(document.form1.fgsubj10.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fsubj10.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsubj11.value  != "")&&(document.form1.fgsubj11.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fgsubj11.focus();
+					 return false;
+				} 
+				if((document.form1.fsubj11.value  == "")&&(document.form1.fgsubj11.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fsubj11.focus();
+					 return false;
+				} 
+			
+				if((document.form1.fsubj12.value  != "")&&(document.form1.fgsubj12.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fgsubj12.focus();
+					 return false;
+				} 
+				if((document.form1.fsubj12.value  == "")&&(document.form1.fgsubj12.value != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your Additional SPM result");
+					 document.form1.fsubj12.focus();
+					 return false;
+				} 
+			
+		
+		}
+		
+		if(document.form1.fsubj1.value.replace(/\s+/g, '')!="" && document.form1.fgsubj1.value.replace(/\s+/g, '')!=""){
+			if(document.form1.fquaSPMyear.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fquaSPMyear.focus();
+				return false;
+			}
+		 }
+		
+		if(document.form1.fquahigh.value.replace(/\s+/g, '')!=""){//STPM
+			 if(document.form1.fquahigh.value.replace(/\s+/g, '')=="LL" && document.form1.foquahigh.value.replace(/\s+/g, '')==""){	
+				document.form1.fsubmit.disabled=false;
+				document.form1.foquahigh.focus();
+				return false;
+			 }
+			 if(document.form1.ftsub1.value.replace(/\s+/g, '')=="" || document.form1.fgtsub1.value.replace(/\s+/g, '')==""){	
+				document.form1.fsubmit.disabled=false;
+				alert("Please complete your STPM / A Level / UEC result");
+				document.form1.ftsub1.focus();
+				return false;
+			 }
+			 if(document.form1.fquahigh.value.replace(/\s+/g, '')=="AL"){
+				 if(document.form1.ftmark1.value.replace(/\s+/g, '')=="" || document.form1.ftawardbody1.value.replace(/\s+/g, '')==""){
+					document.form1.fsubmit.disabled=false;
+					alert("Please complete your A Level result");
+					document.form1.ftsub1.focus();
+					return false;	
+				 
+				 }
+				 if(document.form1.ftawardbody1.value == "OTH" && document.form1.ftawardboth1.value.replace(/\s+/g, '')==""){
+					document.form1.fsubmit.disabled=false;
+					alert("If Others, please specify to complete your A Level result");
+					document.form1.ftawardboth1.focus();
+					return false;
+				}
+				if(document.form1.ftawardbody1.value != "OTH" && document.form1.ftawardboth1.value.replace(/\s+/g, '')!=""){
+					document.form1.fsubmit.disabled=false;
+					document.form1.ftawardboth1.value="";
+					//return false;
+				}
+			 }
+			 
+			  
+			 
+			 
+			 
+				if((document.form1.ftsub2.value != "")&&(document.form1.fgtsub2.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your STPM / A Level / UEC result");
+					 document.form1.fgtsub2.focus();
+					 return false;
+				} 
+				if((document.form1.ftsub2.value  == "")&&(document.form1.fgtsub2.value  != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your STPM / A Level / UEC result");
+					 document.form1.ftsub2.focus();
+					 return false;
+				} 
+				if(document.form1.fquahigh.value.replace(/\s+/g, '')=="AL"){
+					if((document.form1.ftsub2.value != "" || document.form1.fgtsub2.value  != "") && (document.form1.ftmark2.value == "" || document.form1.ftawardbody2.value  == "")){
+						document.form1.fsubmit.disabled=false;
+						 alert("Please complete your A Level result");
+						 document.form1.ftsub2.focus();
+						 return false;
+					} 
+				
+					if(document.form1.ftawardbody2.value == "OTH" && document.form1.ftawardboth2.value.replace(/\s+/g, '')==""){
+						document.form1.fsubmit.disabled=false;
+						alert("If Others, please specify to complete your A Level result");
+						document.form1.ftawardboth2.focus();
+						return false;
+					}
+					
+					if(document.form1.ftawardbody2.value != "OTH" && document.form1.ftawardboth2.value.replace(/\s+/g, '')!=""){
+						document.form1.fsubmit.disabled=false;
+						document.form1.ftawardboth2.value="";
+						//return false;
+					}
+				}
+			 
+				if((document.form1.ftsub3.value != "")&&(document.form1.fgtsub3.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your STPM / A Level / UEC result");
+					 document.form1.fgtsub3.focus();
+					 return false;
+				} 
+				if((document.form1.ftsub3.value  == "")&&(document.form1.fgtsub3.value  != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your STPM / A Level / UEC result");
+					 document.form1.ftsub3.focus();
+					 return false;
+				} 
+				if(document.form1.fquahigh.value.replace(/\s+/g, '')=="AL"){
+					if((document.form1.ftsub3.value != "" || document.form1.fgtsub3.value  != "") && (document.form1.ftmark3.value == "" || document.form1.ftawardbody3.value  == "")){
+						document.form1.fsubmit.disabled=false;
+						 alert("Please complete your A Level result");
+						 document.form1.ftsub3.focus();
+						 return false;
+					} 
+				
+					if(document.form1.ftawardbody3.value == "OTH" && document.form1.ftawardboth3.value.replace(/\s+/g, '')==""){
+						document.form1.fsubmit.disabled=false;
+						alert("If Others, please specify to complete your A Level result");
+						document.form1.ftawardboth3.focus();
+						return false;
+					}
+					
+					if(document.form1.ftawardbody3.value != "OTH" && document.form1.ftawardboth3.value.replace(/\s+/g, '')!=""){
+						document.form1.fsubmit.disabled=false;
+						document.form1.ftawardboth3.value="";
+						//return false;
+					}
+				}
+			 
+				if((document.form1.ftsub4.value != "")&&(document.form1.fgtsub4.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your STPM / A Level / UEC result");
+					 document.form1.fgtsub4.focus();
+					 return false;
+				} 
+				if((document.form1.ftsub4.value  == "")&&(document.form1.fgtsub4.value  != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your STPM / A Level / UEC result");
+					 document.form1.ftsub4.focus();
+					 return false;
+				} 
+				if(document.form1.fquahigh.value.replace(/\s+/g, '')=="AL"){
+					if((document.form1.ftsub4.value != "" || document.form1.fgtsub4.value  != "") && (document.form1.ftmark4.value == "" || document.form1.ftawardbody4.value  == "")){
+						document.form1.fsubmit.disabled=false;
+						 alert("Please complete your A Level result");
+						 document.form1.ftsub4.focus();
+						 return false;
+					} 
+				
+					if(document.form1.ftawardbody4.value == "OTH" && document.form1.ftawardboth4.value.replace(/\s+/g, '')==""){
+						document.form1.fsubmit.disabled=false;
+						alert("If Others, please specify to complete your A Level result");
+						document.form1.ftawardboth4.focus();
+						return false;
+					}
+					
+					if(document.form1.ftawardbody4.value != "OTH" && document.form1.ftawardboth4.value.replace(/\s+/g, '')!=""){
+						document.form1.fsubmit.disabled=false;
+						document.form1.ftawardboth4.value="";
+						//return false;
+					}
+				}
+			 
+				if((document.form1.ftsub5.value != "")&&(document.form1.fgtsub5.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your STPM / A Level / UEC result");
+					 document.form1.fgtsub5.focus();
+					 return false;
+				} 
+				if((document.form1.ftsub5.value  == "")&&(document.form1.fgtsub5.value  != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your STPM / A Level / UEC result");
+					 document.form1.ftsub5.focus();
+					 return false;
+				} 
+				if(document.form1.fquahigh.value.replace(/\s+/g, '')=="AL"){
+					if((document.form1.ftsub5.value != "" || document.form1.fgtsub5.value  != "") && (document.form1.ftmark5.value == "" || document.form1.ftawardbody5.value  == "")){
+						document.form1.fsubmit.disabled=false;
+						 alert("Please complete your A Level result");
+						 document.form1.ftsub5.focus();
+						 return false;
+					} 
+				
+					if(document.form1.ftawardbody5.value == "OTH" && document.form1.ftawardboth5.value.replace(/\s+/g, '')==""){
+						document.form1.fsubmit.disabled=false;
+						alert("If Others, please specify to complete your A Level result");
+						document.form1.ftawardboth5.focus();
+						return false;
+					}
+					
+					if(document.form1.ftawardbody5.value != "OTH" && document.form1.ftawardboth5.value.replace(/\s+/g, '')!=""){
+						document.form1.fsubmit.disabled=false;
+						document.form1.ftawardboth5.value="";
+						//return false;
+					}
+				}
+			 
+				if((document.form1.ftsub6.value != "")&&(document.form1.fgtsub6.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your STPM / A Level / UEC result");
+					 document.form1.fgtsub6.focus();
+					 return false;
+				} 
+				if((document.form1.ftsub6.value  == "")&&(document.form1.fgtsub6.value  != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your STPM / A Level / UEC result");
+					 document.form1.ftsub6.focus();
+					 return false;
+				} 
+				if(document.form1.fquahigh.value.replace(/\s+/g, '')=="AL"){
+					if((document.form1.ftsub6.value != "" || document.form1.fgtsub6.value  != "") && (document.form1.ftmark6.value == "" || document.form1.ftawardbody6.value  == "")){
+						document.form1.fsubmit.disabled=false;
+						 alert("Please complete your A Level result");
+						 document.form1.ftsub6.focus();
+						 return false;
+					} 
+				
+					if(document.form1.ftawardbody6.value == "OTH" && document.form1.ftawardboth6.value.replace(/\s+/g, '')==""){
+						document.form1.fsubmit.disabled=false;
+						alert("If Others, please specify to complete your A Level result");
+						document.form1.ftawardboth6.focus();
+						return false;
+					}
+					
+					if(document.form1.ftawardbody6.value != "OTH" && document.form1.ftawardboth6.value.replace(/\s+/g, '')!=""){
+						document.form1.fsubmit.disabled=false;
+						document.form1.ftawardboth6.value="";
+						//return false;
+					}
+				}
+			 
+				if((document.form1.ftsub7.value != "")&&(document.form1.fgtsub7.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your STPM / A Level / UEC result");
+					 document.form1.fgtsub7.focus();
+					 return false;
+				} 
+				if((document.form1.ftsub7.value  == "")&&(document.form1.fgtsub7.value  != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your STPM / A Level / UEC result");
+					 document.form1.ftsub7.focus();
+					 return false;
+				} 
+				if(document.form1.fquahigh.value.replace(/\s+/g, '')=="AL"){
+					if((document.form1.ftsub7.value != "" || document.form1.fgtsub7.value  != "") && (document.form1.ftmark7.value == "" || document.form1.ftawardbody7.value  == "")){
+						document.form1.fsubmit.disabled=false;
+						 alert("Please complete your A Level result");
+						 document.form1.ftsub7.focus();
+						 return false;
+					} 
+				
+					if(document.form1.ftawardbody7.value == "OTH" && document.form1.ftawardboth7.value.replace(/\s+/g, '')==""){
+						document.form1.fsubmit.disabled=false;
+						alert("If Others, please specify to complete your A Level result");
+						document.form1.ftawardboth7.focus();
+						return false;
+					}
+					
+					if(document.form1.ftawardbody7.value != "OTH" && document.form1.ftawardboth7.value.replace(/\s+/g, '')!=""){
+						document.form1.fsubmit.disabled=false;
+						document.form1.ftawardboth7.value="";
+						//return false;
+					}
+				}
+			 
+				if((document.form1.ftsub8.value != "")&&(document.form1.fgtsub8.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your STPM / A Level / UEC result");
+					 document.form1.fgtsub8.focus();
+					 return false;
+				} 
+				if((document.form1.ftsub8.value  == "")&&(document.form1.fgtsub8.value  != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your STPM / A Level / UEC result");
+					 document.form1.ftsub8.focus();
+					 return false;
+				} 
+				if(document.form1.fquahigh.value.replace(/\s+/g, '')=="AL"){
+					if((document.form1.ftsub8.value != "" || document.form1.fgtsub8.value  != "") && (document.form1.ftmark8.value == "" || document.form1.ftawardbody8.value  == "")){
+						document.form1.fsubmit.disabled=false;
+						 alert("Please complete your A Level result");
+						 document.form1.ftsub8.focus();
+						 return false;
+					} 
+				
+					if(document.form1.ftawardbody8.value == "OTH" && document.form1.ftawardboth8.value.replace(/\s+/g, '')==""){
+						document.form1.fsubmit.disabled=false;
+						alert("If Others, please specify to complete your A Level result");
+						document.form1.ftawardboth8.focus();
+						return false;
+					}
+					
+					if(document.form1.ftawardbody8.value != "OTH" && document.form1.ftawardboth8.value.replace(/\s+/g, '')!=""){
+						document.form1.fsubmit.disabled=false;
+						document.form1.ftawardboth8.value="";
+						//return false;
+					}
+				}
+			 
+				if((document.form1.ftsub9.value != "")&&(document.form1.fgtsub9.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your STPM / A Level / UEC result");
+					 document.form1.fgtsub9.focus();
+					 return false;
+				} 
+				if((document.form1.ftsub9.value  == "")&&(document.form1.fgtsub9.value  != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your STPM / A Level / UEC result");
+					 document.form1.ftsub9.focus();
+					 return false;
+				} 
+				if(document.form1.fquahigh.value.replace(/\s+/g, '')=="AL"){
+					if((document.form1.ftsub9.value != "" || document.form1.fgtsub9.value  != "") && (document.form1.ftmark9.value == "" || document.form1.ftawardbody9.value  == "")){
+						document.form1.fsubmit.disabled=false;
+						 alert("Please complete your A Level result");
+						 document.form1.ftsub9.focus();
+						 return false;
+					} 
+				
+					if(document.form1.ftawardbody9.value == "OTH" && document.form1.ftawardboth9.value.replace(/\s+/g, '')==""){
+						document.form1.fsubmit.disabled=false;
+						alert("If Others, please specify to complete your A Level result");
+						document.form1.ftawardboth9.focus();
+						return false;
+					}
+					
+					if(document.form1.ftawardbody9.value != "OTH" && document.form1.ftawardboth9.value.replace(/\s+/g, '')!=""){
+						document.form1.fsubmit.disabled=false;
+						document.form1.ftawardboth9.value="";
+						//return false;
+					}
+				}
+			 
+				if((document.form1.ftsub10.value != "")&&(document.form1.fgtsub10.value  == "")){
+					document.form1.fsubmit.disabled=false;
+					 alert("Please complete your STPM / A Level / UEC result");
+					 document.form1.fgtsub10.focus();
+					 return false;
+				} 
+				if((document.form1.ftsub10.value  == "")&&(document.form1.fgtsub10.value  != "")){
+					 document.form1.fsubmit.disabled=false;
+					 alert("Please complete your STPM / A Level / UEC result");
+					 document.form1.ftsub10.focus();
+					 return false;
+				} 
+				if(document.form1.fquahigh.value.replace(/\s+/g, '')=="AL"){
+					if((document.form1.ftsub10.value != "" || document.form1.fgtsub10.value  != "") && (document.form1.ftmark10.value == "" || document.form1.ftawardbody10.value  == "")){
+						document.form1.fsubmit.disabled=false;
+						 alert("Please complete your A Level result");
+						 document.form1.ftsub10.focus();
+						 return false;
+					} 
+				
+					if(document.form1.ftawardbody10.value == "OTH" && document.form1.ftawardboth10.value.replace(/\s+/g, '')==""){
+						document.form1.fsubmit.disabled=false;
+						alert("If Others, please specify to complete your A Level result");
+						document.form1.ftawardboth10.focus();
+						return false;
+					}
+					
+					if(document.form1.ftawardbody10.value != "OTH" && document.form1.ftawardboth10.value.replace(/\s+/g, '')!=""){
+						document.form1.fsubmit.disabled=false;
+						document.form1.ftawardboth10.value="";
+						//return false;
+					}
+				}
+			 
+		}
+		if(document.form1.fothqua.value.replace(/\s+/g, '')=="Y") {//ex-TARCIAN
+			if(document.form1.fexstatus.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fexstatus.focus();
+				return false;	
+			} 
+			if(document.form1.fexprogram.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fexprogram.focus();
+				return false;	
+			}
+			
+		}
+		if(document.form1.fothqua.value.replace(/\s+/g, '')=="N") {//OTHER INSTITUTE	
+			if(document.form1.finscat.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.finscat.focus();
+				return false;	
+			} 
+			if(document.form1.finsbranch.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.finsbranch.focus();
+				return false;	
+			} 
+			if(document.form1.finstitute.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.finstitute.focus();
+				return false;	
+			}
+			if(document.form1.finstitute.value.replace(/\s+/g, '').substring(2,5)=="999"){
+				if(document.form1.fothinstitute.value.replace(/\s+/g, '')==""){
+					document.form1.fsubmit.disabled=false;
+					document.form1.fothinstitute.focus();
+					return false;
+				}
+			}  
+			
+			 
+			if(document.form1.fqlevel.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fqlevel.focus();
+				return false;	
+			}
+			if(document.form1.faward.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.faward.focus();
+				return false;	
+			}
+			if(document.form1.fawardcomplete.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fawardcomplete.focus();
+				return false;	
+			}
+			if(document.form1.fawardcomplete.value.replace(/\s+/g, '')=="Y"){
+				if(document.form1.fawardmonth.value.replace(/\s+/g, '')==""){
+					document.form1.fsubmit.disabled=false;
+					document.form1.fawardmonth.focus();
+					return false;	
+				}
+				if(document.form1.fawardyear.value.replace(/\s+/g, '')==""){
+					document.form1.fsubmit.disabled=false;
+					document.form1.fawardyear.focus();
+					return false;	
+				}
+				if(document.form1.fcredit.value.replace(/\s+/g, '')==""){
+					document.form1.fsubmit.disabled=false;
+					document.form1.fcredit.focus();
+					return false;
+				}
+				if(document.form1.fcgpa.value.replace(/\s+/g, '')==""){
+					document.form1.fsubmit.disabled=false;
+					document.form1.fcgpa.focus();
+					return false;	
+				}
+			}
+			if(document.form1.fbka.value.replace(/\s+/g, '')=="" && (document.form1.fbkagrade.value.replace(/\s+/g, '')!="" || document.form1.fbkacredit.value.replace(/\s+/g, '')!="") ){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fbka.focus();
+				return false;	
+			}
+			if(document.form1.fbka.value.replace(/\s+/g, '')!="" && document.form1.fbkacredit.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fbkacredit.focus();
+				return false;	
+			}
+			if(document.form1.fbka.value.replace(/\s+/g, '')!="" && document.form1.fbkagrade.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fbkagrade.focus();
+				return false;	
+			}
+			if(document.form1.fbka.value.replace(/\s+/g, '')!="" && !alphanumeric_pattern.test(document.form1.fbka.value)){  
+				alert("Invalid Character!");
+				document.form1.fsubmit.disabled=false;
+				document.form1.fbka.focus();
+				return false;
+	  		}
+		}
+		
+		
+		
+		//english qualification validation 
+		if(document.form1.fenglishQua.value.replace(/\s+/g, '')=="MU"){
+			if(document.form1.fmuetband.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+                document.form1.fmuetband.focus();
+                return false;
+			}
+			if(document.form1.fmuetexpirydt.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+                document.form1.fmuetexpirydt.focus();
+                return false;
+			}else{
+				if(document.form1.fmuetexpirydt.value.length!=10){
+				document.form1.fsubmit.disabled=false;
+				alert("Wrong format (eg: DD-MM-YYYY)");
+                document.form1.fmuetexpirydt.focus();
+                return false;
+				}
+			}
+		}
+		if(document.form1.fenglishQua.value.replace(/\s+/g, '')=="IE"){
+			if(document.form1.fieltsband.value.replace(/\s+/g, '')=="" || document.form1.fieltsband2.value.replace(/\s+/g, '')==""){ 
+				document.form1.fsubmit.disabled=false;
+                document.form1.fieltsband.focus();
+                return false;
+			}
+			if(document.form1.fieltstestdt.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+                document.form1.fieltstestdt.focus();
+                return false;
+			}else{
+				if(document.form1.fieltstestdt.value.length!=10){
+				document.form1.fsubmit.disabled=false;
+				alert("Wrong format (eg: DD-MM-YYYY)");
+                document.form1.fieltstestdt.focus();
+                return false;
+				}
+			}
+		}
+		if(document.form1.fenglishQua.value.replace(/\s+/g, '')=="TP" || document.form1.fenglishQua.value.replace(/\s+/g, '')=="TI" || document.form1.fenglishQua.value.replace(/\s+/g, '')=="TC"){
+			if(document.form1.ftoeflscore.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+                document.form1.ftoeflscore.focus();
+                return false;
+			}
+			if(document.form1.ftoefltestdt.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.ftoefltestdt.focus();
+                return false;
+			}else{
+				if(document.form1.ftoefltestdt.value.length!=10){
+				document.form1.fsubmit.disabled=false;
+				alert("Wrong format (eg: DD-MM-YYYY)");
+                document.form1.ftoefltestdt.focus();
+                return false;
+				}
+			}	
+		}
+		
+		if(document.form1.fenglishQua.value.replace(/\s+/g, '')=="LS"){
+			if(document.form1.fLSscore.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+                document.form1.fLSscore.focus();
+                return false;
+			}
+		}
+		
+		
+		//other qualification 2 and 3 put bottom of english qualification to avoid error on english qualification validation
+		if(document.form1.fothqua2.value.replace(/\s+/g, '')=="Y") {//ex-TARCIAN2
+			if(document.form1.fexstatus2.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fexstatus2.focus();
+				return false;	
+			} 
+			if(document.form1.fexprogram2.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fexprogram2.focus();
+				return false;	
+			}
+			
+		}
+		if(document.form1.fothqua2.value.replace(/\s+/g, '')=="N") {//OTHER INSTITUTE2
+			if(document.form1.finscat2.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.finscat2.focus();
+				return false;	
+			} 
+			if(document.form1.finsbranch2.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.finsbranch2.focus();
+				return false;	
+			} 
+			if(document.form1.finstitute2.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.finstitute2.focus();
+				return false;	
+			}
+			if(document.form1.finstitute2.value.replace(/\s+/g, '').substring(2,5)=="999"){
+				if(document.form1.fothinstitute2.value.replace(/\s+/g, '')==""){
+					document.form1.fsubmit.disabled=false;
+					document.form1.fothinstitute2.focus();
+					return false;
+				}
+			}  
+			
+			 
+			if(document.form1.fqlevel2.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fqlevel2.focus();
+				return false;	
+			}
+			if(document.form1.faward2.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.faward2.focus();
+				return false;	
+			}
+			if(document.form1.fawardcomplete2.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fawardcomplete2.focus();
+				return false;	
+			}
+			if(document.form1.fawardcomplete2.value.replace(/\s+/g, '')=="Y"){
+				if(document.form1.fawardmonth2.value.replace(/\s+/g, '')==""){
+					document.form1.fsubmit.disabled=false;
+					document.form1.fawardmonth2.focus();
+					return false;	
+				}
+				if(document.form1.fawardyear2.value.replace(/\s+/g, '')==""){
+					document.form1.fsubmit.disabled=false;
+					document.form1.fawardyear2.focus();
+					return false;	
+				}
+				if(document.form1.fcredit2.value.replace(/\s+/g, '')==""){
+					document.form1.fsubmit.disabled=false;
+					document.form1.fcredit2.focus();
+					return false;
+				}
+				if(document.form1.fcgpa2.value.replace(/\s+/g, '')==""){
+					document.form1.fsubmit.disabled=false;
+					document.form1.fcgpa2.focus();
+					return false;	
+				}
+			}
+			if(document.form1.fbka2.value.replace(/\s+/g, '')=="" && (document.form1.fbkagrade2.value.replace(/\s+/g, '')!="" || document.form1.fbkacredit2.value.replace(/\s+/g, '')!="") ){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fbka2.focus();
+				return false;	
+			}
+			if(document.form1.fbka2.value.replace(/\s+/g, '')!="" && document.form1.fbkacredit2.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fbkacredit2.focus();
+				return false;	
+			}
+			if(document.form1.fbka2.value.replace(/\s+/g, '')!="" && document.form1.fbkagrade2.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fbkagrade2.focus();
+				return false;	
+			}
+			if(document.form1.fbka2.value.replace(/\s+/g, '')!="" && !alphanumeric_pattern.test(document.form1.fbka2.value)){  
+				alert("Invalid Character!");
+				document.form1.fsubmit.disabled=false;
+				document.form1.fbka2.focus();
+				return false;
+	  		}
+		}
+		
+		
+		
+		if(document.form1.fothqua3.value.replace(/\s+/g, '')=="Y") {//ex-TARCIAN3
+			if(document.form1.fexstatus3.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fexstatus3.focus();
+				return false;	
+			} 
+			if(document.form1.fexprogram3.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fexprogram3.focus();
+				return false;	
+			}
+			
+		}
+		if(document.form1.fothqua3.value.replace(/\s+/g, '')=="N") {//OTHER INSTITUTE3
+			if(document.form1.finscat3.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.finscat3.focus();
+				return false;	
+			} 
+			if(document.form1.finsbranch3.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.finsbranch3.focus();
+				return false;	
+			} 
+			if(document.form1.finstitute3.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.finstitute3.focus();
+				return false;	
+			}
+			if(document.form1.finstitute3.value.replace(/\s+/g, '').substring(2,5)=="999"){
+				if(document.form1.fothinstitute3.value.replace(/\s+/g, '')==""){
+					document.form1.fsubmit.disabled=false;
+					document.form1.fothinstitute3.focus();
+					return false;
+				}
+			}  
+			
+			 
+			if(document.form1.fqlevel3.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fqlevel3.focus();
+				return false;	
+			}
+			if(document.form1.faward3.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.faward3.focus();
+				return false;	
+			}
+			if(document.form1.fawardcomplete3.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fawardcomplete3.focus();
+				return false;	
+			}
+			if(document.form1.fawardcomplete3.value.replace(/\s+/g, '')=="Y"){
+				if(document.form1.fawardmonth3.value.replace(/\s+/g, '')==""){
+					document.form1.fsubmit.disabled=false;
+					document.form1.fawardmonth3.focus();
+					return false;	
+				}
+				if(document.form1.fawardyear3.value.replace(/\s+/g, '')==""){
+					document.form1.fsubmit.disabled=false;
+					document.form1.fawardyear3.focus();
+					return false;	
+				}
+				if(document.form1.fcredit3.value.replace(/\s+/g, '')==""){
+					document.form1.fsubmit.disabled=false;
+					document.form1.fcredit3.focus();
+					return false;
+				}
+				if(document.form1.fcgpa3.value.replace(/\s+/g, '')==""){
+					document.form1.fsubmit.disabled=false;
+					document.form1.fcgpa3.focus();
+					return false;	
+				}
+			}
+			if(document.form1.fbka3.value.replace(/\s+/g, '')=="" && (document.form1.fbkagrade3.value.replace(/\s+/g, '')!="" || document.form1.fbkacredit3.value.replace(/\s+/g, '')!="") ){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fbka3.focus();
+				return false;	
+			}
+			if(document.form1.fbka3.value.replace(/\s+/g, '')!="" && document.form1.fbkacredit3.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fbkacredit3.focus();
+				return false;	
+			}
+			if(document.form1.fbka3.value.replace(/\s+/g, '')!="" && document.form1.fbkagrade3.value.replace(/\s+/g, '')==""){
+				document.form1.fsubmit.disabled=false;
+				document.form1.fbkagrade3.focus();
+				return false;	
+			}
+			if(document.form1.fbka3.value.replace(/\s+/g, '')!="" && !alphanumeric_pattern.test(document.form1.fbka3.value)){  
+				alert("Invalid Character!");
+				document.form1.fsubmit.disabled=false;
+				document.form1.fbka3.focus();
+				return false;
+	  		}
+		}
+		
+		
+		
+		//MICRO CREDENTIAL		 
+		
+			 if(document.form1.fmccourse1.value.replace(/\s+/g, '')!=""){
+				 if (document.form1.fmccat1.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccat1.focus();
+					 return false;
+				 } 
+				 if (document.form1.fmccbranch1.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccbranch1.focus();
+					 return false;
+				 } 
+				 if (document.form1.fmccinstitute1.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccinstitute1.focus();
+					 return false;
+				 } 
+				 if(document.form1.fmccinstitute1.value.replace(/\s+/g, '').substring(2,5)=="999"){
+					if(document.form1.fothmccinst1.value.replace(/\s+/g, '')==""){
+						document.form1.fsubmit.disabled=false;
+						document.form1.fothmccinst1.focus();
+						return false;
+					}
+				}  
+			 }
+		
+		  	if(document.form1.fmccat1.value.replace(/\s+/g, '')!=""){
+				 if (document.form1.fmccourse1.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccourse1.focus();
+					 return false;
+				 }
+		 	 }
+		
+			 if(document.form1.fmccourse2.value.replace(/\s+/g, '')!=""){
+				 if (document.form1.fmccat2.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccat2.focus();
+					 return false;
+				 } 
+				 if (document.form1.fmccbranch2.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccbranch2.focus();
+					 return false;
+				 } 
+				 if (document.form1.fmccinstitute2.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccinstitute2.focus();
+					 return false;
+				 } 
+				 if(document.form1.fmccinstitute2.value.replace(/\s+/g, '').substring(2,5)=="999"){
+					if(document.form1.fothmccinst2.value.replace(/\s+/g, '')==""){
+						document.form1.fsubmit.disabled=false;
+						document.form1.fothmccinst2.focus();
+						return false;
+					}
+				}  
+			 }
+		
+		  	if(document.form1.fmccat2.value.replace(/\s+/g, '')!=""){
+				 if (document.form1.fmccourse2.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccourse2.focus();
+					 return false;
+				 }
+		 	 }
+		
+			 if(document.form1.fmccourse3.value.replace(/\s+/g, '')!=""){
+				 if (document.form1.fmccat3.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccat3.focus();
+					 return false;
+				 } 
+				 if (document.form1.fmccbranch3.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccbranch3.focus();
+					 return false;
+				 } 
+				 if (document.form1.fmccinstitute3.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccinstitute3.focus();
+					 return false;
+				 } 
+				 if(document.form1.fmccinstitute3.value.replace(/\s+/g, '').substring(2,5)=="999"){
+					if(document.form1.fothmccinst3.value.replace(/\s+/g, '')==""){
+						document.form1.fsubmit.disabled=false;
+						document.form1.fothmccinst3.focus();
+						return false;
+					}
+				}  
+			 }
+		
+		  	if(document.form1.fmccat3.value.replace(/\s+/g, '')!=""){
+				 if (document.form1.fmccourse3.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccourse3.focus();
+					 return false;
+				 }
+		 	 }
+		
+			 if(document.form1.fmccourse4.value.replace(/\s+/g, '')!=""){
+				 if (document.form1.fmccat4.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccat4.focus();
+					 return false;
+				 } 
+				 if (document.form1.fmccbranch4.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccbranch4.focus();
+					 return false;
+				 } 
+				 if (document.form1.fmccinstitute4.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccinstitute4.focus();
+					 return false;
+				 } 
+				 if(document.form1.fmccinstitute4.value.replace(/\s+/g, '').substring(2,5)=="999"){
+					if(document.form1.fothmccinst4.value.replace(/\s+/g, '')==""){
+						document.form1.fsubmit.disabled=false;
+						document.form1.fothmccinst4.focus();
+						return false;
+					}
+				}  
+			 }
+		
+		  	if(document.form1.fmccat4.value.replace(/\s+/g, '')!=""){
+				 if (document.form1.fmccourse4.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccourse4.focus();
+					 return false;
+				 }
+		 	 }
+		
+			 if(document.form1.fmccourse5.value.replace(/\s+/g, '')!=""){
+				 if (document.form1.fmccat5.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccat5.focus();
+					 return false;
+				 } 
+				 if (document.form1.fmccbranch5.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccbranch5.focus();
+					 return false;
+				 } 
+				 if (document.form1.fmccinstitute5.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccinstitute5.focus();
+					 return false;
+				 } 
+				 if(document.form1.fmccinstitute5.value.replace(/\s+/g, '').substring(2,5)=="999"){
+					if(document.form1.fothmccinst5.value.replace(/\s+/g, '')==""){
+						document.form1.fsubmit.disabled=false;
+						document.form1.fothmccinst5.focus();
+						return false;
+					}
+				}  
+			 }
+		
+		  	if(document.form1.fmccat5.value.replace(/\s+/g, '')!=""){
+				 if (document.form1.fmccourse5.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccourse5.focus();
+					 return false;
+				 }
+		 	 }
+		
+			 if(document.form1.fmccourse6.value.replace(/\s+/g, '')!=""){
+				 if (document.form1.fmccat6.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccat6.focus();
+					 return false;
+				 } 
+				 if (document.form1.fmccbranch6.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccbranch6.focus();
+					 return false;
+				 } 
+				 if (document.form1.fmccinstitute6.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccinstitute6.focus();
+					 return false;
+				 } 
+				 if(document.form1.fmccinstitute6.value.replace(/\s+/g, '').substring(2,5)=="999"){
+					if(document.form1.fothmccinst6.value.replace(/\s+/g, '')==""){
+						document.form1.fsubmit.disabled=false;
+						document.form1.fothmccinst6.focus();
+						return false;
+					}
+				}  
+			 }
+		
+		  	if(document.form1.fmccat6.value.replace(/\s+/g, '')!=""){
+				 if (document.form1.fmccourse6.value.replace(/\s+/g, '')==""){
+					 document.form1.fsubmit.disabled=false;
+					 document.form1.fmccourse6.focus();
+					 return false;
+				 }
+		 	 }
+			
+		
+		
+	 }
+	
+	
+	
+	
+	function getBranch(retrieve){
+		var finscat = document.form1.finscat.value;
+		new jsInsBranch(finscat,'finsbranch',retrieve);
+	
+	}
+	
+	function getInstitute(retrieve){
+		var finscat = document.form1.finscat.value;
+		var finsbranch = document.form1.finsbranch.value;
+		new jsInstituteNoTARUMT(finscat,finsbranch,'finstitute',retrieve);
+	}
+	
+	
+	function getBranch2(retrieve){
+		var finscat2 = document.form1.finscat2.value;
+		new jsInsBranch(finscat2,'finsbranch2',retrieve);
+	}
+		
+	function getInstitute2(retrieve){
+		var finscat2 = document.form1.finscat2.value;
+		var finsbranch2 = document.form1.finsbranch2.value;
+		new jsInstituteNoTARUMT(finscat2,finsbranch2,'finstitute2',retrieve);
+	}
+	
+	function getBranch3(retrieve){
+		var finscat3 = document.form1.finscat3.value;
+		new jsInsBranch(finscat3,'finsbranch3',retrieve);
+	}
+		
+	function getInstitute3(retrieve){
+		var finscat3 = document.form1.finscat3.value;
+		var finsbranch3 = document.form1.finsbranch3.value;
+		new jsInstituteNoTARUMT(finscat3,finsbranch3,'finstitute3',retrieve);
+	}
+
+	
+	function chkSchool(fvalue){
+		if(fvalue.substring(1,4)=="999"){
+			document.form1.foschool.disabled=false;
+			document.form1.foschool.focus();
+		}else{
+			document.form1.foschool.disabled=true;
+			document.form1.foschool.value="";
+		}
+	}
+	
+	 function chkSPM(fvalue){
+		if(fvalue=="L"){
+			document.form1.foqua.disabled=false;
+			document.form1.foqua.focus();
+		}else{
+			document.form1.foqua.disabled=true;
+			document.form1.foqua.value="";
+		}
+		
+		//UEC wait for SPM result
+		if(fvalue=="" && document.form1.fquahigh.value=="UE"){
+			$('#divWaitSPM').show();
+		}else{
+			$('#divWaitSPM').hide();
+		}
+		
+	}
+	
+	function chkSTPM(fvalue){
+		if(fvalue=="LL"){
+			document.form1.foquahigh.disabled=false;
+			document.form1.foquahigh.focus();
+		}else{
+			document.form1.foquahigh.disabled=true;
+			document.form1.foquahigh.value="";
+		}
+		
+		//UEC wait for SPM result
+		if(fvalue=="UE" && document.form1.fqua.value==""){
+			$('#divWaitSPM').show();
+		}else{
+			$('#divWaitSPM').hide();
+		}
+	}
+	
+	
+	function check_ExTARC(extarc) {
+		if(extarc == "Y") {
+			$('#divExTarcian').show();
+			$('#divOtherInstitute').hide();
+		} else if(extarc == "N") {
+			$('#divExTarcian').hide();
+			$('#divOtherInstitute').show();
+		} else {
+			$('#divExTarcian').hide();
+			$('#divOtherInstitute').hide();
+		}
+	}
+	
+	function check_ExTARC2(extarc) {
+		if(extarc == "Y") {
+			$('#divExTarcian2').show();
+			$('#divOtherInstitute2').hide();
+		} else if(extarc == "N") {
+			$('#divExTarcian2').hide();
+			$('#divOtherInstitute2').show();
+		} else {
+			$('#divExTarcian2').hide();
+			$('#divOtherInstitute2').hide();
+		}
+	}
+	
+	function check_ExTARC3(extarc) {
+		if(extarc == "Y") {
+			$('#divExTarcian3').show();
+			$('#divOtherInstitute3').hide();
+		} else if(extarc == "N") {
+			$('#divExTarcian3').hide();
+			$('#divOtherInstitute3').show();
+		} else {
+			$('#divExTarcian3').hide();
+			$('#divOtherInstitute3').hide();
+		}
+	}
+	
+	function check_OtherInstitute(oth) {
+		if(oth.substring(2,5) == "999") {
+			$('#divOthInstitue').show();
+		} else {
+			$('#divOthInstitue').hide();
+		}
+	}
+	
+	function check_OtherInstitute2(oth) {
+		if(oth.substring(2,5) == "999") {
+			$('#divOthInstitue2').show();
+		} else {
+			$('#divOthInstitue2').hide();
+		}
+	}
+	
+	function check_OtherInstitute3(oth) {
+		if(oth.substring(2,5) == "999") {
+			$('#divOthInstitue3').show();
+		} else {
+			$('#divOthInstitue3').hide();
+		}
+	}
+	
+	
+	function getBranchMCC(retrieve){
+		var fmccat1 = document.form1.fmccat1.value;
+		new jsInsBranch(fmccat1,'fmccbranch1',retrieve);
+	}
+	
+	function getInstituteMCC(retrieve){
+		var fmccat1 = document.form1.fmccat1.value;
+		var fmccbranch1 = document.form1.fmccbranch1.value;
+		new jsInstitute(fmccat1,fmccbranch1,'fmccinstitute1',retrieve);
+	}
+	
+	function check_OtherInstituteMCC(oth) {
+		if(oth.substring(2,5) == "999") {
+			$('#divOthMCCInstitue').show();
+		} else {
+			$('#divOthMCCInstitue').hide();
+		}
+	}
+	
+	function getBranchMCC2(retrieve){
+		var fmccat2 = document.form1.fmccat2.value;
+		new jsInsBranch(fmccat2,'fmccbranch2',retrieve);
+	}
+	
+	function getInstituteMCC2(retrieve){
+		var fmccat2 = document.form1.fmccat2.value;
+		var fmccbranch2 = document.form1.fmccbranch2.value;
+		new jsInstitute(fmccat2,fmccbranch2,'fmccinstitute2',retrieve);
+	}
+	
+	function check_OtherInstituteMCC2(oth) {
+		if(oth.substring(2,5) == "999") {
+			$('#divOthMCCInstitue2').show();
+		} else {
+			$('#divOthMCCInstitue2').hide();
+		}
+	}
+	
+	function getBranchMCC3(retrieve){
+		var fmccat3 = document.form1.fmccat3.value;
+		new jsInsBranch(fmccat3,'fmccbranch3',retrieve);
+	}
+	
+	function getInstituteMCC3(retrieve){
+		var fmccat3 = document.form1.fmccat3.value;
+		var fmccbranch3 = document.form1.fmccbranch3.value;
+		new jsInstitute(fmccat3,fmccbranch3,'fmccinstitute3',retrieve);
+	}
+	
+	function check_OtherInstituteMCC3(oth) {
+		if(oth.substring(2,5) == "999") {
+			$('#divOthMCCInstitue3').show();
+		} else {
+			$('#divOthMCCInstitue3').hide();
+		}
+	}
+	
+	function getBranchMCC4(retrieve){
+		var fmccat4 = document.form1.fmccat4.value;
+		new jsInsBranch(fmccat4,'fmccbranch4',retrieve);
+	}
+	
+	function getInstituteMCC4(retrieve){
+		var fmccat4 = document.form1.fmccat4.value;
+		var fmccbranch4 = document.form1.fmccbranch4.value;
+		new jsInstitute(fmccat4,fmccbranch4,'fmccinstitute4',retrieve);
+	}
+	
+	function check_OtherInstituteMCC4(oth) {
+		if(oth.substring(2,5) == "999") {
+			$('#divOthMCCInstitue4').show();
+		} else {
+			$('#divOthMCCInstitue4').hide();
+		}
+	}
+	
+	function getBranchMCC5(retrieve){
+		var fmccat5 = document.form1.fmccat5.value;
+		new jsInsBranch(fmccat5,'fmccbranch5',retrieve);
+	}
+	
+	function getInstituteMCC5(retrieve){
+		var fmccat5 = document.form1.fmccat5.value;
+		var fmccbranch5 = document.form1.fmccbranch5.value;
+		new jsInstitute(fmccat5,fmccbranch5,'fmccinstitute5',retrieve);
+	}
+	
+	function check_OtherInstituteMCC5(oth) {
+		if(oth.substring(2,5) == "999") {
+			$('#divOthMCCInstitue5').show();
+		} else {
+			$('#divOthMCCInstitue5').hide();
+		}
+	}
+	
+	function getBranchMCC6(retrieve){
+		var fmccat6 = document.form1.fmccat6.value;
+		new jsInsBranch(fmccat6,'fmccbranch6',retrieve);
+	}
+	
+	function getInstituteMCC6(retrieve){
+		var fmccat6 = document.form1.fmccat6.value;
+		var fmccbranch6 = document.form1.fmccbranch6.value;
+		new jsInstitute(fmccat6,fmccbranch6,'fmccinstitute6',retrieve);
+	}
+	
+	function check_OtherInstituteMCC6(oth) {
+		if(oth.substring(2,5) == "999") {
+			$('#divOthMCCInstitue6').show();
+		} else {
+			$('#divOthMCCInstitue6').hide();
+		}
+	}
+	
+	
+	function showNoteComplete(complete){
+		if(complete == "Y"){
+			alert("All documents must be uploaded at the point of application failing which the application will be processed for normal application without consideration for credit transfer.");
+			$('#divAwdComplete').show();
+		}else if(complete == "N"){
+			alert("All documents must be uploaded at the point of application failing which the application will be processed for normal application without consideration for credit transfer.\n\nHorizontol credit transfer may be considered to Diploma/Bachelor Degree programme except for applicants who failed their earlier programme or apply into Faculty of Accountancy, Finance & Business Programmes.");
+			$('#divAwdComplete').hide();
+		}
+	}
+	
+	function showNoteComplete2(complete){
+		if(complete == "Y"){
+			alert("All documents must be uploaded at the point of application failing which the application will be processed for normal application without consideration for credit transfer.");
+			$('#divAwdComplete2').show();
+		}else if(complete == "N"){
+			alert("All documents must be uploaded at the point of application failing which the application will be processed for normal application without consideration for credit transfer.\n\nHorizontol credit transfer may be considered to Diploma/Bachelor Degree programme except for applicants who failed their earlier programme or apply into Faculty of Accountancy, Finance & Business Programmes.");
+			$('#divAwdComplete2').hide();
+		}
+	}
+	
+	function showNoteComplete3(complete){
+		if(complete == "Y"){
+			alert("All documents must be uploaded at the point of application failing which the application will be processed for normal application without consideration for credit transfer.");
+			$('#divAwdComplete3').show();
+		}else if(complete == "N"){
+			alert("All documents must be uploaded at the point of application failing which the application will be processed for normal application without consideration for credit transfer.\n\nHorizontol credit transfer may be considered to Diploma/Bachelor Degree programme except for applicants who failed their earlier programme or apply into Faculty of Accountancy, Finance & Business Programmes.");
+			$('#divAwdComplete3').hide();
+		}
+	}
+
+	function loadSPMYear(exam) {
+		if(exam == "M") {
+			$('#DIVresultYear').show();
+		}else{
+			$('#DIVresultYear').hide();
+		}
+	}
+	
+	function  check_SPMQuaButton(qua){
+		if(qua == "M") {
+			$('#divSPMbutton').show();
+			//$('#AddOnSPMDiv').show();
+		}else{
+			$('#divSPMbutton').hide();
+			$('#AddOnSPMDiv').hide();
+		}
+	}
+	
+	function check_EnglishQua(engqua) {
+		if(engqua == "MU") {
+			$('#divMUET').show();
+			$('#divIELTS').hide();
+			$('#divTOEFL').hide();
+			$('#divLS').hide();	
+		} else if(engqua == "IE") {
+			$('#divMUET').hide();
+			$('#divIELTS').show();
+			$('#divTOEFL').hide();
+			$('#divLS').hide();	
+		} else if(engqua == "TP" || engqua == "TI" || engqua == "TC") {
+			$('#divMUET').hide();
+			$('#divIELTS').hide();
+			$('#divTOEFL').show();
+			$('#divLS').hide();	
+		} else if(engqua == "LS") {
+			$('#divMUET').hide();
+			$('#divIELTS').hide();
+			$('#divTOEFL').hide();
+			$('#divLS').show();	
+		} else {
+			$('#divMUET').hide();
+			$('#divIELTS').hide();
+			$('#divTOEFL').hide();
+			$('#divLS').hide();	
+		}
+	}
+	
+	
+	function  checkDecimal(evt){
+		evt = (evt) ? evt : window.event;
+		var charCode = (evt.which) ? evt.which : evt.keyCode;
+		if (charCode > 47 && charCode < 58)
+			return true;
+		else if(charCode==13){ //Enter
+			forms.submit();
+			return false;
+		}else
+			return false;
+	}
+	
+	var flip = 0;
+	$( "faddfile" ).click(function() {
+	  $('#divQ1Add').toggle( flip++ % 2 === 0 );
+	});
+	
+	
+	
+	</script>
+
+	
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="https://web.tarc.edu.my/portal/assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://web.tarc.edu.my/portal/assets/css/font-awesome.css" />
+    
+    <!-- page specific plugin styles -->
+    <link rel="stylesheet" href="https://web.tarc.edu.my/portal/assets/css/datepicker.css" />
+    
+    <!-- text fonts -->
+    <link rel="stylesheet" href="https://web.tarc.edu.my/portal/assets/css/ace-fonts.css" />
+    
+    <!-- ace styles -->
+    <link rel="stylesheet" href="https://web.tarc.edu.my/portal/assets/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+    
+    <!-- inline styles related to this page -->
+    
+    <!-- ace settings handler -->
+    <script src="https://web.tarc.edu.my/portal/assets/js/ace-extra.js"></script>
+    
+    <script type="text/javascript">
+    window.jQuery || document.write("<script src='../../assets/js/jquery.js'>"+"<"+"/script>");
+    </script>
+    
+    <script type="text/javascript">
+    if('ontouchstart' in document.documentElement) document.write("<script src='../../assets/js/jquery.mobile.custom.js'>"+"<"+"/script>");
+    </script>
+    
+    <script src="../../assets/js/date-time/bootstrap-datepicker.js"></script>
+    
+    <script type="text/javascript">
+    jQuery(function($) {
+            //datepicker plugin
+            //link
+            $('.date-picker').datepicker({
+                autoclose: true,
+                todayHighlight: true,
+            })
+            //show datepicker when clicking on the icon
+            .next().on(ace.click_event, function(){
+                $(this).prev().focus();
+            });
+    
+        });
+    </script>		
+    
+
+	
+     <!-- #section:basics/content.breadcrumbs -->
+        <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            <ul class="breadcrumb">
+            	 <li class="active">
+                   <!-- <i class="ace-icon fa fa-cog home-icon"></i>
+                     <a href="#">Online Application</a>-->
+                   Application No: 
+                </li>
+				<!--
+                <li>
+                    <a href="#">Intake</a>
+                </li>
+                -->
+              <!--  <li class="active">Online Application</li>-->
+            </ul><!-- /.breadcrumb -->
+            <!-- /section:basics/content.searchbox -->
+        </div>
+        
+          <!-- /section:basics/content.breadcrumbs -->
+        <div class="page-content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    
+                    
+			
+            
+            
+             <div class="tabbable">
+                <ul class="nav nav-tabs" id="myTab">
+                    <li class="active" >
+                        <a data-toggle="tab" href="#Qualification">
+                            <i class="ace-icon fa fa-graduation-cap bigger-120"></i>
+                            Qualification
+                            <span class="badge badge-danger">Pending</span>
+                        </a>
+                    </li>
+                    
+                        <li  >
+                         
+                            <a data-toggle="tab" href="#Document">
+                            
+                               <i class="ace-icon fa fa-upload bigger-120"></i> Upload Documents
+                               <span class="badge badge-success">Completed</span>
+                             </a>
+                        </li>
+                    
+                </ul>
+                
+                <div class="tab-content">
+                    <div id="Qualification" class="tab-pane fade in active ">
+                    
+				 <script>loadResultType('','202501','','D');</script><script>loadLowQualification('');</script><script>loadSPMQualification('M');</script><script>loadHighQualification('');</script><script>new jsInsBranch('','finsbranch','')</script><script>new jsInsBranch('','finsbranch2','')</script><script>new jsInsBranch('','finsbranch3','')</script><script>new jsInsBranch('','fmccbranch1','')</script><script>new jsInsBranch('','fmccbranch2','')</script><script>new jsInsBranch('','fmccbranch3','')</script><script>new jsInsBranch('','fmccbranch4','')</script><script>new jsInsBranch('','fmccbranch5','')</script><script>new jsInsBranch('','fmccbranch6','')</script> 
+                        
+                     <form name="form1" class="form-horizontal" role="form" method="post" action="qualification-pro.jsp" onSubmit="return Validation('')">
+                     
+         
+           <h4>ACADEMIC QUALIFICATION</h4> 
+         
+            <h5><u>SPM/O LEVEL/EQUIVALENT:</u></h5> 
+            <div><p>Ex-TARCians and applicants from other institution of higher learning with SPM/O Level/equivalent results are also required to complete this section.</p>  
+            </div>
+             <div class="form-group">
+                <label class="col-sm-1 control-label no-padding-right" for="fqua">Qualification</label>
+                <div class="col-sm-2">
+                   <select name="fqua" class="form-control" id="fqua" onChange="loadLowQualification(this.value);chkSPM(this.value);loadSPMYear(this.value);loadResultType(this.value,'202501','','D');check_SPMQuaButton(this.value)">
+                    <option value=""></option>
+                     <option value="M" >SPM</option>
+                      <option value="O" >IGCSE/GCSE/O Level</option>
+                      <option value="L" >Others</option>
+                    </select>
+                </div>
+                
+              
+                <div id="DIVresultYear" style="display:none">
+                    <label class="col-sm-1 control-label " for="fquayear">Year</label> 
+                     <div class="col-sm-1">
+                        <input type="text" name="fquayear" id="fquayear" class="form-control" maxlength="4" onKeyPress="return checkDecimal(event)"  value="" />
+                    </div> 
+                </div>    
+                
+                
+                <div id="resultTypeDIV"></div> 
+                
+                
+                 <label class="col-sm-2 control-label no-padding-right" for="foqua">If others, please specify</label>
+                  <div class="col-sm-2">
+                	<input type="text" name="foqua" id="foqua" class="form-control" maxlength="60"  value="" disabled/>
+                </div> 
+               
+                <div class="col-sm-10" id="lowqualDiv"></div> 
+                
+                
+               <div id="divSPMbutton" style="display:none">
+                   <br><br>
+                    <div class="col-sm-12">
+                      <button class="btn btn-sm btn-primary" name="faddfile" type="button" onclick="loadSPMQualification('M');$('#AddOnSPMDiv').toggle( flip++ % 2 === 0 );" >
+                            <i class="fa fa-plus " ></i> Add SPM Year & Result
+                        </button>&nbsp;<span class="small red"> *Only for students who have also sat for SPM in a different year</span>
+                    </div> 
+                </div>
+                
+                 <div class="col-sm-10" id="AddOnSPMDiv" style="display:none"></div> 
+                 
+            </div>
+          
+          
+           <br>
+            <h5><u>STPM/A LEVEL/ UEC/EQUIVALENT  (IF APPLICABLE):</u></h5> 
+            <div><p>Applicants with UEC and SPM are also to complete the above SPM section.</p></div>
+             <div class="form-group">
+                <label class="col-sm-1 control-label no-padding-right" for="fquahigh">Qualification</label>
+                <div class="col-sm-2">
+                   <select name="fquahigh" class="form-control" id="fquahigh" onChange="loadHighQualification(this.value);chkSTPM(this.value)">
+                    <option value=""></option>
+                     <option value="ST" >STPM</option>
+                      <option value="AL" >A Level</option>
+                      <option value="UE" >UEC</option>
+                       <option value="LL" >Others</option>
+                    </select> 
+                </div>
+                 <label class="col-sm-2 control-label no-padding-right" for="foquahigh">If others, please specify</label>
+                  <div class="col-sm-2">
+                	<input type="text" name="foquahigh" id="foquahigh" class="form-control" maxlength="10"  value="" disabled/>
+                </div> 
+                
+               
+                 
+                
+                 <div class="col-sm-10" id="highqualDiv"></div> 
+            </div>
+          
+          
+           <br>
+             <h5><u>OTHER QUALIFICATION OBTAINED/PROGRAMME STUDIED (IF APPLICABLE):</u> (eg. Foundation, Certificate, Diploma, Bachelor Degree, etc.)</h5> 
+             <div></div>
+             <div class="form-group">
+                <label class="col-sm-2 control-label no-padding-right" for="fothqua">Qualification/Programme Obtained From</label>
+                <div class="col-sm-3">
+                   <select name="fothqua" class="form-control" id="fothqua"  onChange="check_ExTARC(this.value)">
+                    <option value=""></option>
+                     <option value="Y" >TARC/TAR UC</option>
+                      <option value="N" >Other Institution of Higher Learning</option>
+                    </select>
+                </div>
+                 <!--<div class="col-sm-12" id="otherQualfDiv"></div> -->
+   			 </div>
+                
+         <!--**********************************EXTARCIAN*****************************************-->                        
+          <div id="divExTarcian"  style="display:none;" >
+             <div class="form-group">
+                <label class="col-sm-2 control-label no-padding-right" for="fexstatus">Student Status</label>
+                <div class="col-sm-2">
+                    <select class="form-control" name="fexstatus" id="fexstatus" >
+                        <option value="" selected></option>
+                        <option value="G" >Graduate/Waiting for final semester result</option>
+                        <option value="E" >Existing</option>
+                        <option value="W" >Withdraw</option>
+                    </select>
+                </div> 
+             </div>
+             
+             <div class="form-group">
+                <label class="col-sm-2 control-label no-padding-right" for="fexprogram">Programme</label>
+                <div class="col-sm-6">
+                    <input type="text" name="fexprogram" id="fexprogram" maxlength="100" class="form-control" value="">
+                </div> 
+             </div>
+             
+             
+             <div id="divOthQuabutton" >
+                <div class="col-sm-12">
+                  <button class="btn btn-sm btn-primary" name="faddfile" type="button" onclick="loadOTHQualification('2');$('#AddOnOTHQDiv').toggle( flip++ % 2 === 0 );" >
+                        <i class="fa fa-plus " ></i> Add Qualification/Programme
+                    </button>
+                </div> 
+            </div><br><br>
+        
+          </div> 
+        <!--**********************************EXTARCIAN ENDs*****************************************-->    
+                  
+       <!--**********************************OTHER INSTITUTE*****************************************-->              
+          <div id="divOtherInstitute"  style="display:none;" >
+             <div class="form-group">
+                <label class="col-sm-2 control-label no-padding-right" for="finscat">Institution & Campus</label>
+                <div class="col-sm-2">
+                    <select class="form-control" name="finscat" id="finscat" onChange="getBranch('')">
+                       <option value="" selected>Select Type</option>
+					   
+                       	   <option value="M1" >MALAYSIA COMMUNITY COLLEGE</option>
+                        
+                       	   <option value="M5" >MALAYSIA KOLEJ VOKASIONAL</option>
+                        
+                       	   <option value="M2" >MALAYSIA MATRICULATION</option>
+                        
+                       	   <option value="M3" >MALAYSIA POLYTECHNIC</option>
+                        
+                       	   <option value="M7" >MALAYSIA PRIVATE COLLEGE/INSTITUTION</option>
+                        
+                       	   <option value="M9" >MALAYSIA PRIVATE UNIVERSITY</option>
+                        
+                       	   <option value="M8" >MALAYSIA PRIVATE UNIVERSITY COLLEGE</option>
+                        
+                       	   <option value="M4" >MALAYSIA PUBLIC UNIVERSITY/INSTITUTE</option>
+                        
+                       	   <option value="M6" >MALAYSIA QUALIFICATIONS AGENCY</option>
+                        
+                       	   <option value="OI" >OVERSEA INSTITUTION</option>
+                                                   
+                    </select>
+               </div> 
+              
+                 <div class="col-sm-2">
+                    <select class="form-control" name="finsbranch" id="finsbranch"  onChange="getInstitute('')">
+                        <option value=""></option>
+                    </select>
+                </div> 
+            
+                <div class="col-sm-4">
+                    <select class="form-control" name="finstitute" id="finstitute" onChange="check_OtherInstitute(this.value)">
+                        <option value=""></option>
+                    </select>
+                </div> 
+                
+                <div class="col-sm-2" id="divOthInstitue"  >
+                    <input type="text" name="fothinstitute" id="fothinstitute" maxlength="50" class="form-control" value="" placeholder="If Others, please specify">
+                </div> 
+            </div>
+         
+             <div class="form-group" >
+                <label class="col-sm-2 control-label no-padding-right" for="fqlevel">Name of Award/Programme</label>
+                <div class="col-sm-2">
+                    <select class="form-control" name="fqlevel" id="fqlevel">
+                    <option selected value="">Level</option>
+                      <option value="DG" >Bachelor Degree</option>
+                      <option value="DI" >Diploma</option>
+                      <option value="CR" >Certificate</option>
+                      <option value="FD" >Foundation</option>
+                      <option value="MT" >Matriculation</option>
+                      <option value="OTH" >Others</option>
+                </select>
+                </div> 
+                
+                <div class="col-sm-4">
+                    <input type="text" name="faward" id="faward" maxlength="100" class="form-control" placeholder="Name of Award/Programme" value="">
+                </div> 
+             </div>
+             
+             <div class="form-group" >
+                <label class="col-sm-2 control-label no-padding-right" for="fawardcomplete">Programme Completed</label>
+                <div class="col-sm-1">
+                    <select class="form-control" name="fawardcomplete" id="fawardcomplete" onChange="showNoteComplete(this.value)">
+                    <option selected value="">&nbsp;</option>
+                      <option value="Y" >Yes</option>
+                      <option value="N" >No</option>
+                </select>
+                </div> 
+             </div>
+             
+            
+            <div id="divAwdComplete"  style="display:none;" >
+             
+                <div class="form-group">
+                    
+                    <label class="col-sm-2 control-label no-padding-right" for="fawardmonth">Month & Year of Award</label>
+                    <div class="col-sm-2">
+                        <select class="form-control" name="fawardmonth" id="fawardmonth">
+                         <option value ="" selected></option>
+                          <option value="01" >January</option>
+                          <option value="02" >February</option>
+                          <option value="03" >March</option>
+                          <option value="04" >April</option>
+                          <option value="05" >May</option>
+                          <option value="06" >June</option>
+                          <option value="07" >July</option>
+                          <option value="08" >August</option>
+                          <option value="09" >September</option>
+                          <option value="10" >October</option>
+                          <option value="11" >November</option>
+                          <option value="12" >December</option>
+                    </select>
+                    </div> 
+                   
+                    <div class="col-sm-2">
+                        <select class="form-control" name="fawardyear" id="fawardyear">
+                         <option value ="" selected></option>
+                         
+                          
+                            <option value="2024" >2024 </option>
+                          
+                          
+                            <option value="2023" >2023 </option>
+                          
+                          
+                            <option value="2022" >2022 </option>
+                          
+                          
+                            <option value="2021" >2021 </option>
+                          
+                          
+                            <option value="2020" >2020 </option>
+                          
+                          
+                            <option value="2019" >2019 </option>
+                          
+                          
+                            <option value="2018" >2018 </option>
+                          
+                          
+                            <option value="2017" >2017 </option>
+                          
+                          
+                            <option value="2016" >2016 </option>
+                          
+                          
+                            <option value="2015" >2015 </option>
+                          
+                    </select>
+                    </div> 
+              </div>
+              
+              
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right" for="fcredit">Total Credits</label>
+                    <div class="col-sm-1">
+                        <input type="text" name="fcredit" id="fcredit" maxlength="3" class="form-control" value="">
+                    </div> 
+                 </div>
+                 
+                 
+                <div class="form-group">
+                    <label class="col-sm-2 control-label no-padding-right" for="fcgpa">CGPA/Average Grade</label>
+                    <div class="col-sm-1">
+                        <input type="text" name="fcgpa" id="fcgpa" maxlength="6" class="form-control" value="">
+                    </div> 
+                 </div>
+             
+         </div>
+         
+         
+         
+          <div class="form-group">
+          	<div class="col-sm-12">
+                <label>If you have taken and pass Bahasa Kebangsaan A (BKA), please indicate:</label>
+            </div>    
+                 <label class="col-sm-2 control-label no-padding-right" for="fbka">BKA Code & Title</label>
+                <div class="col-sm-3">
+                	<input type="text" name="fbka" id="fbka" maxlength="35" class="form-control" value="">
+                </div> 
+                <label class="col-sm-1 control-label no-padding-right" for="fbkacredit">Credit: </label>
+               <div class="col-sm-1">
+                    <input type="text" name="fbkacredit" id="fbkacredit" maxlength="1" class="form-control" value="" onKeyPress="return checkDecimal(event)">
+                </div>  
+                 <label class="col-sm-2 control-label no-padding-right" for="fbkagrade">Grade Obtained: </label>
+               <div class="col-sm-1">
+                    <input type="text" name="fbkagrade" id="fbkagrade" maxlength="10" class="form-control" value="">
+                </div>   
+         </div>
+         
+         
+          <div id="divOthQuabutton" >
+            <div class="col-sm-12">
+              <button class="btn btn-sm btn-primary" name="faddfile" type="button" onclick="loadOTHQualification('2');$('#AddOnOTHQDiv').toggle( flip++ % 2 === 0 );" >
+                    <i class="fa fa-plus " ></i> Add Qualification/Programme
+                </button>
+            </div> 
+        </div><br><br>      
+          
+       </div>
+  	<!--**************************************OTHER INSTITUTE ENDS**********************************************-->	
+    
+     <div class="col-sm-12" id="AddOnOTHQDiv" ></div> 
+     
+     
+     
+      <br>
+    <h5><u>MICRO-CREDENTIAL COURSE (IF APPLICABLE)</u></h5>
+   
+   	<div class="form-group" >
+        <label class="col-sm-2 control-label no-padding-right" for="fmccourse1">Name of Course</label>
+        <div class="col-sm-4">
+            <input type="text" name="fmccourse1" class="form-control" maxlength="50" value="" placeholder="Micro Award in Principles of Journalism" />
+        </div> 
+     </div>
+   
+    
+    <div class="form-group">
+        <label class="col-sm-2 control-label no-padding-right" for="finscat1">Name of Awarding Institution</label>
+        <div class="col-sm-2">
+            <select class="form-control" name="fmccat1" id="fmccat1" onChange="getBranchMCC('')">
+               <option value="" selected>Select Type</option>
+               
+				   <option value="M1" >MALAYSIA COMMUNITY COLLEGE</option>
+               
+				   <option value="M5" >MALAYSIA KOLEJ VOKASIONAL</option>
+               
+				   <option value="M2" >MALAYSIA MATRICULATION</option>
+               
+				   <option value="M3" >MALAYSIA POLYTECHNIC</option>
+               
+				   <option value="M7" >MALAYSIA PRIVATE COLLEGE/INSTITUTION</option>
+               
+				   <option value="M9" >MALAYSIA PRIVATE UNIVERSITY</option>
+               
+				   <option value="M8" >MALAYSIA PRIVATE UNIVERSITY COLLEGE</option>
+               
+				   <option value="M4" >MALAYSIA PUBLIC UNIVERSITY/INSTITUTE</option>
+               
+				   <option value="M6" >MALAYSIA QUALIFICATIONS AGENCY</option>
+               
+				   <option value="OI" >OVERSEA INSTITUTION</option>
+                   
+            </select>
+       </div> 
+      
+         <div class="col-sm-2">
+            <select class="form-control" name="fmccbranch1" id="fmccbranch1"  onChange="getInstituteMCC('')">
+                <option value=""></option>
+            </select>
+        </div> 
+    
+        <div class="col-sm-4">
+            <select class="form-control" name="fmccinstitute1" id="fmccinstitute1" onChange="check_OtherInstituteMCC(this.value)">
+                <option value=""></option>
+            </select>
+        </div> 
+        
+        <div class="col-sm-2" id="divOthMCCInstitue" style="display:none;" >
+            <input type="text" name="fothmccinst1" id="fothmccinst1" maxlength="50" class="form-control" value="" placeholder="If Others, please specify">
+        </div> 
+    </div>
+    
+    <div id="divOthMCCbutton" >
+        <div class="col-sm-12">
+          <button class="btn btn-sm btn-primary" name="faddcourse" type="button" onclick="loadAddMCC('2');$('#AddOnMCCDiv').toggle( flip++ % 2 === 0 );" >
+                <i class="fa fa-plus " ></i> Add Course
+            </button>
+        </div> 
+    </div><br><br>     
+        
+    <div class="col-sm-12" id="AddOnMCCDiv" ></div> 
+ 
+  
+  
+  
+   <br>
+    <h5><u>ENGLISH LANGUAGE PROFICIENCY (IF APPLICABLE)</u></h5>
+      <div class="form-group">
+         <div class="col-sm-3">
+           <select name="fenglishQua" class="form-control" id="fenglishQua" onChange="check_EnglishQua(this.value)" >
+              <option value="" selected>English Qualification</option>
+              <option value="MU" >MUET</option>
+              <option value="IE" >IELTS</option>
+              <option value="TP" >TOEFL Paper-based Test (PBT)  </option>
+              <option value="TI" >TOEFL Internet-based Test (iBT) </option>
+              <option value="TC" >TOEFL Computer-based Test (CBT) </option>
+              <option value="LS" >Cambridge Linguaskill </option>
+            </select>
+            </div>
+            
+            <div id="divMUET"  style="display:none;" > 
+                <label class="col-sm-1 control-label no-padding-right" for="fband">Band</label>
+                <div class="col-sm-1">
+                   <select name="fmuetband" class="form-control" id="fmuetband">
+                      <option value="" selected></option>
+                      <option value="5+" >5+</option>
+                      <option value="6.0" >6.0</option>
+                      <option value="5.0" >5.0</option>
+                      <option value="4.5" >4.5</option>
+                      <option value="4.0" >4.0</option>
+                      <option value="3.5" >3.5</option>
+                      <option value="3.0" >3.0</option>
+                      <option value="2.5" >2.5</option>
+                      <option value="2.0" >2.0</option>
+                      <option value="1.5" >1.5</option>
+                       <option value="1.0" >1.0</option>
+                    </select>
+                </div>
+             <label class="col-sm-1 control-label no-padding-right" for="fmuetexpirydt">Expiry Date</label>
+             <div class="col-sm-2">
+               <div class="input-group">
+                 <input name="fmuetexpirydt" type="text" class="form-control date-picker " id="fmuetexpirydt" maxlength="10"  data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" value="" >
+                 <span class="input-group-addon"><i class="fa fa-calendar bigger-110"></i></span>
+              </div>
+          </div>
+        </div>
+        
+        
+        <div id="divIELTS"  style="display:none;" > 
+              <label class="col-sm-1 control-label no-padding-right" for="fband">Band Score</label>
+             
+              <div class="col-sm-2">
+                    <div class="col-xs-4">
+                       <input type="text" name="fieltsband" id="fieltsband" class="form-control" maxlength="1" onKeyPress="return checkDecimal(event)"  value="" /> 
+                   </div>
+                    
+                    <label class="col-xs-1 control-label">.</label>
+                   
+                    <div class="col-xs-4">
+                     <input type="text" name="fieltsband2" id="fieltsband2" class="form-control" maxlength="1" onKeyPress="return checkDecimal(event)"  value="" />
+                    </div>
+            </div>
+            
+             <label class="col-sm-1 control-label no-padding-right" for="fieltstestdt">Test Date</label>
+             <div class="col-sm-2">
+               <div class="input-group">
+                 <input name="fieltstestdt" type="text" class="form-control date-picker" id="fieltstestdt" maxlength="10"  data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" value="" >
+                 <span class="input-group-addon"><i class="fa fa-calendar bigger-110"></i></span>
+              </div>
+            </div>
+    </div> 
+        
+         
+   <div id="divTOEFL"  style="display:none;" > 
+        <label class="col-sm-1 control-label no-padding-right" for="ftoeflscore">Score</label>
+            <div class="col-sm-1">
+              <input type="text" name="ftoeflscore" id="ftoeflscore" class="form-control" maxlength="3" onKeyPress="return checkDecimal(event)"  value=""  />
+            </div>
+             <label class="col-sm-1 control-label no-padding-right" for="ftoefltestdt">Test Date</label>
+             <div class="col-sm-2">
+               <div class="input-group">
+                 <input name="ftoefltestdt" type="text" class="form-control date-picker" id="ftoefltestdt" maxlength="10"  data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" value="" >
+                 <span class="input-group-addon"><i class="fa fa-calendar bigger-110"></i></span>
+              </div>
+            </div>
+   </div> 
+   
+   
+   <div id="divLS"  style="display:none;" > 
+        <label class="col-sm-1 control-label no-padding-right" for="fLSscore">Score</label>
+            <div class="col-sm-1">
+              <input type="text" name="fLSscore" id="fLSscore" class="form-control" maxlength="4" value=""  />
+            </div>
+            
+   </div> 
+   
+                         
+ </div>
+                  
+                     
+                  <br>
+                  <div class="col-sm-8">
+                    <label class="col-sm-2 control-label no-padding-right">&nbsp;</label>
+                    <div class="col-sm-6">
+                        <input type="hidden" name="fact" value="UpdateQualification" />
+                        <button class="btn btn-sm btn-info" name="fsubmit" type="submit">
+                            <i class="ace-icon fa fa-floppy-o bigger-110"></i>
+                            Save &amp; Next
+                        </button>&nbsp;
+                        <!--<button class="btn btn-sm btn-info" name="fnext" type="button" onclick="window.location.href='declaration.jsp'" disabled>Next
+                        <i class="fa fa-angle-double-right bigger-110" ></i>
+                    </button>-->
+                    </div>
+                </div> 
+                 </form>
+                     <BR><BR><BR>
+                   
+                    
+                   </div><!-- Close <div id="Qualification" class="tab-pane fade in active"> -->
+                   
+                
+                
+                 <div id="Document" class="tab-pane fade  ">
+                 
+                 
+                    <div class="form-group">
+                        <label class="col-sm-10"  >
+                            <span align="right"><strong><u>Information on the Documents to be uploaded:</u></strong></span>
+                        </label>
+                        
+                       
+           		   </div> 
+                   
+                     <div class="form-group">
+                     	   
+                        <label class="col-sm-12">
+                          <ol>
+                          	 
+                           		 <li><p>Documents to be uploaded must be scanned/snapped from the original and in colour.</p></li>
+							 
+                           		 <li><p>Documents must be scanned/snapped at the original size and are clear. Avoid flash light or glare.</p></li>
+							 
+                           		 <li><p>If your image/document files take up more than one page, you are to save it as ONE file before uploading.</p></li>
+							 
+                           		 <li><p>Submission of incomplete/unclear documents will delay in the processing of your application.</p></li>
+							 
+                          </ol>
+                        </label>
+                        
+                        
+                         <div class="form-group">
+                        <label class="col-sm-12"  >
+                            <span class="small red">Please note that maximum for each attached file size is 10MB.<BR>
+                            The only accepted formats are pdf, png, jpg, gif or bmp.<BR />
+                            </span>
+                             <span class="small">* Compulsory file to upload<BR><BR />
+                            </span>
+                        </label>
+                         
+               			</div>  
+                    </div>
+                 
+                 
+                 
+
+                  
+             
+           
+           
+			
+          
+          
+          
+          
+           
+          
+           
+         
+         
+         
+         
+           
+           
+         <!---------------------------START QUALIFICATION OBTAINED/PROGRAMME STUDIED 1 DOCUMENT---------------------------------->
+           
+         <!-----------------------END QUALIFICATION OBTAINED/PROGRAMME STUDIED 1------------------------------------->
+         
+         
+         
+          <!---------------------------START QUALIFICATION OBTAINED/PROGRAMME STUDIED 2 DOCUMENT---------------------------------->
+           
+         <!-----------------------END QUALIFICATION OBTAINED/PROGRAMME STUDIED 2------------------------------------->
+         
+         
+         
+           <!---------------------------START QUALIFICATION OBTAINED/PROGRAMME STUDIED 3 DOCUMENT---------------------------------->
+           
+         <!-----------------------END QUALIFICATION OBTAINED/PROGRAMME STUDIED 3------------------------------------->
+          
+          
+          
+        
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+           
+          
+          
+           
+           
+            
+           
+                     
+           
+            <br>
+              <div class="col-sm-10">
+              <div class="col-sm-1">&nbsp;</div>
+                <div class="col-sm-9">
+                     <button class="btn btn-sm btn-info" name="fnext" type="button" onclick="window.location.href='declaration.jsp'" >
+                        <i class="ace-icon fa fa-floppy-o bigger-110"></i>
+                        Save &amp; Next
+                    </button>
+                </div>
+            </div>      
+           
+                    <BR><BR><BR> 
+                 </div>
+             
+                   
+                   
+               </div><!-- Close <div class="tab-content"> -->
+   		 	</div><!-- Close <div class="tabbable"> -->
+                    
+                    
+                    
+                    
+
+				 <!-- PAGE CONTENT ENDS -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+
+	
+    </div>
+</div><!-- /.main-content -->
+
+
+
+	
+
+			<div id="notPrint" class="footer">
+				<div class="footer-inner">
+					<!-- #section:basics/footer -->
+					
+					
+					
+					<div class="footer-content">
+						<span class="blue small"><a href="http://www.tarc.edu.my/disclaimer.htm" target="_blank">DISCLAIMER</a> | <a href="http://www.tarc.edu.my/privacy.htm" target="_blank">PRIVACY POLICY</a> | COPYRIGHT &copy; 2024 </span>
+						<span class="blue small bolder">TAR UMT. ALL RIGHTS RESERVED</span>
+
+						&nbsp; &nbsp;
+						<span class="action-buttons">
+							<a href="https://twitter.com/tarctechnology" target="_tab">
+								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+							</a>
+
+							<a href="https://www.facebook.com/tunkuabdulrahmanuniversitycollege" target="_tab">
+								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+							</a>
+
+							<a href="http://www.linkedin.com/edu/school?id=21094&trk=edu-cp-title" target="_tab">
+								<i class="ace-icon fa fa-linkedin-square bigger-150"></i>
+							</a>
+						</span>
+					</div>
+
+					<!-- /section:basics/footer -->
+				</div>
+			</div>
+			
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+
+ 		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script src="https://web.tarc.edu.my/portal/assets/js/jquery.js"></script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="https://web.tarc.edu.my/portal/assets/js/jquery1x.js"></script>
+<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='https://web.tarc.edu.my/portal/assets/js/jquery.mobile.custom.js'>"+"<"+"/script>");
+		</script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/bootstrap.js"></script>
+
+		<!-- page specific plugin scripts -->
+
+		<!-- ace scripts -->
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/elements.scroller.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/elements.colorpicker.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/elements.fileinput.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/elements.typeahead.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/elements.wysiwyg.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/elements.spinner.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/elements.treeview.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/elements.wizard.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/elements.aside.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/ace.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/ace.ajax-content.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/ace.touch-drag.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/ace.sidebar.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/ace.sidebar-scroll-1.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/ace.submenu-hover.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/ace.widget-box.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/ace.settings.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/ace.settings-rtl.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/ace.settings-skin.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/ace.widget-on-reload.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/ace.searchbox-autocomplete.js"></script>
+
+		<!-- inline scripts related to this page -->
+
+		<!-- the following scripts are used in demo only for onpage help and you don't need them -->
+		<link rel="stylesheet" href="https://web.tarc.edu.my/portal/assets/css/ace.onpage-help.css" />
+		<link rel="stylesheet" href="https://web.tarc.edu.my/portal/docs/assets/js/themes/sunburst.css" />
+
+		<script type="text/javascript"> ace.vars['base'] = '..'; </script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/elements.onpage-help.js"></script>
+		<script src="https://web.tarc.edu.my/portal/assets/js/ace/ace.onpage-help.js"></script>
+		<script src="https://web.tarc.edu.my/portal/docs/assets/js/rainbow.js"></script>
+		<script src="https://web.tarc.edu.my/portal/docs/assets/js/language/generic.js"></script>
+		<script src="https://web.tarc.edu.my/portal/docs/assets/js/language/html.js"></script>
+		<script src="https://web.tarc.edu.my/portal/docs/assets/js/language/css.js"></script>
+		<script src="https://web.tarc.edu.my/portal/docs/assets/js/language/javascript.js"></script>
+	</body>
+</html>
+	
+

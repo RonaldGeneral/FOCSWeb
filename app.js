@@ -11,7 +11,7 @@ app.set('layout', './layouts/layout')
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-  res.render('home');
+  res.render('require_checker');
 });
 
 app.listen(port, () => {
