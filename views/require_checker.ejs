@@ -44,81 +44,39 @@
 
 	<body class="no-skin">
 		<!-- #section:basics/navbar.layout -->
-		<div id="navbar" class="navbar navbar-default ace-save-state" style="background:#9a0000;">
+		<!-- <div id="navbar" class="navbar navbar-default ace-save-state" style="background:#9a0000;">
 			<div class="navbar-container ace-save-state" id="navbar-container">
-				<!-- #section:basics/sidebar.mobile.toggle -->
-				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
-					<span class="sr-only">Toggle sidebar</span>
-
-					<span class="icon-bar"></span>
-
-					<span class="icon-bar"></span>
-
-					<span class="icon-bar"></span>
-				</button>
-
-				<!-- /section:basics/sidebar.mobile.toggle -->
-				<div class="navbar-header pull-left">
-					<!-- #section:basics/navbar.layout.brand -->
-					<a href="http://www.tarc.edu.my" class="navbar-brand" target="_blank">
-						<small>
-							<img src="https://web.tarc.edu.my/portal/images/tarumt-logo2.png" width="70px" />
- 							<span class="hidden-480">Online Application for Admission (Pre-University and Undergraduate Programmes)</span>
-						</small>
-					</a>
-
-					<!-- /section:basics/navbar.layout.brand -->
-
-					<!-- #section:basics/navbar.toggle -->
-
-					<!-- /section:basics/navbar.toggle -->
-				</div>
-
-				<!-- #section:basics/navbar.dropdown -->
-				<div class="navbar-buttons navbar-header pull-right" role="navigation">
-					<ul class="nav ace-nav">
- 
-						<!-- #section:basics/navbar.user_menu -->
-						<li class="red">
-							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<i class="fa fa-user bigger-180"></i>&nbsp;&nbsp;
-								<span class="user-info">
-									<small>Welcome,</small>
-									LIM TIEN AU
-								</span>
-
-								<i class="ace-icon fa fa-caret-down"></i>
-							</a>
-
-							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-                            	<li>
-									<a target="_blank" href="https://www.tarc.edu.my/account/changepassword.jsp?femail=jingru4@gmail.com">
-										<i class="ace-icon fa fa-key"></i>
-										Change Password
-									</a>
-								</li>
-  								<li>
-									<a href="https://web.tarc.edu.my/portal/admintake/logout.jsp">
-										<i class="ace-icon fa fa-power-off"></i>
-										Logout
-									</a>
-								</li>
-							</ul>
-						</li>
-
-						<!-- /section:basics/navbar.user_menu -->
-					</ul>
-				</div>
-
-				<!-- /section:basics/navbar.dropdown -->
-			</div><!-- /.navbar-container -->
-		</div>
-
+				
+        
 		<!-- /section:basics/navbar.layout -->
-		<div class="main-container ace-save-state" id="main-container">
+		<!-- <div class="main-container ace-save-state" id="main-container">
 			<script type="text/javascript">
 				try{ace.settings.loadState('main-container')}catch(e){}
-			</script>
+			</script> -->
+        <%- include('layouts/partials/header', { isStatic: false }) %>
+        <style>
+            .Pvc6xe {
+                position: fixed;
+                z-index: 1030;
+                background-color: orange;
+            }
+            .Pvc6xe a,svg{
+                color: black !important;
+            }
+            body {
+                padding-top: 50px;
+            }
+        </style>
+        <script>
+            window.addEventListener('scroll', function() {
+                var navbar = document.querySelector('.navbar');
+                if (window.scrollY > 0) {
+                    navbar.style.backgroundColor = 'orange';
+                } else {
+                    navbar.style.backgroundColor = 'orange';
+                }
+            });
+        </script>
 	
 <script>
 	function openChildWindow(myurl) {
@@ -132,62 +90,6 @@
 		  }, 100); 
 	}
 </script>
-
-
-
-
-<!-- #section:basics/sidebar -->
-<div id="sidebar" class="sidebar responsive ace-save-state">
-    <script type="text/javascript">
-        try{ace.settings.loadState('sidebar')}catch(e){}
-    </script>
-
-
-
-    <ul class="nav nav-list">
-    	<li class="">
-            <a href="https://web.tarc.edu.my/portal/admintake/user/setNav.jsp">
-                <i class="menu-icon fa fa-home"></i>
-                 <span class="menu-text">
-                    Home 
-               </span>
-            </a>
-
-            <b class="arrow"></b></li>
-    
-     
-    
-		<li class="">
-			<a href="#" onClick="openChildWindow('https://web.tarc.edu.my/portal//einv_profile/pointer.jsp?reqParam=4utvSjDIrXojJwPwJkz6EZOaEiXUBIkyP7H1GoXh%2FAH3W%2BFVN9cDlv7IpPrCvwI0KRaKd8aTVNYKR9Yl%2B6bYKS%2BRxwaDtkDbKw8rOONaxbK6pjCjaqGWWxnRCnPOU5U76uuPlm6bc1yGQhf1Otd3MUSL1dnwRGwZ4uMuRHDd0RUkS2V0%2FbGzSXR5Cy8pyDyyE6dPmkbhUACvTVoctQe1kzp2c1sPVKmQd2Njjk6YjNQ%3D')">
-				 <i class="menu-icon fa fa-hand-o-right blue"></i>
-				 <span class="menu-text blue ">
-				  Billing / E-Invoice <i class="fa fa-exclamation-triangle red"></i>
-				 </span>
-			</a>
-		</li>
-        
-      
-        
-     
-        
-   
-    </ul><!-- /.nav-list -->
-    
-    <br>
-    <div class="small blue">&nbsp;<strong><i class="menu-icon fa fa-info-circle"></i> Need assistance?</strong><table><tr><td>&nbsp;</td><td><p>You may contact us at +603-41450123 ext. 3420/3267/3547 from 8.30am to 5.30pm, Mondays - Fridays (excluding public holidays).</p></td></tr></table></div>
-
-    <!-- #section:basics/sidebar.layout.minimize -->
-    <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-        <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
-  </div>
-
-    <!-- /section:basics/sidebar.layout.minimize -->
-</div>
-
-<!-- /section:basics/sidebar -->
-
-
-
 
 
 
@@ -224,7 +126,7 @@
 				return false;	
 			} 
 			 
-			
+			 
 			 
 			 
 			 
@@ -1495,7 +1397,6 @@
 		new jsInstituteNoTARUMT(finscat,finsbranch,'finstitute',retrieve);
 	}
 	
-	
 	function getBranch2(retrieve){
 		var finscat2 = document.form1.finscat2.value;
 		new jsInsBranch(finscat2,'finsbranch2',retrieve);
@@ -1890,23 +1791,6 @@
     
 
 	
-     <!-- #section:basics/content.breadcrumbs -->
-        <div class="breadcrumbs ace-save-state" id="breadcrumbs">
-            <ul class="breadcrumb">
-            	 <li class="active">
-                   <!-- <i class="ace-icon fa fa-cog home-icon"></i>
-                     <a href="#">Online Application</a>-->
-                   Application No: 
-                </li>
-				<!--
-                <li>
-                    <a href="#">Intake</a>
-                </li>
-                -->
-              <!--  <li class="active">Online Application</li>-->
-            </ul><!-- /.breadcrumb -->
-            <!-- /section:basics/content.searchbox -->
-        </div>
         
           <!-- /section:basics/content.breadcrumbs -->
         <div class="page-content">
@@ -1914,30 +1798,9 @@
                 <div class="col-xs-12">
                     <!-- PAGE CONTENT BEGINS -->
                     
-                    
-			
-            
-            
              <div class="tabbable">
-                <ul class="nav nav-tabs" id="myTab">
-                    <li class="active" >
-                        <a data-toggle="tab" href="#Qualification">
-                            <i class="ace-icon fa fa-graduation-cap bigger-120"></i>
-                            Qualification
-                            <span class="badge badge-danger">Pending</span>
-                        </a>
-                    </li>
-                    
-                        <li  >
-                         
-                            <a data-toggle="tab" href="#Document">
-                            
-                               <i class="ace-icon fa fa-upload bigger-120"></i> Upload Documents
-                               <span class="badge badge-success">Completed</span>
-                             </a>
-                        </li>
-                    
-                </ul>
+                <h2>Qualification</h2>
+                
                 
                 <div class="tab-content">
                     <div id="Qualification" class="tab-pane fade in active ">
@@ -1982,7 +1845,7 @@
                
                 <div class="col-sm-10" id="lowqualDiv"></div> 
                 
-                
+                <!-- 
                <div id="divSPMbutton" style="display:none">
                    <br><br>
                     <div class="col-sm-12">
@@ -1990,9 +1853,9 @@
                             <i class="fa fa-plus " ></i> Add SPM Year & Result
                         </button>&nbsp;<span class="small red"> *Only for students who have also sat for SPM in a different year</span>
                     </div> 
-                </div>
-                
-                 <div class="col-sm-10" id="AddOnSPMDiv" style="display:none"></div> 
+                </div> -->
+                <!-- 
+                 <div class="col-sm-10" id="AddOnSPMDiv" style="display:none"></div>  -->
                  
             </div>
           
@@ -2266,7 +2129,7 @@
      
      
       <br>
-    <h5><u>MICRO-CREDENTIAL COURSE (IF APPLICABLE)</u></h5>
+    <!-- <h5><u>MICRO-CREDENTIAL COURSE (IF APPLICABLE)</u></h5>
    
    	<div class="form-group" >
         <label class="col-sm-2 control-label no-padding-right" for="fmccourse1">Name of Course</label>
@@ -2331,7 +2194,7 @@
     </div><br><br>     
         
     <div class="col-sm-12" id="AddOnMCCDiv" ></div> 
- 
+  -->
   
   
   
