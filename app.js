@@ -5,6 +5,8 @@ const app = express()
 const port = 3000
 const db = require('./db');
 const bodyParser = require('body-parser');
+const elective = require('./elective');
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
@@ -52,8 +54,21 @@ app.get('/req', (req, res) => {
   res.render('require_checker');
 });
 
-app.get('/course', (req, res) => {
-  res.render('course');
+app.get('/elective', async (req, res) => {
+    let progs = await elective.getProgElective();
+    let egs, courses = [], selectedProg = 0, selectedEg = '';
+    if(req.query && req.query.prog) {
+
+        selectedProg = req.query.prog;
+        egs = await elective.getElectiveGroup(selectedProg);
+
+        if(req.query.group) {
+            selectedEg = req.query.group;
+            courses = await elective.getElectiveCourses(selectedEg);
+        }
+    }
+    
+    res.render('elective', {progs, egs, selectedProg, selectedEg, courses});
 });
 
 function startServer() {
