@@ -46,6 +46,7 @@ app.post('/check-requirements', async (req, res) => {
     // Separate low and high qualifications
     const lowQual = subjectGradeData.lowQual;
     const highQual = subjectGradeData.highQual;
+    const englishProficiency = subjectGradeData.englishProficiency;
     const postGraduate = subjectGradeData.postGraduate;
    
     const data = {
@@ -55,11 +56,8 @@ app.post('/check-requirements', async (req, res) => {
       fhighqua: formData.fquahigh,
       fpostqua: formData.postQualification,
       fenglishqua: formData.fenglishQua,
-      englishProficiency: subjectGradeData.englishProficiency,
-      postGraduate: postGraduate.hasComputingMathBachelor ? {
-        workExperience: postGraduate.workExperience,
-        cgpa: postGraduate.latestCGPA
-      } : null
+      englishProficiency,
+      postGraduate
     };
 
     const availableProgrammes = await pr.getAvailableProgrammes(data);

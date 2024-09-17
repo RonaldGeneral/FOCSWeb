@@ -27,47 +27,87 @@ exports.getAvailableProgrammes = async function(data) {
     
     // Check SPM requirements
     if(lowQual){
-      if(fqua = "M"){
+      if(fqua == "M"){
         if (programme.SPMNo && programme.SPMGrade) {
-          const spmSubjects = lowQual.filter(subject => subject.grade <= programme.SPMGrade);
+          const spmSubjects = lowQual.filter(subject => subject.grade.charAt(0) <= programme.SPMGrade);
           if (spmSubjects.length < programme.SPMNo) return false;
           
           // Check for Mathematics and English requirements
-          const mathSubject = spmSubjects.find(subject => subject.subject.toLowerCase().includes('mathematics'));
-          const englishSubject = spmSubjects.find(subject => subject.subject.toLowerCase().includes('ingerris'));
-          if (!mathSubject || mathSubject.grade > 'C' || !englishSubject || englishSubject.grade > 'D') return false;
+          const mathSubject = lowQual.find(subject => subject.subject.toLowerCase().includes('mathematics'));
+          const englishSubject = lowQual.find(subject => subject.subject.toLowerCase().includes('ingerris'));
+          if (!mathSubject || mathSubject.grade.charAt(0) > 'C' || !englishSubject || englishSubject.grade.charAt(0) > 'D') return false;
         }
       }
       
-      if(fqua = "O"){
+      else{
+        // Check O Level requirements
         if (programme.OLevelNo && programme.OLevelGrade) {
-          const oLevelSubjects = lowQual.filter(subject => subject.grade <= programme.OLevelGrade);
+          const oLevelSubjects = lowQual.filter(subject => subject.grade.charAt(0) <= programme.OLevelGrade);
           if (oLevelSubjects.length < programme.OLevelNo) return false;
           
           // Check for Mathematics and English requirements
           const mathSubject = oLevelSubjects.find(subject => subject.subject.toLowerCase().includes('mathematics'));
           const englishSubject = oLevelSubjects.find(subject => subject.subject.toLowerCase().includes('english'));
-          if (!mathSubject || mathSubject.grade > 'C' || !englishSubject || englishSubject.grade > 'E') return false;
+          if (!mathSubject || mathSubject.grade.charAt(0) > 'C' || !englishSubject || englishSubject.grade.charAt(0) > 'E') return false;
+        }
+      }
+    }
+    
+    if(highQual){
+      // Check UEC requirements
+      if(fhighqua == "UE"){
+        if (programme.UECNo && programme.UECGrade) {
+          const uecSubjects = highQual.filter(subject => subject.grade.charAt(0) <= programme.UECGrade);
+          if (uecSubjects.length < programme.UECNo) return false;
+          
+          // Check for Mathematics and English requirements
+          const mathSubject = uecSubjects.find(subject => subject.subject.toLowerCase().includes('mathematics'));
+          const englishSubject = uecSubjects.find(subject => subject.subject.toLowerCase().includes('english'));
+          if (!mathSubject || mathSubject.grade.charAt(0) > 'B' || !englishSubject || englishSubject.grade.charAt(0) > 'C') return false;
         }
       }
       
-      // Check O Level requirements
       
+      // Check STPM requirements
+      if(fhighqua == "ST"){
+        if (programme.STPMNo && programme.STPMGrade) {
+          const stpmSubjects = highQual.filter(subject => subject.grade.charAt(0) <= programme.STPMGrade);
+          if (stpmSubjects.length < programme.STPMNo) return false;
+          
+          // Check for Mathematics and English requirements
+          if(spmSubjects){
+            const mathSubject = spmSubjects.find(subject => subject.subject.toLowerCase().includes('mathematics'));
+            const englishSubject = spmSubjects.find(subject => subject.subject.toLowerCase().includes('ingerris'));
+            if (!mathSubject || mathSubject.grade.charAt(0) > 'C' || !englishSubject || englishSubject.grade.charAt(0) > 'D') return false;
+          }
+          else{
+            return false;
+          }
+          
+        }
+      }
+      
+      // Check A Level requirements
+      if(fhighqua == "AL"){
+        if (programme.ALevelNo && programme.ALevelGrade) {
+          const aLevelSubjects = highQual.filter(subject => subject.grade.charAt(0) <= programme.ALevelGrade);
+          if (aLevelSubjects.length < programme.ALevelNo) return false;
+          
+          // Check for Mathematics and English requirements
+          if(oLevelSubjects){
+            const mathSubject = oLevelSubjects.find(subject => subject.subject.toLowerCase().includes('mathematics'));
+            const englishSubject = oLevelSubjects.find(subject => subject.subject.toLowerCase().includes('english'));
+            if (!mathSubject || mathSubject.grade.charAt(0) > 'C' || !englishSubject || englishSubject.grade.charAt(0) > 'E') return false;
+          }
+          else{
+            return false;
+          }
+          
+        }
+      }
     }
     
     
-    // Check UEC requirements
-    if (programme.UECNo && programme.UECGrade) {
-      const uecSubjects = highQual.filter(subject => subject.grade <= programme.UECGrade);
-      if (uecSubjects.length < programme.UECNo) return false;
-      
-      // Check for Mathematics and English requirements
-      const mathSubject = uecSubjects.find(subject => subject.subject.toLowerCase().includes('mathematics'));
-      const englishSubject = uecSubjects.find(subject => subject.subject.toLowerCase().includes('english'));
-      if (!mathSubject || mathSubject.grade > 'B' || !englishSubject || englishSubject.grade > 'C') return false;
-    }
-    
-    // Add checks for STPM and A Level if needed
     if (postGraduate) {
       // Check CGPA and work experience requirements
       if (programme.MinCGPA && postGraduate.cgpa < programme.MinCGPA) return false;
