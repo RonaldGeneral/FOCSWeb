@@ -152,14 +152,14 @@ exports.getAvailableProgrammes = async function(data) {
     }
     
     // check if not provide any low qualification
-    if (programme.SPMNo && programme.SPMGrade && programme.OLevelNo && programme.OLevelGrade && !lowQual){
+    if (programme.SPMNo && programme.SPMGrade && programme.OLevelNo && programme.OLevelGrade && !fqua){
         return false;
     }
     // check if not provide any high qualification
-    if (programme.UECNo && programme.UECGrade && programme.STPMNo && programme.STPMGrade && !highQual){
+    if (programme.UECNo && programme.UECGrade && programme.STPMNo && programme.STPMGrade && !fhighqua){
       return false;
     }
-    if(!programme.UECNo && !programme.UECGrade && !postGraduate){
+    if(!programme.UECNo && !programme.UECGrade && !fpostqua){
       return false;
     }
 
