@@ -123,6 +123,7 @@ exports.getAvailableProgrammes = async function(data) {
             if (fenglishqua == "MU" && englishProficiency.band < 4.0) return false;
             if (fenglishqua == "IE" && englishProficiency.bandScore < 5.5) return false;
             if (fenglishqua == "TP" && englishProficiency.score < 46) return false;
+            if (fenglishqua == "") return false;
           }
         } else if (programmeID == 14) {
           const minCGPA = hasComputingMathBachelor ? 2.5 : 2.75;
@@ -131,6 +132,7 @@ exports.getAvailableProgrammes = async function(data) {
             if (fenglishqua == "MU" && englishProficiency.band < 3.5) return false;
             if (fenglishqua == "IE" && englishProficiency.bandScore < 5.0) return false;
             if (fenglishqua == "TP" && englishProficiency.score < 40) return false;
+            if (fenglishqua == "") return false;
           }
         } else if (programmeID == 15 || programmeID == 16) {
           if (!hasComputingMathBachelor && workExperience < 5) return false;
@@ -138,6 +140,7 @@ exports.getAvailableProgrammes = async function(data) {
             if (fenglishqua == "MU" && englishProficiency.band < 4.0) return false;
             if (fenglishqua == "IE" && englishProficiency.bandScore < 6.0) return false;
             if (fenglishqua == "TP" && englishProficiency.score < 60) return false;
+            if (fenglishqua == "") return false;
           }
         } else if (programmeID == 17) {
           if (!hasComputingMathBachelor) return false;
@@ -145,6 +148,7 @@ exports.getAvailableProgrammes = async function(data) {
             if (fenglishqua == "MU" && englishProficiency.band < 3.5) return false;
             if (fenglishqua == "IE" && englishProficiency.bandScore < 5.0) return false;
             if (fenglishqua == "TP" && englishProficiency.score < 40) return false;
+            if (fenglishqua == "") return false;
           }
         }
       }
