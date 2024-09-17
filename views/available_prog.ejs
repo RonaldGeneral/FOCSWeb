@@ -1,0 +1,28 @@
+<%- include('layouts/partials/header') %>
+
+<h1>Available Programmes</h1>
+
+<% if (availableProgrammes.length > 0) { %>
+  <ul>
+    <% availableProgrammes.forEach(function(programme) { %>
+      <li>
+        <strong><%= programme.ProgrammeName %></strong> - <%= programme.StudyYear %> year(s)
+        <ul>
+          <li>Minimum Requirements:
+            <ul>
+              <% programme.requirements.forEach(function(req) { %>
+                <li>
+                  <%= req.criteria %>: <%= req.detail %>
+                </li>
+              <% }); %>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <p>No programmes match your qualifications. Please review your input or contact an advisor for more information.</p>
+<% } %>
+
+<%- include('layouts/partials/footer') %>
