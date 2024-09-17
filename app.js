@@ -6,6 +6,7 @@ const port = 3000
 const db = require('./db');
 const bodyParser = require('body-parser');
 const elective = require('./elective');
+const pr = require('./programme-require');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -37,12 +38,37 @@ db.testConnection()
   }
 });
 
-app.post('/check-requirements', (req, res) => {
-  const formData = req.body;
-  const subjectGradeData = JSON.parse(formData.subjectGradeData);
+app.post('/check-requirements', async (req, res) => {
+  try {
+    const formData = req.body;
+    const subjectGradeData = JSON.parse(formData.subjectGradeData);
 
-  // Process the data and send a response
-  res.render('available_prog', { data: subjectGradeData });
+    // Separate low and high qualifications
+    const lowQual = subjectGradeData.lowQual;
+    const highQual = subjectGradeData.highQual;
+    const postGraduate = subjectGradeData.postGraduate;
+   
+    const data = {
+      lowQual,
+      highQual,
+      fqua: formData.fqua,
+      fhighqua: formData.fquahigh,
+      fpostqua: formData.postQualification,
+      fenglishqua: formData.fenglishQua,
+      englishProficiency: subjectGradeData.englishProficiency,
+      postGraduate: postGraduate.hasComputingMathBachelor ? {
+        workExperience: postGraduate.workExperience,
+        cgpa: postGraduate.latestCGPA
+      } : null
+    };
+
+    const availableProgrammes = await pr.getAvailableProgrammes(data);
+
+    res.render('available_prog', { programmes: availableProgrammes });
+  } catch (error) {
+    console.error('Error in /check-requirements:', error);
+    res.status(500).json({ error: 'An error occurred while checking requirements' });
+  }
 });
 
 

@@ -1,7 +1,8 @@
-async function getAvailableProgrammes(data) {
-    const connection = await pool.getConnection();
+const db = require('./db');
+
+exports.getAvailableProgrammes = async function(data) {
     try {
-      const [rows] = await connection.query(`
+      const rows = await db.query(`
         SELECT p.ProgrammeID, p.ProgrammeName, p.StudyYear, r.*
         FROM programme p
         JOIN requirement r ON p.ReqID = r.ReqID
@@ -15,35 +16,45 @@ async function getAvailableProgrammes(data) {
         StudyYear: programme.StudyYear,
         requirements: formatRequirements(programme)
       }));
-    } finally {
-      connection.release();
+    } catch (error) {
+      console.error('Error fetching available programmes:', error);
+      throw error;
     }
   }
   
   function checkProgrammeRequirements(programme, data) {
-    const { lowQual, highQual, englishProficiency } = data;
+    const { lowQual, highQual, fqua, fhighqua, fpostqua, fenglishqua, englishProficiency,postGraduate } = data;
     
     // Check SPM requirements
-    if (programme.SPMNo && programme.SPMGrade) {
-      const spmSubjects = lowQual.filter(subject => subject.grade <= programme.SPMGrade);
-      if (spmSubjects.length < programme.SPMNo) return false;
+    if(lowQual){
+      if(fqua = "M"){
+        if (programme.SPMNo && programme.SPMGrade) {
+          const spmSubjects = lowQual.filter(subject => subject.grade <= programme.SPMGrade);
+          if (spmSubjects.length < programme.SPMNo) return false;
+          
+          // Check for Mathematics and English requirements
+          const mathSubject = spmSubjects.find(subject => subject.subject.toLowerCase().includes('mathematics'));
+          const englishSubject = spmSubjects.find(subject => subject.subject.toLowerCase().includes('ingerris'));
+          if (!mathSubject || mathSubject.grade > 'C' || !englishSubject || englishSubject.grade > 'D') return false;
+        }
+      }
       
-      // Check for Mathematics and English requirements
-      const mathSubject = spmSubjects.find(subject => subject.subject.toLowerCase().includes('mathematics'));
-      const englishSubject = spmSubjects.find(subject => subject.subject.toLowerCase().includes('english'));
-      if (!mathSubject || mathSubject.grade > 'C' || !englishSubject || englishSubject.grade > 'D') return false;
+      if(fqua = "O"){
+        if (programme.OLevelNo && programme.OLevelGrade) {
+          const oLevelSubjects = lowQual.filter(subject => subject.grade <= programme.OLevelGrade);
+          if (oLevelSubjects.length < programme.OLevelNo) return false;
+          
+          // Check for Mathematics and English requirements
+          const mathSubject = oLevelSubjects.find(subject => subject.subject.toLowerCase().includes('mathematics'));
+          const englishSubject = oLevelSubjects.find(subject => subject.subject.toLowerCase().includes('english'));
+          if (!mathSubject || mathSubject.grade > 'C' || !englishSubject || englishSubject.grade > 'E') return false;
+        }
+      }
+      
+      // Check O Level requirements
+      
     }
     
-    // Check O Level requirements
-    if (programme.OLevelNo && programme.OLevelGrade) {
-      const oLevelSubjects = lowQual.filter(subject => subject.grade <= programme.OLevelGrade);
-      if (oLevelSubjects.length < programme.OLevelNo) return false;
-      
-      // Check for Mathematics and English requirements
-      const mathSubject = oLevelSubjects.find(subject => subject.subject.toLowerCase().includes('mathematics'));
-      const englishSubject = oLevelSubjects.find(subject => subject.subject.toLowerCase().includes('english'));
-      if (!mathSubject || mathSubject.grade > 'C' || !englishSubject || englishSubject.grade > 'E') return false;
-    }
     
     // Check UEC requirements
     if (programme.UECNo && programme.UECGrade) {
@@ -57,6 +68,11 @@ async function getAvailableProgrammes(data) {
     }
     
     // Add checks for STPM and A Level if needed
+    if (postGraduate) {
+      // Check CGPA and work experience requirements
+      if (programme.MinCGPA && postGraduate.cgpa < programme.MinCGPA) return false;
+      if (programme.MinWorkExperience && postGraduate.workExperience < programme.MinWorkExperience) return false;
+    }
     
     return true;
   }
