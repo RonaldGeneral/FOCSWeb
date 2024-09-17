@@ -1820,6 +1820,7 @@ function collectAndSubmitData(event) {
   if (postQualification !== '') {
     postGraduateData = {
       hasComputingMathBachelor: document.getElementById('fothqua').checked,
+	  studyEnglish: document.getElementById('fstudiesEnglish').checked,
       workExperience: document.getElementById('fworkexp').value,
       latestCGPA: document.getElementById('fcgpa').value
     };
@@ -2022,9 +2023,16 @@ function collectSubjectGradeData(subjectName, gradeName) {
 			</div>
 			<div id="postgraduateDiv" style="display:none;">
 				<div class="form-group" >
-					<label class="col-sm-3 control-label no-padding-right" for="fothqua">Have a computing/mathematics bachelor</label>
+					<label class="col-sm-3 control-label no-padding-right" for="fothqua">Have a computing/mathematics qualification above bachelor</label>
 					<div class="col-sm-3 d-flex pt-3">
 					<input type="checkbox" name="fothqua" id="fothqua" />
+					</div>
+				</div>
+				
+				<div class="form-group" >
+					<label class="col-sm-3 control-label no-padding-right" for="fstudiesEnglish">Studies was taken in English</label>
+					<div class="col-sm-3 d-flex pt-3">
+					<input type="checkbox" name="fstudiesEnglish" id="fstudiesEnglish" />
 					</div>
 				</div>
 				
@@ -2052,8 +2060,8 @@ function collectSubjectGradeData(subjectName, gradeName) {
 						<option value="" selected>English Qualification</option>
 						<option value="MU" >MUET</option>
 						<option value="IE" >IELTS</option>
-						<option value="TP" >TOEFL</option>
-						<option value="LS" >Cambridge Linguaskill</option>
+						<option value="TP" >TOEFL</option><!-- 
+						<option value="LS" >Cambridge Linguaskill</option> -->
 					</select>
 				</div>
 					
@@ -2062,7 +2070,7 @@ function collectSubjectGradeData(subjectName, gradeName) {
 						<div class="col-sm-1">
 						<select name="fmuetband" class="form-control" id="fmuetband">
 							<option value="" selected></option>
-							<option value="5+" >5+</option>
+							<option value="5.5" >5+</option>
 							<option value="5.0" >5.0</option>
 							<option value="4.5" >4.5</option>
 							<option value="4.0" >4.0</option>
@@ -2088,7 +2096,7 @@ function collectSubjectGradeData(subjectName, gradeName) {
 				<div id="divTOEFL"  style="display:none;" > 
 						<label class="col-sm-1 control-label no-padding-right" for="ftoeflscore">Score</label>
 							<div class="col-sm-1">
-							<input type="text" name="ftoeflscore" id="ftoeflscore" class="form-control" maxlength="3" onKeyPress="return checkDecimal(event)"  value=""  />
+							<input type="number" name="ftoeflscore" id="ftoeflscore" class="form-control" maxlength="3"  value=""  />
 							</div>
 				</div> 
 		
@@ -2096,7 +2104,7 @@ function collectSubjectGradeData(subjectName, gradeName) {
 				<div id="divLS"  style="display:none;" > 
 						<label class="col-sm-1 control-label no-padding-right" for="fLSscore">Score</label>
 							<div class="col-sm-1">
-							<input type="text" name="fLSscore" id="fLSscore" class="form-control" maxlength="4" value=""  />
+							<input type="number" name="fLSscore" id="fLSscore" class="form-control" maxlength="4" value=""  />
 							</div>
 							
 				</div>

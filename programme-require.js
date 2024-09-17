@@ -107,13 +107,62 @@ exports.getAvailableProgrammes = async function(data) {
       }
     }
     
-    
-    if (postGraduate) {
+    if (fpostqua) {
       // Check CGPA and work experience requirements
-      if (programme.MinCGPA && postGraduate.cgpa < programme.MinCGPA) return false;
-      if (programme.MinWorkExperience && postGraduate.workExperience < programme.MinWorkExperience) return false;
+      if (postGraduate) {
+        const programmeID = programme.ProgrammeID;
+        const hasComputingMathBachelor = postGraduate.hasComputingMathBachelor;
+        const studyEnglish = postGraduate.studyEnglish;
+        const cgpa = postGraduate.cgpa;
+        const workExperience = postGraduate.workExperience;
+
+        if (programmeID == 12 || programmeID == 13) {
+          const minCGPA = hasComputingMathBachelor ? 2 : 2.5;
+          if (cgpa < minCGPA) return false;
+          if (!studyEnglish && englishProficiency) {
+            if (fenglishqua == "MU" && englishProficiency.band < 4.0) return false;
+            if (fenglishqua == "IE" && englishProficiency.bandScore < 5.5) return false;
+            if (fenglishqua == "TP" && englishProficiency.score < 46) return false;
+          }
+        } else if (programmeID == 14) {
+          const minCGPA = hasComputingMathBachelor ? 2.5 : 2.75;
+          if (cgpa < minCGPA && workExperience < 5) return false;
+          if (!studyEnglish && englishProficiency) {
+            if (fenglishqua == "MU" && englishProficiency.band < 3.5) return false;
+            if (fenglishqua == "IE" && englishProficiency.bandScore < 5.0) return false;
+            if (fenglishqua == "TP" && englishProficiency.score < 40) return false;
+          }
+        } else if (programmeID == 15 || programmeID == 16) {
+          if (!hasComputingMathBachelor && workExperience < 5) return false;
+          if (!studyEnglish && englishProficiency) {
+            if (fenglishqua == "MU" && englishProficiency.band < 4.0) return false;
+            if (fenglishqua == "IE" && englishProficiency.bandScore < 6.0) return false;
+            if (fenglishqua == "TP" && englishProficiency.score < 60) return false;
+          }
+        } else if (programmeID == 17) {
+          if (!hasComputingMathBachelor) return false;
+          if (!studyEnglish && englishProficiency) {
+            if (fenglishqua == "MU" && englishProficiency.band < 3.5) return false;
+            if (fenglishqua == "IE" && englishProficiency.bandScore < 5.0) return false;
+            if (fenglishqua == "TP" && englishProficiency.score < 40) return false;
+          }
+        }
+      }
+      
     }
     
+    // check if not provide any low qualification
+    if (programme.SPMNo && programme.SPMGrade && programme.OLevelNo && programme.OLevelGrade && !lowQual){
+        return false;
+    }
+    // check if not provide any high qualification
+    if (programme.UECNo && programme.UECGrade && programme.STPMNo && programme.STPMGrade && !highQual){
+      return false;
+    }
+    if(!programme.UECNo && !programme.UECGrade && !postGraduate){
+      return false;
+    }
+
     return true;
   }
   
