@@ -30,31 +30,28 @@ exports.getAvailableProgrammes = async function(data) {
       if(fqua == "M"){
         if (programme.SPMNo && programme.SPMGrade) {
           const spmSubjects = lowQual.filter(subject => subject.grade.charAt(0) <= programme.SPMGrade);
-          if (spmSubjects.length < programme.SPMNo) return false;
+          if ((spmSubjects.length < programme.SPMNo) && fhighqua != "UE") return false;
           
           // Check for Mathematics and English requirements
           const mathSubject = lowQual.find(subject => subject.subject.toLowerCase().includes('mathematics'));
           const englishSubject = lowQual.find(subject => subject.subject.toLowerCase().includes('ingerris'));
-          if (!mathSubject || mathSubject.grade.charAt(0) > 'C' || !englishSubject || englishSubject.grade.charAt(0) > 'D') return false;
+          if ((!mathSubject || mathSubject.grade.charAt(0) > 'C' || !englishSubject || englishSubject.grade.charAt(0) > 'D') && fhighqua != "UE") return false;
         }
       }
       
       else{
         // Check O Level requirements
-        if (programme.OLevelNo && programme.OLevelGrade) {
+        if (programme.OLevelNo && programme.OLevelGrade && fqua == "O") {
           const oLevelSubjects = lowQual.filter(subject => subject.grade.charAt(0) <= programme.OLevelGrade);
-          if (oLevelSubjects.length < programme.OLevelNo) return false;
+          if ((oLevelSubjects.length < programme.OLevelNo) && fhighqua != "UE") return false;
           
           // Check for Mathematics and English requirements
           const mathSubject = oLevelSubjects.find(subject => subject.subject.toLowerCase().includes('mathematics'));
           const englishSubject = oLevelSubjects.find(subject => subject.subject.toLowerCase().includes('english'));
-          if (!mathSubject || mathSubject.grade.charAt(0) > 'C' || !englishSubject || englishSubject.grade.charAt(0) > 'E') return false;
+          if ((!mathSubject || mathSubject.grade.charAt(0) > 'C' || !englishSubject || englishSubject.grade.charAt(0) > 'E') && fhighqua != "UE") return false;
         }
       }
     }
-
-    console.log('TARUMT Qualification in checkProgrammeRequirements:', tarumtQual);
-
     if(tarumtQual && tarumtQual.qualification){
         if(tarumtQual.qualification === "Foundation"){
             if(tarumtQual.program == "Science" && programme.ProgrammeID == 5) {
@@ -64,10 +61,7 @@ exports.getAvailableProgrammes = async function(data) {
                 return true;
             }
         } else if(tarumtQual.qualification === "Diploma"){
-            if(programme.ProgrammeID == 5 && parseFloat(tarumtQual.cgpa) >= 2.0) {
-                return true;
-            }
-            if(programme.ProgrammeID >= 6 && programme.ProgrammeID <= 11 && parseFloat(tarumtQual.cgpa) >= 2.5) {
+            if(programme.ProgrammeID >= 5 && programme.ProgrammeID <= 11 && parseFloat(tarumtQual.cgpa) >= programme.minCGPA) {
                 return true;
             }
         }
@@ -88,16 +82,16 @@ exports.getAvailableProgrammes = async function(data) {
       }
       
       
+      
       // Check STPM requirements
       if(fhighqua == "ST"){
         if (programme.STPMNo && programme.STPMGrade) {
           const stpmSubjects = highQual.filter(subject => subject.grade.charAt(0) <= programme.STPMGrade);
           if (stpmSubjects.length < programme.STPMNo) return false;
-          
           // Check for Mathematics and English requirements
-          if(spmSubjects){
-            const mathSubject = spmSubjects.find(subject => subject.subject.toLowerCase().includes('mathematics'));
-            const englishSubject = spmSubjects.find(subject => subject.subject.toLowerCase().includes('ingerris'));
+          if(lowQual){
+            const mathSubject = lowQual.find(subject => subject.subject.toLowerCase().includes('mathematics'));
+            const englishSubject = lowQual.find(subject => subject.subject.toLowerCase().includes('ingerris') );
             if (!mathSubject || mathSubject.grade.charAt(0) > 'C' || !englishSubject || englishSubject.grade.charAt(0) > 'D') return false;
           }
           else{
@@ -114,9 +108,9 @@ exports.getAvailableProgrammes = async function(data) {
           if (aLevelSubjects.length < programme.ALevelNo) return false;
           
           // Check for Mathematics and English requirements
-          if(oLevelSubjects){
-            const mathSubject = oLevelSubjects.find(subject => subject.subject.toLowerCase().includes('mathematics'));
-            const englishSubject = oLevelSubjects.find(subject => subject.subject.toLowerCase().includes('english'));
+          if(lowQual){
+            const mathSubject = lowQual.find(subject => subject.subject.toLowerCase().includes('mathematics'));
+            const englishSubject = lowQual.find(subject => subject.subject.toLowerCase().includes('english') );
             if (!mathSubject || mathSubject.grade.charAt(0) > 'C' || !englishSubject || englishSubject.grade.charAt(0) > 'E') return false;
           }
           else{
@@ -174,9 +168,11 @@ exports.getAvailableProgrammes = async function(data) {
       }
       
     }
+
+    
     
     // check if not provide any low qualification
-    if (programme.SPMNo && programme.SPMGrade && programme.OLevelNo && programme.OLevelGrade && !fqua){
+    if (programme.SPMNo && programme.SPMGrade && programme.OLevelNo && programme.OLevelGrade && !fqua && fhighqua != "UE"){
         return false;
     }
     // check if not provide any high qualification
@@ -213,8 +209,21 @@ exports.getAvailableProgrammes = async function(data) {
         detail: `At least ${programme.UECNo} subjects with grade ${programme.UECGrade} or better, including Mathematics (B) and English (C)`
       });
     }
+
+    if (programme.STPMNo && programme.STPMGrade) {
+      requirements.push({
+        criteria: 'STPM',
+        detail: `At least ${programme.STPMNo} subjects with grade ${programme.STPMrade} or better, including Mathematics (C) and English (D)`
+      });
+    }
     
-    // Add STPM and A Level requirements if needed
+    if (programme.ALevelNo && programme.ALevelGrade) {
+      requirements.push({
+        criteria: 'A Level',
+        detail: `At least ${programme.ALevelNo} subjects with grade ${programme.ALevelGrade} or better, including Mathematics (C) and English (E)`
+      });
+    }
+    
     
     return requirements;
   }

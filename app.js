@@ -49,7 +49,6 @@ app.post('/check-requirements', async (req, res) => {
     const tarumtQual = subjectGradeData.tarumt;
     const englishProficiency = subjectGradeData.englishProficiency;
     const postGraduate = subjectGradeData.postGraduate;
-    console.log('Parsed subject grade data:', subjectGradeData);
    
     const data = {
       lowQual,
@@ -62,7 +61,6 @@ app.post('/check-requirements', async (req, res) => {
       englishProficiency,
       postGraduate
     };
-    console.log('appjs', tarumtQual);
     const availableProgrammes = await pr.getAvailableProgrammes(data);
 
     res.render('available_prog', { programmes: availableProgrammes });
