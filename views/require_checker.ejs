@@ -1790,6 +1790,27 @@ function loadHighQualification(qualification) {
   highqualDiv.appendChild(addButton);
 }
 
+function loadTarumtQualification(qualification) {
+  const foundationDiv = document.getElementById('foundationDiv');
+  const diplomaDiv = document.getElementById('diplomaDiv');
+
+  // Hide both divs initially
+  if(!qualification){
+	foundationDiv.style.display = 'none';
+  	diplomaDiv.style.display = 'none';
+  }
+  
+
+  // Display the appropriate div based on the selected qualification
+  if (qualification === 'F') {
+    foundationDiv.style.display = 'block';
+	diplomaDiv.style.display = 'none';
+  } else if (qualification === 'D') {
+    diplomaDiv.style.display = 'block';
+	foundationDiv.style.display = 'none';
+  }
+}
+
 function loadPostQualification(qualification) {
 
   if (!qualification) {
@@ -1804,7 +1825,6 @@ function loadPostQualification(qualification) {
 
 }
 
-
 function collectAndSubmitData(event) {
   event.preventDefault(); // Prevent default form submission
 
@@ -1813,6 +1833,22 @@ function collectAndSubmitData(event) {
 
   // Collect STPM/A Level/UEC data
   const highQualData = collectSubjectGradeData('fhighsubject', 'fhighgrade');
+
+  // Collect TAR UMT data
+  let tarumtData = {};
+  const tarumtQualification = document.getElementById('fquatarumt').value;
+  if (tarumtQualification === 'F') {
+    tarumtData = {
+      qualification: 'Foundation',
+      program: document.getElementById('foundationIn').value
+    };
+  } else if (tarumtQualification === 'D') {
+    tarumtData = {
+      qualification: 'Diploma',
+      program: document.getElementById('diplomaIn').value,
+      cgpa: document.getElementById('cgpa').value
+    };
+  }
 
   // Collect Postgraduate data if not 'None'
   let postGraduateData = {};
@@ -1844,17 +1880,13 @@ function collectAndSubmitData(event) {
       qualification: englishQualification,
       score: document.getElementById('ftoeflscore').value
     };
-  } else if (englishQualification === 'LS') {
-    englishProficiencyData = {
-      qualification: englishQualification,
-      score: document.getElementById('fLSscore').value
-    };
-  }
+  } 
 
   // Combine all data
   const allData = {
     lowQual: lowQualData,
     highQual: highQualData,
+    tarumt: tarumtData,
     postGraduate: postGraduateData,
     englishProficiency: englishProficiencyData
   };
@@ -2010,6 +2042,56 @@ function collectSubjectGradeData(subjectName, gradeName) {
             </div>
           
           
+			<br>
+			<h5><u>TARUMT Certification</u></h5>
+			<div class="form-group">
+				<label class="col-sm-1 control-label no-padding-right"
+					for="fquatarumt">Qualification</label>
+				<div class="col-sm-2">
+					<select name="fquatarumt" class="form-control" id="fquatarumt"
+						onChange="loadTarumtQualification(this.value);">
+						<option value="">None</option>
+						<option value="F">Foundation</option>
+						<option value="D">Diploma</option>
+					</select>
+				</div>
+			</div>
+
+			<div id="foundationDiv" style="display:none;">
+				<div class="form-group">
+					<label class="col-sm-1 control-label no-padding-right"
+						for="foundationIn">Foundation in</label>
+					<div class="col-sm-3">
+						<select name="foundationIn" class="form-control" id="foundationIn">
+							<option value="Computing" selected>Computing</option>
+							<option value="Science">Science</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div id="diplomaDiv" style="display:none;">
+				<div class="form-group">
+					<label class="col-sm-1 control-label no-padding-right"
+						for="diplomaIn">Diploma in</label>
+					<div class="col-sm-3">
+						<select name="diplomaIn" class="form-control" id="diplomaIn">
+							<option value="Computer Science" selected>Computer Science</option>
+							<option value="Information Technology">Information Technology</option>
+							<option value="Software Engineering">Software Engineering</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-1 control-label no-padding-right"
+						for="cgpa">CGPA</label>
+					<div class="col-sm-2">
+						<input type="number" name="cgpa" id="cgpa" class="form-control"
+							step="0.01" min="0" max="4" />
+					</div>
+				</div>
+			</div>
+
            <br>
              <h5><u>Postgraduate Certification</u></h5> 
 			 <div class="form-group">

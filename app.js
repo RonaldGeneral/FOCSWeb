@@ -46,8 +46,10 @@ app.post('/check-requirements', async (req, res) => {
     // Separate low and high qualifications
     const lowQual = subjectGradeData.lowQual;
     const highQual = subjectGradeData.highQual;
+    const tarumtQual = subjectGradeData.tarumt;
     const englishProficiency = subjectGradeData.englishProficiency;
     const postGraduate = subjectGradeData.postGraduate;
+    console.log('Parsed subject grade data:', subjectGradeData);
    
     const data = {
       lowQual,
@@ -56,10 +58,11 @@ app.post('/check-requirements', async (req, res) => {
       fhighqua: formData.fquahigh,
       fpostqua: formData.postQualification,
       fenglishqua: formData.fenglishQua,
+      tarumtQual,
       englishProficiency,
       postGraduate
     };
-
+    console.log('appjs', tarumtQual);
     const availableProgrammes = await pr.getAvailableProgrammes(data);
 
     res.render('available_prog', { programmes: availableProgrammes });

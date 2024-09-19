@@ -23,7 +23,7 @@ exports.getAvailableProgrammes = async function(data) {
   }
   
   function checkProgrammeRequirements(programme, data) {
-    const { lowQual, highQual, fqua, fhighqua, fpostqua, fenglishqua, englishProficiency,postGraduate } = data;
+    const { lowQual, highQual, fqua, fhighqua, fpostqua, fenglishqua, tarumtQual, englishProficiency,postGraduate } = data;
     
     // Check SPM requirements
     if(lowQual){
@@ -51,6 +51,26 @@ exports.getAvailableProgrammes = async function(data) {
           if (!mathSubject || mathSubject.grade.charAt(0) > 'C' || !englishSubject || englishSubject.grade.charAt(0) > 'E') return false;
         }
       }
+    }
+
+    console.log('TARUMT Qualification in checkProgrammeRequirements:', tarumtQual);
+
+    if(tarumtQual && tarumtQual.qualification){
+        if(tarumtQual.qualification === "Foundation"){
+            if(tarumtQual.program == "Science" && programme.ProgrammeID == 5) {
+                return true;
+            }
+            if(tarumtQual.program == "Computing" && programme.ProgrammeID >= 6 && programme.ProgrammeID <= 11) {
+                return true;
+            }
+        } else if(tarumtQual.qualification === "Diploma"){
+            if(programme.ProgrammeID == 5 && parseFloat(tarumtQual.cgpa) >= 2.0) {
+                return true;
+            }
+            if(programme.ProgrammeID >= 6 && programme.ProgrammeID <= 11 && parseFloat(tarumtQual.cgpa) >= 2.5) {
+                return true;
+            }
+        }
     }
     
     if(highQual){
