@@ -223,6 +223,55 @@ exports.getAvailableProgrammes = async function(data) {
         detail: `At least ${programme.ALevelNo} subjects with grade ${programme.ALevelGrade} or better, including Mathematics (C) and English (E)`
       });
     }
+    if (programme.ProgrammeID == 12 || programme.ProgrammeID == 13) {
+      requirements.push({
+        criteria: 'Bachelor Degree in related field',
+        detail: `At least achieve CGPA 2.0 or better, with Muet Band 4.0 or IELTS Band 5.5 or TOELF 46`
+      });
+    }
+
+    if (programme.ProgrammeID == 12 || programme.ProgrammeID == 13) {
+      requirements.push({
+        criteria: 'Bachelor Degree in non-related field',
+        detail: `At least achieve CGPA 2.5 or better, with Muet Band 4.0 or IELTS Band 5.5 or TOELF 46 with previous english education exception`
+      });
+    }
+
+    if (programme.ProgrammeID == 14) {
+      requirements.push({
+        criteria: 'Bachelor Degree in related field',
+        detail: `At least achieve CGPA 2.5 or 5 years of working experience or better, with Muet Band 3.5 or IELTS Band 5.0 or TOELF 40 with previous english education exception`
+      });
+    }
+
+    if (programme.ProgrammeID == 14) {
+      requirements.push({
+        criteria: 'Bachelor Degree in non-related field',
+        detail: `At least achieve CGPA 2.75 or better, with Muet Band 3.5 or IELTS Band 5.0 or TOELF 40 with previous english education exception`
+      });
+    }
+
+    if (programme.ProgrammeID == 15 || programme.ProgrammeID == 16) {
+      requirements.push({
+        criteria: 'Master Degree in related field',
+        detail: `At least with Muet Band 4.0 or IELTS Band 6.0 or TOELF 60 with previous english education exception`
+      });
+    }
+
+    if (programme.ProgrammeID == 15 || programme.ProgrammeID == 16) {
+      requirements.push({
+        criteria: 'Master Degree in non-related field',
+        detail: `At least with 5 years working experience, Muet Band 4.0 or IELTS Band 6.0 or TOELF 60 with previous english education exception`
+      });
+    }
+
+    if (programme.ProgrammeID == 17) {
+      requirements.push({
+        criteria: 'Master Degree in related field',
+        detail: `At least with Muet Band 3.5 or IELTS Band 5.0 or TOELF 40 with previous english education exception`
+      });
+    }
+
     
     
     return requirements;
