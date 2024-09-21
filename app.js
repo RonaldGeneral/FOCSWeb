@@ -7,6 +7,7 @@ const db = require('./db');
 const bodyParser = require('body-parser');
 const elective = require('./elective');
 const pr = require('./programme-require');
+const ai = require('./ai');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -91,6 +92,19 @@ app.get('/elective', async (req, res) => {
         if(req.query.group) {
             selectedEg = req.query.group;
             courses = await elective.getElectiveCourses(selectedEg);
+            console.log(courses);
+
+            for (let course of courses)  {
+                if(!course.CourseDesc) {
+                  course.CourseDesc = await ai.describeCourse(course.CourseName);
+                  await elective.saveCourseDesc(course.CourseID, course.CourseDesc);
+                }
+                if(!course.Career) {
+                  careersArray = await ai.listCareer(selectedProg.ProgrammeName, course.CourseName);
+                  course.Career = careersArray.join('#');
+                  await elective.saveCourseCareer(course.CourseID, careersArray);
+                } 
+            }
         }
     }
     

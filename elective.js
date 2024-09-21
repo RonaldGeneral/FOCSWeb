@@ -31,3 +31,17 @@ exports.getElectiveCourses = async function(code) {
         WHERE e.GroupCode = ?;`, [code]
     );
 };
+
+exports.saveCourseDesc = async function(id, desc) {
+    return db.query(
+        `UPDATE course SET CourseDesc = ? WHERE course.CourseID = ?;`, [desc, id]
+    );
+};
+
+exports.saveCourseCareer = async function(id, careersArray=[]) {
+    careersStr = careersArray.join('#');
+
+    return db.query(
+        `UPDATE electivecourse SET Career = ? WHERE ElectiveID = ?;`, [careersStr, id]
+    );
+};
