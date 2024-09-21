@@ -51,46 +51,53 @@ function parseJSON(input) {
 }
 
 exports.describeCourse = async function(course) {
-    model = genAI.getGenerativeModel({
-        model: "gemini-1.5-flash",
-        systemInstruction: `
-            Describe the course given for university TARUMT in 30 - 50 words in sentences starting with verbs
-        `
-    })
-    
-    const prompt =
-        "describe course '"+course+"'";
+    try {
+        model = genAI.getGenerativeModel({
+            model: "gemini-1.5-flash",
+            systemInstruction: `
+                Describe the course given for university TARUMT in 30 - 50 words in sentences starting with verbs
+            `
+        })
+        
+        const prompt =
+            "describe course '"+course+"'";
 
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const text = response.text();
-    console.log(text);
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        const text = response.text();
+        console.log(text);
+        return text;
+    } catch(e){console.log(e);}
 
-    return text;
+    return ''
 }
 
 exports.listCareer = async function(programme, course) {
-    model = genAI.getGenerativeModel({
-        model: "gemini-1.5-flash",
-        systemInstruction: `
-            List the 3-4 possible careers for a given university course for students pursuing list career for people pursuing `+programme+` in following json format:
-            {
-                careers: [<career1>, <career2>, <career3>]
-            }
-        `
-    })
-    
-    const prompt =
-        "list career for course '"+course+"'";
+    try {
+        model = genAI.getGenerativeModel({
+            model: "gemini-1.5-flash",
+            systemInstruction: `
+                List the 3-4 possible careers for a given university course for students pursuing list career for people pursuing `+programme+` in following json format:
+                {
+                    careers: [<career1>, <career2>, <career3>]
+                }
+            `
+        })
+        
+        const prompt =
+            "list career for course '"+course+"'";
 
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const text = response.text();
-    console.log(text);
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        const text = response.text();
+        console.log(text);
 
-    resObj = parseJSON(text);
-    console.log(resObj);
-    careers = resObj.careers??[];
-    return careers;
+        resObj = parseJSON(text);
+        console.log(resObj);
+        careers = resObj.careers??[];
+        return careers;
+    }catch(e){console.log(e)}
+
+    return [];
 }
 

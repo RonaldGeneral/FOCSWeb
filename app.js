@@ -91,7 +91,7 @@ app.get('/elective', async (req, res) => {
 
         if(req.query.group) {
             selectedEg = req.query.group;
-            courses = await elective.getElectiveCourses(selectedEg);
+            courses = await elective.getElectiveCourses(selectedEg, selectedProg);
             console.log(courses);
 
             for (let course of courses)  {

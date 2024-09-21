@@ -12,7 +12,7 @@ exports.getProgElective = async function() {
 
 exports.getElectiveGroup = async function(progid) {
     return db.query(
-        `SELECT e.GroupCode
+        `SELECT e.GroupCode, e.ProgCourseID
         FROM programme p
         INNER JOIN progcourse pc ON p.ProgrammeID = pc.ProgrammeID
         INNER JOIN electivegroup e ON pc.ID = e.ProgCourseID
@@ -21,14 +21,14 @@ exports.getElectiveGroup = async function(progid) {
     );
 };
 
-exports.getElectiveCourses = async function(code) {
+exports.getElectiveCourses = async function(code, progID) {
     return db.query(
         `SELECT c.*, ec.*
         FROM progcourse pc
         INNER JOIN electivegroup e ON e.ProgCourseID = pc.ID
         INNER JOIN electivecourse ec ON pc.CourseID = ec.ElectiveID  
         INNER JOIN course c ON pc.CourseID = c.CourseID
-        WHERE e.GroupCode = ?;`, [code]
+        WHERE e.GroupCode = ? AND pc.ProgrammeID = ?;`, [code, progID]
     );
 };
 
