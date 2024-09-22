@@ -97,6 +97,9 @@ app.get('/compare', async (req, res) => {
     let compareData = await compareOutline.getCompare(selectedProg1);
     let courses = await compareOutline.getCourses(selectedProg1);
     let campuses = await compareOutline.getCampuses(selectedProg1);
+
+    courses = courses.sort();
+
     prog1Data = {
       ProgrammeName: compareData[0].ProgrammeName,
       Fees: compareData[0].Fees,
@@ -104,12 +107,16 @@ app.get('/compare', async (req, res) => {
       progOutline: courses.map(c => c.CourseName),
       campus: campuses.map(c => c.BranchName)
     };
+    
   }
 
   if (selectedProg2) {
     let compareData = await compareOutline.getCompare(selectedProg2);
     let courses = await compareOutline.getCourses(selectedProg2);
     let campuses = await compareOutline.getCampuses(selectedProg2);
+
+    courses = courses.sort();
+
     prog2Data = {
       ProgrammeName: compareData[0].ProgrammeName,
       Fees: compareData[0].Fees,
@@ -119,12 +126,26 @@ app.get('/compare', async (req, res) => {
     };
   }
 
+  if(selectedProg1 && selectedProg2) {
+    var common_course = [];
+
+    for (var i = 0; i < prog1Data.progOutline.length; i++) {
+        indexOf = (arr, q) => arr.findIndex(item => q.toLowerCase() === item.toLowerCase());
+        if (indexOf(prog2Data.progOutline, prog1Data.progOutline[i]) != -1) {
+            common_course.push(prog1Data.progOutline[i]);
+        }
+
+    }
+
+  }
+
   res.render('compare_programme', { 
     allProgs,
     selectedProg1, 
     selectedProg2, 
     prog1: prog1Data, 
-    prog2: prog2Data 
+    prog2: prog2Data,
+    common_course 
   });
 });
 

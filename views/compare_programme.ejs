@@ -34,71 +34,101 @@
 <section id="h.237984dadd6e35ae_3" class="yaqOZd">
     <div class="mYVXT">
         <div class="LS81yb VICjCf j5pSsc db35Fc" tabindex="-1">
-            <h1 class="display-5 my-5 text-center">Compare Programmes</h1>
-            <div class="container">
-                <div class="col-md-9 mx-auto">
-                    <form action="" method="GET">
-                        <div class="row mb-4">
-                            <div class="col">
-                                <select class="form-select" name="prog1" id="select1" onchange="this.form.submit()">
-                                    <option value="">-- Select Programme 1 --</option>
-                                    <% allProgs.forEach(prog => { %>
-                                        <option <%= selectedProg1? 'selected':''%> value="<%= prog.ProgrammeID %>" ><%= prog.ProgrammeName %></option>
-                                    <% }) %>
-                                </select>
+            <div class="position-relative">
+                <h1 class="display-5 my-5 text-center">Compare Programmes</h1>
+                <div class="container">
+                    <div class="col-md-9 mx-auto">
+                        <form action="" method="GET">
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <select class="form-select" name="prog1" id="select1" onchange="this.form.submit()">
+                                        <option value="">-- Select Programme 1 --</option>
+                                        <% allProgs.forEach(prog => { %>
+                                            <option <%= selectedProg1 == prog.ProgrammeID? 'selected':''%> value="<%= prog.ProgrammeID %>" ><%= prog.ProgrammeName %></option>
+                                        <% }) %>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <select class="form-select" name="prog2" id="select2" onchange="this.form.submit()">
+                                        <option value="">-- Select Programme 2 --</option>
+                                        <% allProgs.forEach(prog => { %>
+                                            <option <%= selectedProg2 == prog.ProgrammeID? 'selected':''%> value="<%= prog.ProgrammeID %>"><%= prog.ProgrammeName %></option>
+                                        <% }) %>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="col">
-                                <select class="form-select" name="prog2" id="select2" onchange="this.form.submit()">
-                                    <option value="">-- Select Programme 2 --</option>
-                                    <% allProgs.forEach(prog => { %>
-                                        <option <%= selectedProg2? 'selected':''%> value="<%= prog.ProgrammeID %>"><%= prog.ProgrammeName %></option>
-                                    <% }) %>
-                                </select>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                        <% if (prog1 && prog2) { %>
 
-                    <% if (prog1 && prog2) { %>
-                        <table class="table table-bordered">
-                            <tr class="bg-light">
-                                <th>Comparison</th>
-                                <th><%= prog1.progName %></th>
-                                <th><%= prog2.progName %></th>
-                            </tr>
-                            <tr>
-                                <th>Programme Outline</th>
-                                <td>
-                                    <ul>
-                                        <% prog1.progOutline.split("', '").forEach(course => { %>
-                                            <li><%= course.replace(/'/g, '') %></li>
+                            <style>
+                                table{
+                                    table-layout: fixed;
+                                    width: 300px;
+                                }                                
+                            </style>
+
+                            <table class="table table-bordered">
+                                <tr class="bg-light">
+                                    <th style="width: 200px;">Comparison</th>
+                                    <th><%= prog1.progName %></th>
+                                    <th><%= prog2.progName %></th>
+                                </tr>
+                                <tr>
+                                    <th>Programme Outline</th>
+                                    <td>
+                                        <ul>
+                                            <% prog1.progOutline.forEach(course => { %>
+                                                <li class="<%= (common_course.includes(course))?'text-success':'text-danger' %>"><%= course.replace(/'/g, '') %></li>
+                                            <% }) %>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <% prog2.progOutline.forEach(course => { %>
+                                                <li class="<%= (common_course.includes(course))?'text-success':'text-danger' %>"><%= course.replace(/'/g, '') %></li>
+                                            <% }) %>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Fees</th>
+                                    <td><%= (prog1.Fees)?prog1.Fees.toFixed(2): 'N/A' %></td>
+                                    <td><%= (prog2.Fees)?prog2.Fees.toFixed(2): 'N/A' %></td>
+                                </tr>
+                                <tr>
+                                    <th>Career Prospects</th>
+
+                                    <td>
+                                        <ul>
+                                            <% prog1.Career.split('#').forEach(career => { %>
+                                                <li><%= career %></li>
+                                            <% }) %>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <% prog2.Career.split('#').forEach(career => { %>
+                                                <li><%= career %></li>
+                                            <% }) %>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Available Campuses</th>
+                                    <td>
+                                        <% prog1.campus.sort().forEach(campus => { %>
+                                            <li><%= campus  %></li>
                                         <% }) %>
-                                    </ul>
-                                </td>
-                                <td>
-                                    <ul>
-                                        <% prog2.progOutline.split("', '").forEach(course => { %>
-                                            <li><%= course.replace(/'/g, '') %></li>
+                                    </td>
+                                    <td>
+                                        <% prog2.campus.sort().forEach(campus => { %>
+                                            <li><%= campus  %></li>
                                         <% }) %>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Fees</th>
-                                <td><%= prog1.fees || 'N/A' %></td>
-                                <td><%= prog2.fees || 'N/A' %></td>
-                            </tr>
-                            <tr>
-                                <th>Career Prospects</th>
-                                <td><%= prog1.career || 'N/A' %></td>
-                                <td><%= prog2.career || 'N/A' %></td>
-                            </tr>
-                            <tr>
-                                <th>Available Campuses</th>
-                                <td><%= prog1.campus || 'N/A' %></td>
-                                <td><%= prog2.campus || 'N/A' %></td>
-                            </tr>
-                        </table>
-                    <% } %>
+                                    </td>
+                                </tr>
+                            </table>
+                        <% } %>
+                    </div>
                 </div>
             </div>
         </div>
