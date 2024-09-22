@@ -85,7 +85,6 @@ app.get('/req', (req, res) => {
 
 app.get('/compare', async (req, res) => {
   const { prog1, prog2 } = req.query;
-
   let selectedProg1 = prog1 ? parseInt(prog1) : null;
   let selectedProg2 = prog2 ? parseInt(prog2) : null;
 
@@ -99,9 +98,11 @@ app.get('/compare', async (req, res) => {
     let courses = await compareOutline.getCourses(selectedProg1);
     let campuses = await compareOutline.getCampuses(selectedProg1);
     prog1Data = {
-      ...compareData[0],
-      progOutline: courses.map(c => c.CourseName).join("', '"),
-      campus: campuses.map(c => c.BranchName).join(", ")
+      ProgrammeName: compareData[0].ProgrammeName,
+      Fees: compareData[0].Fees,
+      Career: compareData[0].Career,
+      progOutline: courses.map(c => c.CourseName),
+      campus: campuses.map(c => c.BranchName)
     };
   }
 
@@ -110,15 +111,16 @@ app.get('/compare', async (req, res) => {
     let courses = await compareOutline.getCourses(selectedProg2);
     let campuses = await compareOutline.getCampuses(selectedProg2);
     prog2Data = {
-      ...compareData[0],
-      progOutline: courses.map(c => c.CourseName).join("', '"),
-      campus: campuses.map(c => c.BranchName).join(", ")
+      ProgrammeName: compareData[0].ProgrammeName,
+      Fees: compareData[0].Fees,
+      Career: compareData[0].Career,
+      progOutline: courses.map(c => c.CourseName),
+      campus: campuses.map(c => c.BranchName)
     };
   }
 
   res.render('compare_programme', { 
     allProgs,
-    course, 
     selectedProg1, 
     selectedProg2, 
     prog1: prog1Data, 

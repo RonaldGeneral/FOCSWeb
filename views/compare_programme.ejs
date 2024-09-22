@@ -20,7 +20,6 @@
                                             class="zfr3Q duRjpb CDt4Ke "
                                             style="line-height: 0.84; text-align: center;">
                                             <span class="GJytX C9DxTc "
-                                                style="color: #f7ebeb; font-family: Lato, Arial; font-weight: 900; vertical-align: baseline;">Elective Course</span></h1>
                                     </div>
                                 </div>
                             </div>
@@ -44,7 +43,7 @@
                                 <select class="form-select" name="prog1" id="select1" onchange="this.form.submit()">
                                     <option value="">-- Select Programme 1 --</option>
                                     <% allProgs.forEach(prog => { %>
-                                        <option value="<%= prog.ProgrammeID %>" ><%= prog.ProgrammeName %></option>
+                                        <option <%= selectedProg1? 'selected':''%> value="<%= prog.ProgrammeID %>" ><%= prog.ProgrammeName %></option>
                                     <% }) %>
                                 </select>
                             </div>
@@ -52,7 +51,7 @@
                                 <select class="form-select" name="prog2" id="select2" onchange="this.form.submit()">
                                     <option value="">-- Select Programme 2 --</option>
                                     <% allProgs.forEach(prog => { %>
-                                        <option value="<%= prog.ProgrammeID %>"><%= prog.ProgrammeName %></option>
+                                        <option <%= selectedProg2? 'selected':''%> value="<%= prog.ProgrammeID %>"><%= prog.ProgrammeName %></option>
                                     <% }) %>
                                 </select>
                             </div>
