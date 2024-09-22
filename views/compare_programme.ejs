@@ -32,75 +32,83 @@
     </div>
 </section> 
 
-<section id="h.237984dadd6e35ae_3" class="yaqOZd"></section>
+<section id="h.237984dadd6e35ae_3" class="yaqOZd">
     <div class="mYVXT">
         <div class="LS81yb VICjCf j5pSsc db35Fc" tabindex="-1">
+            <h1 class="display-5 my-5 text-center">Compare Programmes</h1>
+            <div class="container">
+                <div class="col-md-9 mx-auto">
+                    <form action="" method="GET">
+                        <div class="row mb-4">
+                            <div class="col">
+                                <select class="form-select" name="prog1" id="select1" onchange="this.form.submit()">
+                                    <option value="">-- Select Programme 1 --</option>
+                                    <% allProgs.forEach(prog => { %>
+                                        <option value="<%= prog.ProgrammeID %>" ><%= prog.ProgrammeName %></option>
+                                    <% }) %>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <select class="form-select" name="prog2" id="select2" onchange="this.form.submit()">
+                                    <option value="">-- Select Programme 2 --</option>
+                                    <% allProgs.forEach(prog => { %>
+                                        <option value="<%= prog.ProgrammeID %>"><%= prog.ProgrammeName %></option>
+                                    <% }) %>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
 
+                    <% if (prog1 && prog2) { %>
+                        <table class="table table-bordered">
+                            <tr class="bg-light">
+                                <th>Comparison</th>
+                                <th><%= prog1.progName %></th>
+                                <th><%= prog2.progName %></th>
+                            </tr>
+                            <tr>
+                                <th>Programme Outline</th>
+                                <td>
+                                    <ul>
+                                        <% prog1.progOutline.split("', '").forEach(course => { %>
+                                            <li><%= course.replace(/'/g, '') %></li>
+                                        <% }) %>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <% prog2.progOutline.split("', '").forEach(course => { %>
+                                            <li><%= course.replace(/'/g, '') %></li>
+                                        <% }) %>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Fees</th>
+                                <td><%= prog1.fees || 'N/A' %></td>
+                                <td><%= prog2.fees || 'N/A' %></td>
+                            </tr>
+                            <tr>
+                                <th>Career Prospects</th>
+                                <td><%= prog1.career || 'N/A' %></td>
+                                <td><%= prog2.career || 'N/A' %></td>
+                            </tr>
+                            <tr>
+                                <th>Available Campuses</th>
+                                <td><%= prog1.campus || 'N/A' %></td>
+                                <td><%= prog2.campus || 'N/A' %></td>
+                            </tr>
+                        </table>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js "></script>
+            
 <!---->
 
-            <h1 class="display-5 my-5 text-center">Compare Programmes</h1>
-    <div class="container">
-        <div class="col-md-9 mx-auto">
-            <table class="table">
-                <tr class="bg-light">
-                    <th>Select Programme</th>
-                    <th width="300px">
-                        <select class="form-control" id="select1" onchange="item1(this.value)">
-                            <option value="0">-- Select Any Programme --</option>
-                        </select>
-                    </th>
-                    <th width="300px">
-                        <select class="form-control" id="select2" onchange="item2(this.value)">
-                            <option value="0">-- Select Any Programme --</option>
-                        </select>
-                    </th>
-                </tr>
-                
-                <tr>
-                    <th>Programme Name</th>
-                    <td id="progName1"><li>N/A</li></td> 
-                    <td id="progName2"><li>N/A</li></td>
-                </tr>
-                <tr>
-                    <th>Minimum Entry Requirements</th>
-                    <td id="entryReq1"><li>N/A</li></td> 
-                    <td id="entryReq2"><li>N/A</li></td>
-                </tr>
-                <tr>
-                    <th>Programme Outline</th>
-                    <td id="progOutline1"><li>N/A</li></td>
-                    <td id="progOutline2"><li>N/A</li></td>
-                </tr>
-                <tr>
-                    <th>Fees</th>
-                    <td id="fees1"><li>N/A</li></td>
-                    <td id="fees2"><li>N/A</li></td>
-                </tr>
-
-                <tr>
-                    <th>Career Prospects</th>
-                    <td id="career1"><li>N/A</li></td>
-                    <td id="career2"><li>N/A</li></td>
-                </tr>
-
-                <tr>
-                    <th>Available Campuses</th>
-                    <td id="campus1"><li>N/A</li></td>
-                    <td id="campus2"><li>N/A</li></td>
-                </tr>
-
-            </table>
-
-        </div>
-    </div>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js "></script>
-            
-    <!---->
-
-
-        </div>
-    </div>
 </section>

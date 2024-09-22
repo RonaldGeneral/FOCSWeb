@@ -8,6 +8,8 @@ const bodyParser = require('body-parser');
 const elective = require('./elective');
 const pr = require('./programme-require');
 const ai = require('./ai');
+const compareOutline = require('./compare_outline');
+const compareData = require('./compare_data');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -79,6 +81,49 @@ app.get('/', (req, res) => {
 
 app.get('/req', (req, res) => {
   res.render('require_checker');
+});
+
+app.get('/compare', async (req, res) => {
+  const { prog1, prog2 } = req.query;
+
+  let selectedProg1 = prog1 ? parseInt(prog1) : null;
+  let selectedProg2 = prog2 ? parseInt(prog2) : null;
+
+  allProgs = await compareOutline.getAllProg();
+
+  let prog1Data = null;
+  let prog2Data = null;
+
+  if (selectedProg1) {
+    let compareData = await compareOutline.getCompare(selectedProg1);
+    let courses = await compareOutline.getCourses(selectedProg1);
+    let campuses = await compareOutline.getCampuses(selectedProg1);
+    prog1Data = {
+      ...compareData[0],
+      progOutline: courses.map(c => c.CourseName).join("', '"),
+      campus: campuses.map(c => c.BranchName).join(", ")
+    };
+  }
+
+  if (selectedProg2) {
+    let compareData = await compareOutline.getCompare(selectedProg2);
+    let courses = await compareOutline.getCourses(selectedProg2);
+    let campuses = await compareOutline.getCampuses(selectedProg2);
+    prog2Data = {
+      ...compareData[0],
+      progOutline: courses.map(c => c.CourseName).join("', '"),
+      campus: campuses.map(c => c.BranchName).join(", ")
+    };
+  }
+
+  res.render('compare_programme', { 
+    allProgs,
+    course, 
+    selectedProg1, 
+    selectedProg2, 
+    prog1: prog1Data, 
+    prog2: prog2Data 
+  });
 });
 
 app.get('/elective', async (req, res) => {
